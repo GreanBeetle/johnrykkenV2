@@ -1,3 +1,9 @@
+
 ul {
   list-style: none;
+}
+
+.card {
+  margin: 25px;
+  width: 500px;
 }
