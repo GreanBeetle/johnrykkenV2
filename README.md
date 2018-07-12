@@ -5,11 +5,12 @@
 
 ### _John Rykken_
 
-_7/12/18  Upcoming builds will be deployed to Firebase. Link soon to follow _
+_7/12/18  Upcoming builds will be deployed to Firebase. Link soon to follow._
 
 Built with Angular, Bulma, Firestore and Firebase, this is my personal website. I'm aiming for a smooth UX and dark-themed UI. The site has 5 sections: Home, Crux, Code!, Portfolio, and Admin.   
 
-1. HOME
+
+#### 1. HOME
   * Landing page with the following:
   * A short 'About Me' section
   * An brief overview of my skills, both technical and soft
@@ -17,7 +18,8 @@ Built with Angular, Bulma, Firestore and Firebase, this is my personal website. 
   * An overview of my history as a writer, including links to and synopses of my manuscripts and published novels
   * A quick explanation of and link to CODE!, the sub-section of this site that showcases my various programming skills. CODE! will  include things like Euler Problems, CRUD functionality, and API calls  
 
-2. CRUX
+
+#### 2. CRUX
   * My tech blog, CRUX, will be written for noob coders and the curious (e.g. new code school students and tech dilettantes)
   * It will address concepts like the 'DOM', 'promises', 'asynchronicity', 'state', 'the stack', and so on.
   * I'll assume my readers know basically nothing about code
@@ -33,7 +35,8 @@ Built with Angular, Bulma, Firestore and Firebase, this is my personal website. 
   * Admin will have the option to delete vulgar, aggressive, or otherwise negative comments
   * I may build a form allowing users to request explanation of specific terms
 
-3. CODE!
+
+#### 3. CODE!
   * An introductory paragraph will explain the idea behind CODE!. The idea, basically, is to showcase my facility for technical problem solving  
   * This section is built for tech recruiters and other developers
   * Pagination will divide it into 3 discrete parts
@@ -42,10 +45,12 @@ Built with Angular, Bulma, Firestore and Firebase, this is my personal website. 
   * Part 2 will contain some simple forms allowing users to perform basic CRUD operations. This will likely take the shape of users listing their favorite writers or tech role models (e.g. Hemingway or Turing or whoever ) and adding multiple quotes for each role model. Ultimately the user will be able to create, read, update, and delete each `role model` (exact class name TBD) and each `quote` belonging to each `role model`
   * Part 3 will let the user provide query parameters and make an API call. The results will display on the page. Which API I'll use is TBD.
 
-4. PORTFOLIO
+
+#### 4. PORTFOLIO
   * A simple page with screenshots of and links to my other coding projects
 
-5. ADMIN
+
+#### 5. ADMIN
   * This will be a protected page containing admin functionality
   * It will list all `article`s and provide a form for updating and deleting each
   * A significant portion of space will be dedicated to writing new `article`s (some input boxes and a large-ish text area)
@@ -53,6 +58,7 @@ Built with Angular, Bulma, Firestore and Firebase, this is my personal website. 
   * There will be a file dropzone for images, PDFs, or other files I may find useful on the site
   * Admin will be able to CRUD all files
   * Additional functionality will be added as necessary  
+
 
 ## Other functionality
   * Authentication
