@@ -1,0 +1,25 @@
+.hero {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.heroTitle {
+  /* font-family: 'novacento-book'; */
+  font-size: 3em;
+  color: #000;
+}
+
+/* #heroTitle.animated {
+  animation-duration: 3s;
+  // animation-iteration-count: infinite;
+} */
+
+#heroSubtitle {
+  font-family: 'novacento-book';
+  color: $blue-green;
+  font-size: 2em;
+}
+
+.hero-body {
+  text-align: center;
+}
