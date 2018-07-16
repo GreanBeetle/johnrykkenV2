@@ -1,0 +1,9 @@
+@font-face {
+  font-family: novacento-norm;
+  src: url("/assets/fonts/novacento-normal.otf") format('opentype');
+}
+
+@font-face {
+  font-family: novacento-lite;
+  src: url("/assets/fonts/novacento-light.otf") format('opentype');
+}

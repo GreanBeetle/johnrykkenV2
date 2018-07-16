@@ -1,7 +1,17 @@
-// font-family: 'Raleway', sans-serif;
-// font-family: 'Open Sans', sans-serif;
-// font-family: 'Shadows Into Light', cursive;
-// font-family: 'Shadows Into Light Two', cursive;
+// @import "./styles.scss";
 
 // fonts
-$font-shadows: 'Shadows Into Light Two', cursive;
+$font-shadows: 'Shadows Into Light', cursive;
+$font-shadows-two: 'Shadows Into Light Two', cursive;
+$font-raleway: 'Raleway', sans-serif;
+$font-open-sans: 'Open Sans', sans-serif;
+$font-calibri: 'Calibri', sans-serif;
+$font-nova-norm: 'novacento-norm';
+
+// colors
+$blue-green: #0E7474 !global;
+$blue: #305485 !global;
+$green: #C4C963 !global;
+$gray: #D0C7C8 !global;
+$light-gray: #c0c0c0 !global;
+$dark-gray: #808080 !global;
