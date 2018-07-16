@@ -1,10 +1,14 @@
+@import "../../variables.scss";
+
 section {
   h1 {
     color: blue;
+    font-family: $font-shadows;
   }
 
   h2 {
     color: red;
+    font-family: Calibri, sans-serif;
   }
 
   h4 {
