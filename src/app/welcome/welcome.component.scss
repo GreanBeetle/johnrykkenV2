@@ -1,13 +1,15 @@
+@import "../../variables.scss";
+
 .hero {
-  background-image: url("/assets/img/coffeecomputer1.jpeg");
+  background-image: url("/assets/img/backpacker.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .heroTitle {
-  /* font-family: 'novacento-book'; */
+  font-family: $font-nova-norm;
   font-size: 3em;
-  color: #000;
+  color: #fff;
 }
 
 /* #heroTitle.animated {
@@ -15,12 +17,20 @@
   // animation-iteration-count: infinite;
 } */
 
-// #heroSubtitle {
-//   font-family: 'novacento-book';
-//   color: $blue-green;
-//   font-size: 2em;
-// }
+.subtitle {
+  font-family: $font-nova-norm;
+  color: $green;
+  font-size: 2em;
+}
 
 .hero-body {
   text-align: center;
+}
+
+.card {
+  text-align: center;
+  background:rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 20px;
 }
