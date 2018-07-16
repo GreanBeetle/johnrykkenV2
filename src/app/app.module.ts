@@ -8,6 +8,7 @@ import { CruxComponent } from './crux/crux.component';
 import { CodeComponent } from './code/code.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AdminComponent } from './admin/admin.component';
+import { WelcomeAboutmeComponent } from './welcome-aboutme/welcome-aboutme.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AdminComponent } from './admin/admin.component';
     CruxComponent,
     CodeComponent,
     PortfolioComponent,
-    AdminComponent
+    AdminComponent,
+    WelcomeAboutmeComponent
   ],
   imports: [
     BrowserModule,
