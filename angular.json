@@ -124,5 +124,10 @@
       }
     }
   },
-  "defaultProject": "john-rykken-V2"
+  "defaultProject": "john-rykken-V2",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
