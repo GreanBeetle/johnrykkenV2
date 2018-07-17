@@ -1,6 +1,14 @@
+@import "../../variables.scss";
+
 section {
+  background-color: $green;
+
   ul {
     list-style: initial;
     margin-left: 10%;
+  }
+
+  li {
+    font-family: $font-calibri;
   }
 }
