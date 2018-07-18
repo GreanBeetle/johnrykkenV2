@@ -3,17 +3,28 @@
 section {
   background-color: $green;
 
+  .columns {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
   ul {
     list-style: initial;
     margin-left: 10%;
   }
 
   li {
-    font-family: $font-calibri;
+    font-family: $font-raleway;
+  }
+
+  p {
+    font-family: $font-raleway;
+    margin-bottom: 10px;
   }
 
   img {
-    max-height: 250px;
+    max-height: 225px;
+    border-radius: 5px;
   }
 
   .profilePic {
