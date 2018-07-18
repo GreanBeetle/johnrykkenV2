@@ -1,0 +1,39 @@
+@import "../../variables.scss";
+
+#skills-title, #skills-main-title {
+  font-family: 'Raleway';
+}
+
+#skills-main-title {
+  font-size: 3em;
+}
+
+#skills-logo {
+  height: 200px;
+  width: 200px;
+}
+
+#skills-container {
+  text-align: center;
+  .tile {
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+.image, .is-4by4 {
+  margin: 0 auto;
+}
+
+#humor {
+  color: #E96847;
+}
+
+#creativity {
+  font-family: $font-shadows;
+  color: $blue;
+  font-weight: bolder;
+}
+
+#driven {
+  font-weight: 500;
+}
