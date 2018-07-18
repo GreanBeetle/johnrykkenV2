@@ -11,4 +11,12 @@ section {
   li {
     font-family: $font-calibri;
   }
+
+  img {
+    max-height: 250px;
+  }
+
+  .profilePic {
+    text-align: center;
+  }
 }
