@@ -9,10 +9,21 @@
   margin: 10px;
 }
 
-.code {
-  font-family: $font-code;
-}
 
 .navbar-item {
   color: $light-gray;
+}
+
+a:hover {
+  color: $blue !important;
+  background-color: #000 !important;
+}
+
+.code {
+  font-family: $font-code;
+  color: $blue-green;
+}
+
+.code:hover {
+  color: $blue !important;
 }
