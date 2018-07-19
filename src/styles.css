@@ -7,3 +7,8 @@
   font-family: novacento-lite;
   src: url("/assets/fonts/novacento-light.otf") format('opentype');
 }
+
+@font-face {
+  font-family: monaco;
+  src: url("/assets/fonts/monaco.ttf") format('truetype');
+}

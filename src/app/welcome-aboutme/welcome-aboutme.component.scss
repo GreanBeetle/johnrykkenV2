@@ -14,10 +14,6 @@ section {
     list-style-position: inside;
   }
 
-  li {
-    font-family: $font-raleway;
-  }
-
   p {
     font-family: $font-calibri;
   }
@@ -30,5 +26,18 @@ section {
   .picture {
     text-align: center;
   }
+
+  .commandLine {
+    font-family: $font-code;
+    background-color: #000;
+    color: $light-gray;
+    padding: 2px;
+  }
+
+  .commandLine:hover {
+    color: $blue-green;
+    cursor: pointer;
+  }
+
 
 }
