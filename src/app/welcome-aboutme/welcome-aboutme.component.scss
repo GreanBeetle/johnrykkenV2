@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
 section {
-  background-color: $green;
+  background-color: black;
 
   .columns {
     margin-left: 100px;
@@ -15,7 +15,7 @@ section {
   }
 
   p {
-    font-family: $font-calibri;
+    font-family: $font-raleway;
   }
 
   img {
@@ -30,12 +30,12 @@ section {
   .commandLine {
     font-family: $font-code;
     background-color: #000;
-    color: $light-gray;
+    color: $blue-green;
     padding: 2px;
   }
 
   .commandLine:hover {
-    color: $blue-green;
+    color: $blue;
     cursor: pointer;
   }
 
