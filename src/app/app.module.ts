@@ -10,6 +10,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AdminComponent } from './admin/admin.component';
 import { WelcomeAboutmeComponent } from './welcome-aboutme/welcome-aboutme.component';
 import { WelcomeSkillsComponent } from './welcome-skills/welcome-skills.component';
+import { WelcomeCruxComponent } from './welcome-crux/welcome-crux.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { WelcomeSkillsComponent } from './welcome-skills/welcome-skills.componen
     PortfolioComponent,
     AdminComponent,
     WelcomeAboutmeComponent,
-    WelcomeSkillsComponent
+    WelcomeSkillsComponent,
+    WelcomeCruxComponent
   ],
   imports: [
     BrowserModule,

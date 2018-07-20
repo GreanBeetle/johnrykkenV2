@@ -1,0 +1,50 @@
+@import "../../variables.scss";
+
+#crux-section {
+  background-color: black;
+  font-family: 'Raleway';
+
+
+  .container {
+    text-align: center;
+
+    h1 {
+      color: $dark-gray;
+      font-size: 4em;
+    }
+
+    h4 {
+      font-size: 2em;
+      color: $blue-green;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: white;
+    }
+
+    .tile, .is-child {
+      text-align: justify;
+      margin-left: 20%;
+      margin-right: 20%;
+
+      p {
+        color: white;
+        font-size: 1.3em;
+      }
+
+      strong {
+        color: $green;
+      }
+
+      ul {
+        list-style: initial;
+        font-family: $font-open-sans;
+        font-size: 14pt;
+        li {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

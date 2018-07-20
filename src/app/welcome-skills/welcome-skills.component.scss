@@ -1,39 +1,47 @@
 @import "../../variables.scss";
 
-#skills-title, #skills-main-title {
-  font-family: 'Raleway';
-}
+section {
 
-#skills-main-title {
-  font-size: 3em;
-}
-
-#skills-logo {
-  height: 200px;
-  width: 200px;
-}
-
-#skills-container {
-  text-align: center;
-  .tile {
-    background-color: rgba(255, 255, 255, 0);
+  li {
+    font-family: $font-raleway;
   }
-}
 
-.image, .is-4by4 {
-  margin: 0 auto;
-}
+  #skills-title, #skills-main-title {
+    font-family: 'Raleway';
+  }
 
-#humor {
-  color: #E96847;
-}
+  #skills-main-title {
+    font-size: 3em;
+  }
 
-#creativity {
-  font-family: $font-shadows;
-  color: $blue;
-  font-weight: bolder;
-}
+  #skills-logo {
+    height: 200px;
+    width: 200px;
+  }
 
-#driven {
-  font-weight: 500;
+  #skills-container {
+    text-align: center;
+    .tile {
+      background-color: rgba(255, 255, 255, 0);
+    }
+  }
+
+  .image, .is-4by4 {
+    margin: 0 auto;
+  }
+
+  #humor {
+    color: #E96847;
+  }
+
+  #creativity {
+    font-family: $font-shadows;
+    color: $blue;
+    font-weight: bolder;
+  }
+
+  #driven {
+    font-weight: 500;
+  }
+
 }
