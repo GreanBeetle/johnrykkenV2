@@ -1,0 +1,16 @@
+@import "../../variables.scss";
+
+section {
+
+  background-color: $green;
+
+  .synopsis, .introParagraph {
+    font-family: $font-raleway;
+  }
+
+  .bookcover {
+    max-height: 150px;
+    margin: 0 auto;
+  }
+
+}
