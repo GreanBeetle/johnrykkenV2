@@ -1,0 +1,16 @@
+@import "../../variables.scss";
+
+footer {
+  text-align: center;
+  background-color: $gray !important;
+
+  .level {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  .social-media-icon {
+    height: 30px;
+    width: 30px;
+  }
+}

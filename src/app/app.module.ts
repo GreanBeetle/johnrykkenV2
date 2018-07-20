@@ -16,6 +16,10 @@ import { WelcomeCruxComponent } from './welcome-crux/welcome-crux.component';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { WelcomeFooterComponent } from './welcome-footer/welcome-footer.component';
+import { WelcomeWritingComponent } from './welcome-writing/welcome-writing.component';
+
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -35,7 +39,9 @@ export const firebaseConfig = {
     AdminComponent,
     WelcomeAboutmeComponent,
     WelcomeSkillsComponent,
-    WelcomeCruxComponent
+    WelcomeCruxComponent,
+    WelcomeFooterComponent,
+    WelcomeWritingComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +49,7 @@ export const firebaseConfig = {
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     RouterModule.forRoot([
       {
         path: '',
