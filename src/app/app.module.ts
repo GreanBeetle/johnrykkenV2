@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -11,6 +13,16 @@ import { AdminComponent } from './admin/admin.component';
 import { WelcomeAboutmeComponent } from './welcome-aboutme/welcome-aboutme.component';
 import { WelcomeSkillsComponent } from './welcome-skills/welcome-skills.component';
 import { WelcomeCruxComponent } from './welcome-crux/welcome-crux.component';
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket
+};
 
 @NgModule({
   declarations: [
@@ -27,6 +39,10 @@ import { WelcomeCruxComponent } from './welcome-crux/welcome-crux.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
     RouterModule.forRoot([
       {
         path: '',
