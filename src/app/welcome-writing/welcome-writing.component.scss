@@ -2,10 +2,28 @@
 
 section {
 
-  background-color: $green;
+  background-color: $dark-gray;
+
+  .container {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .title-container {
+    text-align: center;
+  }
+
+  .writing-title {
+    font-family: $font-raleway;
+    font-size: 3em;
+    font-weight: 200;
+    color: #000;
+
+  }
 
   .synopsis, .introParagraph {
     font-family: $font-raleway;
+    text-align: justify;
   }
 
   .bookcover {
