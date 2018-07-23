@@ -2,7 +2,7 @@
 
 footer {
   text-align: center;
-  background-color: $gray !important;
+  background-color: $dark-gray !important;
 
   .level {
     padding-left: 20%;
@@ -12,5 +12,9 @@ footer {
   .social-media-icon {
     height: 30px;
     width: 30px;
+  }
+
+  small {
+    font-family: $font-raleway;
   }
 }
