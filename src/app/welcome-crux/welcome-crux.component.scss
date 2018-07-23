@@ -8,6 +8,10 @@
   .container {
     text-align: center;
 
+    .titleContainer:hover {
+      cursor: pointer;
+    }
+
     h1 {
       color: $dark-gray;
       font-size: 4em;
