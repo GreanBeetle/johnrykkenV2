@@ -1,0 +1,18 @@
+<section class="section is-small">
+  <div class="container">
+
+    <form>
+      <div class="form-group">
+        <label for="camera">Date</label>
+        <input type=date #roverDate>
+      </div>
+      <button (click)="getAPOD()">GET</button>
+    </form>
+
+    <div *ngIf='paydirt'>
+      {{ paydirt.explanation }}
+      <img src={{paydirt.hdurl}}>
+    </div>
+
+  </div>
+</section>

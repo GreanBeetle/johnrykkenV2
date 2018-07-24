@@ -19,7 +19,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { WelcomeFooterComponent } from './welcome-footer/welcome-footer.component';
 import { WelcomeWritingComponent } from './welcome-writing/welcome-writing.component';
-import { WelcomeCodeComponent } from './welcome-code/welcome-code.component';
+import { NasaApiComponent } from './nasa-api/nasa-api.component';
 
 
 export const firebaseConfig = {
@@ -43,7 +43,7 @@ export const firebaseConfig = {
     WelcomeCruxComponent,
     WelcomeFooterComponent,
     WelcomeWritingComponent,
-    WelcomeCodeComponent
+    NasaApiComponent
   ],
   imports: [
     BrowserModule,

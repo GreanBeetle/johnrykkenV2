@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WelcomeCodeComponent } from './welcome-code.component';
+import { NasaApiComponent } from './nasa-api.component';
 
-describe('WelcomeCodeComponent', () => {
-  let component: WelcomeCodeComponent;
-  let fixture: ComponentFixture<WelcomeCodeComponent>;
+describe('NasaApiComponent', () => {
+  let component: NasaApiComponent;
+  let fixture: ComponentFixture<NasaApiComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WelcomeCodeComponent ]
+      declarations: [ NasaApiComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WelcomeCodeComponent);
+    fixture = TestBed.createComponent(NasaApiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
