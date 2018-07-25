@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 
 export class NavbarComponent implements OnInit {
   user;
-  private isLoggedIn: boolean;
+  public isLoggedIn: boolean;
 
   constructor(public authServ: AuthenticationService, private router: Router) {
     this.authServ.user.subscribe(user => {

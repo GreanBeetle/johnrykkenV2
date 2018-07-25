@@ -5,11 +5,11 @@
     </nav>
   </div>
   <div class="navbar-end">
-    <div *ngIf="isLoggedIn" class="navbar-item">
-      <small class="authItem">logged in as {{ user?.displayName }} | </small>
+    <div *ngIf="user" class="navbar-item">
+      <small class="authItem">logged in as {{ user.displayName }} | </small>
       <small class="authItem logoutButton" (click)="logout()">&nbsp;logout</small>
     </div>
-    <div *ngIf="!isLoggedIn" class="navbar-item">
+    <div *ngIf="!user" class="navbar-item">
       <small class="authItem" routerLink="login">login&nbsp;</small><br>
       <small class="or" >|&nbsp;</small><br>
       <small class="authItem"routerLink="signup">sign up</small>
