@@ -9,8 +9,8 @@ import { Observable, Subject } from 'rxjs';
 export class NasaApiService {
   constructor(private http: Http) { }
 
-  getAPOD() {
-    return this.http.get(`https://api.nasa.gov/planetary/apod?api_key=e0XTCrbdgEbS353UoB8sV2EPeLdCYYO0Nq1YFbSZ`);
+  getAPOD(date) {
+    return this.http.get(`https://api.nasa.gov/planetary/apod?date=${date}&api_key=e0XTCrbdgEbS353UoB8sV2EPeLdCYYO0Nq1YFbSZ`);
   }
 
 }

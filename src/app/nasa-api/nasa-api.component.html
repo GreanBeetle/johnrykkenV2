@@ -6,7 +6,7 @@
         <label for="camera">Date</label>
         <input type=date #roverDate>
       </div>
-      <button (click)="getAPOD()">GET</button>
+      <button (click)="getAPOD(roverDate.value)">GET</button>
     </form>
 
     <div *ngIf='paydirt'>

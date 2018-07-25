@@ -14,9 +14,9 @@ export class NasaApiComponent implements OnInit {
 
   constructor(private nasaApiService: NasaApiService) { }
 
-  getAPOD() {
-    alert('You clicked the NASA button');
-    this.nasaApiService.getAPOD().subscribe(payload => {
+  getAPOD(date) {
+    alert('You clicked the NASA button: ' + date);
+    this.nasaApiService.getAPOD(date).subscribe(payload => {
       this.paydirt = payload.json();
     });
   }
