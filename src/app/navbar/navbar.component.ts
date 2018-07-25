@@ -6,21 +6,23 @@ import { Router } from '@angular/router';
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  providers: [ AuthenticationService ]
+  providers: [
+    AuthenticationService
+  ]
 })
 
 export class NavbarComponent implements OnInit {
   user;
-  public isLoggedIn: boolean;
+  loggedIn: boolean;
 
   constructor(public authServ: AuthenticationService, private router: Router) {
     this.authServ.user.subscribe(user => {
         this.user = user;
         console.log('ID and display name: ' + user.uid + user.displayName);
         if (user == null) {
-          this.isLoggedIn = false;
+          this.loggedIn = false;
         } else {
-          this.isLoggedIn = true;
+          this.loggedIn = true;
         }
     });
   }

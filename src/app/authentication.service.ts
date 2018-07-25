@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 export class AuthenticationService {
   user: Observable<firebase.User>;
   private userDetails: firebase.User = null;
+  loggedIn = false;
 
   constructor(private afAuth: AngularFireAuth, private router: Router) {
     this.user = afAuth.authState;
@@ -35,6 +36,7 @@ export class AuthenticationService {
         .then(res => {
           resolve(res);
         });
+      this.loggedIn = true;
     });
   }
 
@@ -48,6 +50,7 @@ export class AuthenticationService {
 
   logout() {
     this.afAuth.auth.signOut().then((res) => this.router.navigate(['/']));
+    this.loggedIn = false;
   }
 
   // #### return to github authentication if there is time
