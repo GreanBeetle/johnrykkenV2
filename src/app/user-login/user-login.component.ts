@@ -5,8 +5,10 @@ import { AuthenticationService } from '../authentication.service';
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
-  styleUrls: ['./user-login.component.scss']
+  styleUrls: ['./user-login.component.scss'],
+  providers: [ AuthenticationService ]
 })
+
 export class UserLoginComponent {
 
   constructor(private authServ: AuthenticationService, private router: Router) { }
@@ -23,6 +25,10 @@ export class UserLoginComponent {
       this.router.navigate(['/']);
     }).catch((err) =>
       console.log('Github login error: ' + err));
+  }
+
+  logout() {
+    this.authServ.logout();
   }
 
 }

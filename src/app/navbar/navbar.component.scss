@@ -27,3 +27,20 @@ a:hover {
 .code:hover {
   color: $blue !important;
 }
+
+.logoutButton:hover {
+  cursor: pointer;
+}
+
+.authItem, small {
+  color: $dark-gray;
+  
+}
+
+.authItem:hover {
+  cursor: pointer;
+}
+
+.or {
+  color: $gray;
+}
