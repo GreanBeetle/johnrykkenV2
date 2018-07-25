@@ -1,3 +1,4 @@
+import { routing } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -54,32 +55,11 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
+    routing,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    RouterModule.forRoot([
-      {
-        path: '',
-        component: WelcomeComponent
-      },
-      {
-        path: 'crux',
-        component: CruxComponent
-      },
-      {
-        path: 'code',
-        component: CodeComponent
-      },
-      {
-        path: 'portfolio',
-        component: PortfolioComponent
-      },
-      {
-        path: 'admin',
-        component: AdminComponent
-      },
-    ])
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
