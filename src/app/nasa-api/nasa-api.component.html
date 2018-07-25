@@ -4,9 +4,9 @@
     <form>
       <div class="form-group">
         <label for="camera">Date</label>
-        <input type=date #roverDate>
+        <input type=date #picDate>
       </div>
-      <button (click)="getAPOD(roverDate.value)">GET</button>
+      <button (click)="getAPOD(picDate.value)">GET</button>
     </form>
 
     <div *ngIf='paydirt'>

@@ -14,13 +14,16 @@ import { WelcomeAboutmeComponent } from './welcome-aboutme/welcome-aboutme.compo
 import { WelcomeSkillsComponent } from './welcome-skills/welcome-skills.component';
 import { WelcomeCruxComponent } from './welcome-crux/welcome-crux.component';
 import { masterFirebaseConfig } from './api-keys';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
 import { WelcomeFooterComponent } from './welcome-footer/welcome-footer.component';
 import { WelcomeWritingComponent } from './welcome-writing/welcome-writing.component';
 import { NasaApiComponent } from './nasa-api/nasa-api.component';
-
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { environment } from '../environments/environment';
+import { UserSignupComponent } from './user-signup/user-signup.component';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -43,7 +46,9 @@ export const firebaseConfig = {
     WelcomeCruxComponent,
     WelcomeFooterComponent,
     WelcomeWritingComponent,
-    NasaApiComponent
+    NasaApiComponent,
+    UserSignupComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +57,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     RouterModule.forRoot([
       {
         path: '',
