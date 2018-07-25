@@ -10,24 +10,25 @@ import { UserLoginComponent } from './user-login/user-login.component';
 
 const appRoutes: Routes = [
   {
-    path: '',
-    component: WelcomeComponent
+    path: '', component: WelcomeComponent
   },
   {
-    path: 'crux',
-    component: CruxComponent
+    path: 'crux', component: CruxComponent
   },
   {
-    path: 'code',
-    component: CodeComponent
+    path: 'code', component: CodeComponent
   },
   {
-    path: 'portfolio',
-    component: PortfolioComponent
+    path: 'portfolio', component: PortfolioComponent
   },
   {
-    path: 'admin',
-    component: AdminComponent
+    path: 'admin', component: AdminComponent
+  },
+  {
+    path: 'signup', component: UserSignupComponent
+  },
+  {
+    path: 'login', component: UserLoginComponent
   }
 ];
 
