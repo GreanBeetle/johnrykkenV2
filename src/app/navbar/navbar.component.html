@@ -23,11 +23,19 @@
   </div>
 </nav>
 
-<!-- mobile sidebar -->
+<!-- mobile navbar -->
 <nav class="navbar sideBar" *ngIf="showMenu">
-  <h1 (click)="toggleDisplay()" [style]='displayMenu()'>TOGGLEMENU</h1>
-  <img [src]="angularLogo">
+  <div class="navbar-brand" (click)="toggleDisplay()">
+    <img src="/assets/img/burger-icon.png" class="burger-icon">
+  </div>
 </nav>
 
+<h1 (click)="toggleMenu()">TOGGLE</h1>
 
-<h1 (click)="toggleMenu()">toggle please</h1>
+<!-- hidden mobile sidebar -->
+<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+</div>
