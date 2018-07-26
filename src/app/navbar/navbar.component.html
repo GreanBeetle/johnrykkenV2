@@ -1,15 +1,16 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<!-- main navbar -->
+<nav class="navbar mainNavbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <nav class="level">
       <img src="/assets/img/logo-crux.png" class="logoCrux">
     </nav>
   </div>
   <div class="navbar-end">
-    <div *ngIf="user" class="navbar-item">
+    <div *ngIf="loggedIn" class="navbar-item">
       <small class="authItem">logged in as {{ user.displayName }} | </small>
       <small class="authItem logoutButton" (click)="logout()">&nbsp;logout</small>
     </div>
-    <div *ngIf="!user" class="navbar-item">
+    <div *ngIf="!loggedIn" class="navbar-item">
       <small class="authItem" routerLink="login">login&nbsp;</small><br>
       <small class="or" >|&nbsp;</small><br>
       <small class="authItem"routerLink="signup">sign up</small>
@@ -21,3 +22,12 @@
     <a routerLink="/admin" class="navbar-item">admin</a>
   </div>
 </nav>
+
+<!-- mobile sidebar -->
+<nav class="navbar sideBar" *ngIf="showMenu">
+  <h1 (click)="toggleDisplay()" [style]='displayMenu()'>TOGGLEMENU</h1>
+  <img [src]="angularLogo">
+</nav>
+
+
+<h1 (click)="toggleMenu()">toggle please</h1>
