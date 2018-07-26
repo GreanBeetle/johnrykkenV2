@@ -43,3 +43,11 @@ a:hover {
 .or {
   color: $gray;
 }
+
+// mobile menu and sideBar
+.mobile {
+  .burger-icon {
+    max-height: 40px;
+    margin-left: 25px;
+  }
+}
