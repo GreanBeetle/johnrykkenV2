@@ -31,9 +31,13 @@ a:hover {
   cursor: pointer;
 }
 
+
 .authItem, small {
   color: $dark-gray;
+}
 
+.logoutButton {
+  color: #fff;
 }
 
 // mobile menu and sideBar
