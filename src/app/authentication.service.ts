@@ -2,7 +2,14 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { User } from './models/user.model';
+import {
+  AngularFirestore,
+  AngularFirestoreDocument
+} from 'angularfire2/firestore';
+import { switchMap, startWith, tap, filter } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +20,8 @@ export class AuthenticationService {
   private userDetails: firebase.User = null;
   loggedIn = false;
 
-  constructor(private afAuth: AngularFireAuth, private router: Router) {
+  constructor(private afAuth: AngularFireAuth,
+              private router: Router) {
     this.user = afAuth.authState;
     this.user.subscribe(
       (user) => {
@@ -24,6 +32,7 @@ export class AuthenticationService {
         }
       }
     );
+
   }
 
   googleLogin() {
@@ -55,17 +64,9 @@ export class AuthenticationService {
 
   // #### return to github authentication if there is time
   githubLogin() {
-    return new Promise<any>((resolve, reject) => {
-      const provider = new firebase.auth.GithubAuthProvider();
-      this.afAuth.auth
-      .signInWithPopup(provider)
-      .then(res => {
-        resolve(res);
-      }, err => {
-        console.log(err);
-        reject(err);
-      });
-    });
+    return this.afAuth.auth.signInWithPopup(
+      new firebase.auth.GithubAuthProvider()
+    );
   }
   // #### end github authentication
 

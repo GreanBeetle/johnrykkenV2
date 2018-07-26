@@ -20,12 +20,14 @@ export class UserLoginComponent {
       console.log('Google login error: ' + err));
   }
 
+  // ##### github login currently does not return a user name or user details
   githubLogin() {
     this.authServ.githubLogin().then((res) => {
-      this.router.navigate(['/']);
+      this.router.navigate(['crux']);
     }).catch((err) =>
       console.log('Github login error: ' + err));
   }
+  // ##### github login
 
   logout() {
     this.authServ.logout();
