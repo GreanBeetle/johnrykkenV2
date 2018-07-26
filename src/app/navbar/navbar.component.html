@@ -2,7 +2,7 @@
 <nav class="navbar mainNavbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <nav class="level">
-      <img src="/assets/img/logo-crux.png" class="logoCrux">
+      <img src="/assets/img/logo-crux.png" class="logoCrux" routerLink="/">
     </nav>
   </div>
   <div class="navbar-end">
@@ -12,7 +12,7 @@
     </div>
     <div *ngIf="!loggedIn" class="navbar-item">
       <small class="authItem" routerLink="login">login&nbsp;</small><br>
-      <small class="or" >|&nbsp;</small><br>
+      <small class="or" > or&nbsp;</small><br>
       <small class="authItem"routerLink="signup">sign up</small>
     </div>
     <a routerLink="/" class="navbar-item">home</a>
@@ -24,14 +24,15 @@
 </nav>
 
 <div class="mobile">
+
   <!-- mobile navbar -->
-  <nav class="navbar sideBar" *ngIf="!showMenu">
+  <nav class="navbar mobileNavbar">
     <div class="navbar-brand">
-      <img src="/assets/img/burger-icon.png" class="burger-icon" (click)="toggleMenu()">
+      <nav class="level">
+        <img src="/assets/img/burger-icon.png" class="burger-icon" (click)="toggleMenu()">
+      </nav>
     </div>
   </nav>
-
-  <h1 (click)="toggleMenu()">TOGGLE</h1>
 
   <!-- hidden mobile sidebar -->
   <div class="w3-sidebar w3-bar-block w3-border-right" id="mySidebar" *ngIf="showMenu">
@@ -40,4 +41,5 @@
     <a href="#" class="w3-bar-item w3-button">Link 2</a>
     <a href="#" class="w3-bar-item w3-button">Link 3</a>
   </div>
+
 </div>

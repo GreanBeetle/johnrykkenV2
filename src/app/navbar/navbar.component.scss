@@ -27,7 +27,7 @@ a:hover {
   color: $blue !important;
 }
 
-.logoutButton:hover {
+.logoutButton:hover, .authItem:hover, .navbar-brand:hover, button:hover {
   cursor: pointer;
 }
 
@@ -36,18 +36,35 @@ a:hover {
 
 }
 
-.authItem:hover {
-  cursor: pointer;
-}
-
-.or {
-  color: $gray;
-}
-
 // mobile menu and sideBar
-.mobile {
-  .burger-icon {
-    max-height: 40px;
-    margin-left: 25px;
+@media only screen and (min-width: 0px) and (max-width: 1088px)  {
+
+  .mobile {
+    display: block;
+
+    .burger-icon {
+      max-height: 30px;
+      margin-left: 25px;
+    }
+
+    .w3-sidebar {
+      top: 0px !important;
+      z-index: 40;
+    }
+
+    button {
+      height: 52px;
+    }
+  }
+
+  .mainNavbar {
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width: 1089px) {
+  .mobile {
+    display: none;
   }
 }
