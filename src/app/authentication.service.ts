@@ -39,7 +39,8 @@ export class AuthenticationService {
 
   createUser(displayName, email, password) {
     firebase.auth().createUserWithEmailAndPassword(email, password).then( response => {
-      console.log('From authentication service. Here is the respone CREDENTIAL after creating a user: ' + response.credential );
+      const id = response.user.uid;
+      this.userService.addUser(id, email, displayName);
     });
   }
 

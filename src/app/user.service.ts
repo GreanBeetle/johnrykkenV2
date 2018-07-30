@@ -22,7 +22,11 @@ export class UserService {
   constructor(private afs: AngularFirestore) {
     this.usersCollection = this.afs.collection('users');
     this.users = this.usersCollection.valueChanges();
-    console.log('Here are your users from user service: ' + this.users);
    }
+
+  addUser(uid, email, displayName) {
+    this.afs.collection('users').doc(uid).set({'email': email, 'displayName': displayName, 'admin': false});
+  }
+
 
 }
