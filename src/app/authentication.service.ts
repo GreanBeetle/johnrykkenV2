@@ -9,7 +9,7 @@ import {
   AngularFirestoreDocument
 } from 'angularfire2/firestore';
 import { switchMap, startWith, tap, filter } from 'rxjs/operators';
-
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,9 @@ export class AuthenticationService {
   loggedIn = false;
 
   constructor(private afAuth: AngularFireAuth,
-              private router: Router) {
+              private router: Router,
+              public afs: AngularFirestore,
+              public userService: UserService ) {
     this.user = afAuth.authState;
     this.user.subscribe(
       (user) => {
@@ -33,6 +35,12 @@ export class AuthenticationService {
       }
     );
 
+  }
+
+  createUser(displayName, email, password) {
+    firebase.auth().createUserWithEmailAndPassword(email, password).then( response => {
+      console.log('Here is the respone after creating a user: ' + response);
+    });
   }
 
   googleLogin() {

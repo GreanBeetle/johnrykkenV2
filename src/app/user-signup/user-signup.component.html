@@ -1,5 +1,12 @@
 <section class="section is-medium">
   <div class="container" style="text-align: center;">
-    <img src="assets/img/under_construction.png" style="max-height:150px;">
+    <div class="card" style="max-width:400px;margin:0 auto;">
+      <form>
+        <input type="text" placeholder="display name" #displayName><br><br>
+        <input type="email" placeholder="email" #email><br><br>
+        <input type="password" placeholder="password" #password><br><br>
+        <button type="button" name="button" (click)="signup()">Sign Up</button>
+      </form>
+    </div>
   </div>
 </section>
