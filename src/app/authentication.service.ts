@@ -34,33 +34,23 @@ export class AuthenticationService {
         }
       }
     );
-
   }
 
   createUser(displayName, email, password) {
     firebase.auth().createUserWithEmailAndPassword(email, password).then( response => {
       const id = response.user.uid;
       this.userService.addUser(id, email, displayName);
+    }).catch((err) => {
+      alert(err);
     });
+    this.router.navigate(['/']);
   }
 
   login(email, password) {
     firebase.auth().signInWithEmailAndPassword(email, password).then( response => {
       console.log('Authentication service login. Here is the response: ' + response.user.uid);
-    });
-  }
-
-  googleLogin() {
-    return new Promise<any>((resolve, reject) => {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      provider.addScope('profile');
-      provider.addScope('email');
-      this.afAuth.auth
-        .signInWithPopup(provider)
-        .then(res => {
-          resolve(res);
-        });
-      this.loggedIn = true;
+    }).catch((err) => {
+      alert(err);
     });
   }
 
@@ -76,5 +66,23 @@ export class AuthenticationService {
     this.afAuth.auth.signOut().then((res) => this.router.navigate(['/']));
     this.loggedIn = false;
   }
+
+  // ####################
+  // google login works but is not used
+  googleLogin() {
+    return new Promise<any>((resolve, reject) => {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      provider.addScope('profile');
+      provider.addScope('email');
+      this.afAuth.auth
+        .signInWithPopup(provider)
+        .then(res => {
+          resolve(res);
+        });
+      this.loggedIn = true;
+    });
+  }
+  // end google login
+  // ####################
 
 }
