@@ -5,7 +5,7 @@
         <input type="text" placeholder="display name" #displayName><br><br>
         <input type="email" placeholder="email" #email><br><br>
         <input type="password" placeholder="password" #password><br><br>
-        <button type="button" name="button" (click)="signup()">Sign Up</button>
+        <button type="button" name="button" (click)="signup(displayName.value, email.value, password.value)">Sign Up</button>
       </form>
     </div>
   </div>
