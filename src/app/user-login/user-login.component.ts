@@ -13,6 +13,10 @@ export class UserLoginComponent {
 
   constructor(private authServ: AuthenticationService, private router: Router) { }
 
+  login(email, password) {
+    this.authServ.login(email, password);
+  }
+
   googleLogin() {
     this.authServ.googleLogin().then((res) => {
       this.router.navigate(['/']);

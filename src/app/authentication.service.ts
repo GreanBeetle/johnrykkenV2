@@ -43,6 +43,12 @@ export class AuthenticationService {
     });
   }
 
+  login(email, password) {
+    firebase.auth().signInWithEmailAndPassword(email, password).then( response => {
+      console.log('Authentication service login. Here is the response: ' + response.user.uid);
+    });
+  }
+
   googleLogin() {
     return new Promise<any>((resolve, reject) => {
       const provider = new firebase.auth.GoogleAuthProvider();
@@ -69,13 +75,5 @@ export class AuthenticationService {
     this.afAuth.auth.signOut().then((res) => this.router.navigate(['/']));
     this.loggedIn = false;
   }
-
-  // #### return to github authentication if there is time
-  githubLogin() {
-    return this.afAuth.auth.signInWithPopup(
-      new firebase.auth.GithubAuthProvider()
-    );
-  }
-  // #### end github authentication
 
 }
