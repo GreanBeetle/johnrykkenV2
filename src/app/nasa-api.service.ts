@@ -14,7 +14,3 @@ export class NasaApiService {
   }
 
 }
-
-// #### with date
-// https://api.nasa.gov/planetary/apod?date=2018-01-19&api_key=e0XTCrbdgEbS353UoB8sV2EPeLdCYYO0Nq1YFbSZ
-// ####
