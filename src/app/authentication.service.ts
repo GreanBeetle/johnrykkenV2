@@ -29,31 +29,15 @@ export class AuthenticationService {
                 this.user = afAuth.authState;
                 this.usersCollection = this.afs.collection('users');
                 this.users = this.usersCollection.valueChanges();
-                this.user.subscribe(user => {
-                  if (user !== null) {
-                    this.usersCollection.doc(`${user.uid}`).ref.get().then((doc) => {
-                      if (doc.exists) {
-                        this.username = doc.data().displayName;
-                        console.log('username ', this.username);
-                      } else {
-                        this.username = null;
-                        console.log('No such document');
-                      }
-                    });
-                  }
-                });
-
               }
 
   createUser(displayName, email, password) {
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then( response => {
-            const id = response.user.uid;
-            this.userService.addUser(id, email, displayName);
-        })
-        .catch((err) => {
-            alert(err);
-        });
+    firebase.auth().createUserWithEmailAndPassword(email, password).then( response => {
+        const id = response.user.uid;
+        this.userService.addUser(id, email, displayName);
+      }).catch((err) => {
+        alert(err);
+      });
     this.router.navigate(['/']);
   }
 
