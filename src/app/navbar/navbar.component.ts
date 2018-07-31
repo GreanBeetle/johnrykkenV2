@@ -22,7 +22,6 @@ export class NavbarComponent implements OnInit {
   user;
   loggedIn;
   showMenu = false;
-  angularLogo = 'https://cdn-images-1.medium.com/max/1600/1*hDJlAbtIVBrvyau4d8JRLg.png';
   username;
 
   constructor(public authServ: AuthenticationService,
