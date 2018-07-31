@@ -18,17 +18,21 @@ export class NavbarComponent implements OnInit {
   loggedIn;
   showMenu = false;
   angularLogo = 'https://cdn-images-1.medium.com/max/1600/1*hDJlAbtIVBrvyau4d8JRLg.png';
+  username;
 
   constructor(public authServ: AuthenticationService,
               private router: Router,
               private userserv: UserService) {
+    this.username = this.authServ.username.subscribe(username => {
+      this.username = username;
+      console.log('navbar username is ', this.username);
+    });
     this.authServ.user.subscribe(user => {
-      this.user = this.userserv.retrieveUserName(user.uid);
-      console.log('Here is the navbar user ' + this.user);
       if (user == null) {
         this.loggedIn = false;
       } else {
         this.loggedIn = true;
+        this.user = user;
       }
     });
   }

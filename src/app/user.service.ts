@@ -7,6 +7,7 @@ import {
 } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import { User } from './models/user.model';
+import { AuthenticationService } from './authentication.service';
 
 @Injectable({
   providedIn: 'root',
@@ -26,19 +27,10 @@ export class UserService {
     this.afs.collection('users').doc(uid).set({'email': email, 'displayName': displayName, 'admin': false});
   }
 
-  retrieveUserName(uid) {
-    this.usersCollection.doc(uid).ref.get().then(function(doc) {
-      if (doc.exists) {
-        alert('retrieveUserName returns this ' + doc.data().displayName);
-        return doc.data().displayName;
-      } else {
-        console.log('no such document');
-      }
-    })
-    .catch(function(error) {
-      alert('Error retrieving document:' + error);
-    });
-  }
+  // this.usersCollection.doc(uid).valueChanges().subscribe(value => {
+  //   this.username = value.displayName;
+  // });
+
 
 
 }
