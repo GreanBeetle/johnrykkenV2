@@ -2,13 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { User } from './models/user.model';
-import {
-  AngularFirestore,
-  AngularFirestoreDocument
-} from 'angularfire2/firestore';
-import { switchMap, startWith, tap, filter } from 'rxjs/operators';
 import { UserService } from './user.service';
 
 @Injectable({
@@ -17,54 +12,38 @@ import { UserService } from './user.service';
 
 export class AuthenticationService {
   user: Observable<firebase.User>;
-  private userDetails: firebase.User = null;
-  loggedIn = false;
 
   constructor(private afAuth: AngularFireAuth,
               private router: Router,
-              public afs: AngularFirestore,
               public userService: UserService ) {
-    this.user = afAuth.authState;
-    this.user.subscribe(
-      (user) => {
-        if (user) {
-          this.userDetails = user;
-        } else {
-          this.userDetails = null;
-        }
-      }
-    );
-  }
+                this.user = afAuth.authState;
+              }
 
   createUser(displayName, email, password) {
-    firebase.auth().createUserWithEmailAndPassword(email, password).then( response => {
-      const id = response.user.uid;
-      this.userService.addUser(id, email, displayName);
-    }).catch((err) => {
-      alert(err);
-    });
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then( response => {
+        const id = response.user.uid;
+        this.userService.addUser(id, email, displayName);
+      })
+      .catch((err) => {
+        alert(err);
+      });
     this.router.navigate(['/']);
   }
 
   login(email, password) {
-    firebase.auth().signInWithEmailAndPassword(email, password).then( response => {
-      console.log('Authentication service login. Here is the response: ' + response.user.uid);
-    }).catch((err) => {
-      alert(err);
-    });
-  }
-
-  isLoggedIn() {
-    if (this.userDetails == null ) {
-      return false;
-    } else {
-      return true;
-    }
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then( response => {
+        console.log('User ID is: ' + response.user.uid);
+      })
+      .catch((err) => {
+        alert(err);
+      });
+    this.router.navigate(['/']);
   }
 
   logout() {
     this.afAuth.auth.signOut().then((res) => this.router.navigate(['/']));
-    this.loggedIn = false;
   }
 
   // ####################
@@ -79,7 +58,6 @@ export class AuthenticationService {
         .then(res => {
           resolve(res);
         });
-      this.loggedIn = true;
     });
   }
   // end google login

@@ -26,6 +26,7 @@ import { environment } from '../environments/environment';
 import { UserSignupComponent } from './user-signup/user-signup.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { AuthenticationService } from './authentication.service';
+import { UserService } from './user.service';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -65,7 +66,8 @@ export const firebaseConfig = {
     AngularFirestoreModule
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

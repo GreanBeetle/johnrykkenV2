@@ -8,12 +8,9 @@ import {
 import { Observable } from 'rxjs';
 import { User } from './models/user.model';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
-// adds, updates, and deletes users; finds individual users; returns all users
 
 export class UserService {
   usersCollection: AngularFirestoreCollection<User>;
@@ -27,6 +24,20 @@ export class UserService {
   addUser(uid, email, displayName) {
     alert('You hit add user');
     this.afs.collection('users').doc(uid).set({'email': email, 'displayName': displayName, 'admin': false});
+  }
+
+  retrieveUserName(uid) {
+    this.usersCollection.doc(uid).ref.get().then(function(doc) {
+      if (doc.exists) {
+        alert('retrieveUserName returns this ' + doc.data().displayName);
+        return doc.data().displayName;
+      } else {
+        console.log('no such document');
+      }
+    })
+    .catch(function(error) {
+      alert('Error retrieving document:' + error);
+    });
   }
 
 
