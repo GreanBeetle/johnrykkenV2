@@ -7,9 +7,7 @@
   </div>
   <div class="navbar-end">
     <div *ngIf="loggedIn" class="navbar-item">
-      <h1 class="title"> {{ username }} </h1>
-      <small class="authItem"> {{ user.uid }} </small>
-      <small class="authItem"> {{ user.email }} </small>
+      <small class="authItem"> {{ username }} </small>
       <small class="authItem logoutButton" (click)="logout()">&nbsp;&nbsp;logout</small>
     </div>
     <div *ngIf="!loggedIn" class="navbar-item">

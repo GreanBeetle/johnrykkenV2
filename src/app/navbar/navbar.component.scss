@@ -72,3 +72,12 @@ a:hover {
     display: none;
   }
 }
+
+// mobile burger only
+@media only screen and (min-width: 0px) and (max-width: 769px) {
+  .mobile {
+    .burger-icon {
+      margin-top: 10px;
+    }
+  }
+}
