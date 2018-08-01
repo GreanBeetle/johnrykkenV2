@@ -12,27 +12,41 @@
     }
 
     .card {
-      max-width: 400px;
-      margin: 0 auto;
-      background-color: $dark-gray;
-      // border: 1px solid $extra-dark-gray;
-      padding: 20px;
-      margin-top: 10%;
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: $dark-gray;
+        padding: 20px;
+        margin-top: 10%;
+        padding-bottom: 25px;
 
-      input {
-        padding: 5px;
-        text-align: center;
-        font-family: $font-raleway;
-        font-weight: bold;
-        min-width: 300px;
-      }
+        input {
+          padding: 5px;
+          text-align: center;
+          font-family: $font-raleway;
+          font-weight: bold;
+          min-width: 300px;
+        }
 
-      .button {
-        min-width: 300px;
-        border-radius: 2px;
-        font-family: $font-nova-norm;
-        padding: 5px;
-      }
+        .button {
+          min-width: 300px;
+          border-radius: 2px;
+          font-family: $font-nova-norm;
+          padding: 5px;
+        }
     }
+}
 
+// mobile
+@media only screen and (max-width: 700px) {
+    .section {
+        .card {
+            max-width: 300px;
+            input {
+              min-width: 150px;
+            }
+            .button {
+              min-width: 150px;
+            }
+        }
+    }
 }
