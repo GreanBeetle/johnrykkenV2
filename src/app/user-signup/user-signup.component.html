@@ -1,11 +1,14 @@
-
-  <div class="signupContainer" style="text-align: center;">
-    <div class="card" style="max-width:400px;margin:0 auto;">
-      <form>
-        <input type="text" placeholder="display name" #displayName><br><br>
-        <input type="email" placeholder="email" #email><br><br>
-        <input type="password" placeholder="password" #password><br><br>
-        <button type="button" name="button" (click)="signup(displayName.value, email.value, password.value)">Sign Up</button>
-      </form>
-    </div>
+<section class="section">
+  <div class="card">
+    <h1 class="title">sign up</h1>
+    <form>
+      <input type="text" placeholder="username" #displayName><br><br>
+      <input type="email" placeholder="email" #email><br><br>
+      <input type="password" placeholder="password" #password><br><br>
+      <a class="button is-black"
+         (click)="signup(displayName.value, email.value, password.value)">
+         sign up
+      </a>
+    </form>
   </div>
+</section>

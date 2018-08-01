@@ -1,15 +1,16 @@
-@media only screen and (min-width: 0px) and (max-width: 1088px)  {
-  // blank
+.navbarContainer {
+  position: fixed;
+  top: 0;
+  width: 100%; /* Full width */
+  z-index: 10;
+}
+.body-content {
+  margin-top: 60px;
+  height: 100%;
 }
 
-@media only screen and (min-width: 1089px) {
-  .navbarContainer {
-    position: fixed;
-    top: 0;
-    width: 100%; /* Full width */
-    z-index: 10;
-  }
+@media only screen and (min-width: 0px) and (max-width: 1088px) {
   .body-content {
-    margin-top: 60px;
+    margin-top: 50px;
   }
 }

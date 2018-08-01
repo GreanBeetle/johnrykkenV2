@@ -1,8 +1,39 @@
+@import "../../variables.scss";
 
-
-.signupContainer {
+.section {
     height: 100% !important;
     min-height: 100% !important;
-    top: 60px;
-    bottom: 0px;
+    background-color: $dark-gray;
+    text-align: center;
+
+    h1 {
+      font-family: $font-nova-lite;
+      color: #000000 !important;
+    }
+
+    .card {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: $extra-dark-gray;
+      border: none;
+      padding: 20px;
+      margin-top: 10%;
+
+      input {
+        padding: 5px;
+        text-align: center;
+        font-family: $font-raleway;
+        font-weight: bold;
+        color: #000000 !important;
+        min-width: 300px;
+      }
+
+      .button {
+        min-width: 300px;
+        border-radius: 2px;
+        font-family: $font-nova-norm;
+        padding: 5px;
+      }
+    }
+
 }
