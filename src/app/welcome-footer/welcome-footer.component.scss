@@ -3,34 +3,20 @@
 footer {
     text-align: center;
     background-color: $dark-gray !important;
-    .level {
-      padding-left: 20%;
-      padding-right: 20%;
-    }
+
     .social-media-icon {
       height: 30px;
       width: 30px;
     }
+
     small {
       font-family: $font-raleway;
     }
 }
 
-@media only screen and (min-width: 0px) and (max-width: 769px) {
-  .desktopFooter {
-    display: none !important;
-  }
-  .mobileFooter {
-    display: block !important;
-    
-  }
-}
-
 @media only screen and (min-width: 770px) {
-  .desktopFooter {
-    display: block !important;
-  }
-  .mobileFooter {
-    display: none !important;
+  .columns {
+    margin-right: 200px;
+    margin-left: 200px;
   }
 }
