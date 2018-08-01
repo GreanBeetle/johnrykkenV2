@@ -1,20 +1,36 @@
 @import "../../variables.scss";
 
 footer {
-  text-align: center;
-  background-color: $dark-gray !important;
+    text-align: center;
+    background-color: $dark-gray !important;
+    .level {
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+    .social-media-icon {
+      height: 30px;
+      width: 30px;
+    }
+    small {
+      font-family: $font-raleway;
+    }
+}
 
-  .level {
-    padding-left: 20%;
-    padding-right: 20%;
+@media only screen and (min-width: 0px) and (max-width: 769px) {
+  .desktopFooter {
+    display: none !important;
   }
-
-  .social-media-icon {
-    height: 30px;
-    width: 30px;
+  .mobileFooter {
+    display: block !important;
+    
   }
+}
 
-  small {
-    font-family: $font-raleway;
+@media only screen and (min-width: 770px) {
+  .desktopFooter {
+    display: block !important;
+  }
+  .mobileFooter {
+    display: none !important;
   }
 }
