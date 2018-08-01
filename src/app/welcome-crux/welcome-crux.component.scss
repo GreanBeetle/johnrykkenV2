@@ -4,7 +4,6 @@
   background-color: black;
   font-family: 'Raleway';
 
-
   .container {
     text-align: center;
 
@@ -25,6 +24,13 @@
     p {
       font-size: 1.5em;
       color: white;
+    }
+
+    @media only screen and (min-width: 0px) and (max-width: 900px) {
+      .tile, .is-ancestor {
+        margin-left: 25px;
+        margin-right: 25px;
+      }
     }
 
     .tile, .is-child {
