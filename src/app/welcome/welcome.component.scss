@@ -23,6 +23,12 @@
   font-size: 2em;
 }
 
+.mobileSubtitle {
+  display: none;
+  font-family: $font-nova-lite;
+  color: $green;
+}
+
 .hero-body {
   text-align: center;
 }
@@ -37,9 +43,13 @@
 
 @media only screen and (min-width: 0px) and (max-width: 500px) {
   .heroTitle {
-    font-size: 1.5em;
+    font-size: 2em;
   }
   .subtitle {
-    font-size: 1em;
+    display: none;
+  }
+  .mobileSubtitle {
+    display: block;
+    font-size: 1.5em;
   }
 }
