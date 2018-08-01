@@ -13,7 +13,7 @@
   color: $light-gray;
 }
 
-a:hover {
+a:hover, .authItem:hover {
   color: $blue !important;
   background-color: #000 !important;
 }
@@ -54,10 +54,23 @@ a:hover {
     .w3-sidebar {
       top: 0px !important;
       z-index: 40;
+      background-color: $dark-gray;
+    }
+
+    .w3-bar-item:hover {
+      background-color: $light-gray !important;
+    }
+
+    a:hover {
+      color: #000 !important;
     }
 
     button {
       height: 52px;
+    }
+
+    .signupLink:hover, .loginLink:hover {
+      color: $blue !important;
     }
   }
 
