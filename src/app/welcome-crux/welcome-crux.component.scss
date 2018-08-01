@@ -1,62 +1,65 @@
 @import "../../variables.scss";
 
-#crux-section {
+.section {
   background-color: black;
-  font-family: 'Raleway';
+  font-family: $font-raleway;
 
   .container {
-    text-align: center;
+      text-align: center;
 
-    .titleContainer:hover {
-      cursor: pointer;
-    }
-
-    h1 {
-      color: $dark-gray;
-      font-size: 4em;
-    }
-
-    h4 {
-      font-size: 2em;
-      color: $blue-green;
-    }
-
-    p {
-      font-size: 1.5em;
-      color: white;
-    }
-
-    @media only screen and (min-width: 0px) and (max-width: 900px) {
-      .tile, .is-ancestor {
-        margin-left: 25px;
-        margin-right: 25px;
+      .titleContainer:hover {
+        cursor: pointer;
       }
-    }
 
-    .tile, .is-child {
-      text-align: justify;
-      margin-left: 20%;
-      margin-right: 20%;
+      h1 {
+        color: $dark-gray;
+        font-size: 4em;
+      }
+
+      h4 {
+        font-size: 2em;
+        color: $blue-green;
+      }
 
       p {
-        color: $extra-dark-gray;
-        font-size: 1em;
-        font-weight: 300;
+        font-size: 1.5em;
+        color: white;
       }
 
-      strong {
-        color: $green;
-      }
+      .paragraphs {
+          text-align: justify;
+          margin-left: 20%;
+          margin-right: 20%;
 
-      ul {
-        list-style: initial;
-        font-family: $font-open-sans;
-        font-size: 1em;
-        list-style-position: inside;
-        li {
-          color: $extra-dark-gray;
-        }
+          p {
+            color: $extra-dark-gray;
+            font-size: 1em;
+            font-weight: 300;
+          }
+
+          strong {
+            color: $green;
+          }
+
+          ul {
+            list-style: initial;
+            font-family: $font-open-sans;
+            font-size: 1em;
+            list-style-position: inside;
+            li {
+              color: $extra-dark-gray;
+            }
+          }
+      } // paragraphs
+  } // container
+} // section
+
+// mobile
+@media only screen and (min-width: 0px) and (max-width: 900px) {
+  .section {
+      .paragraphs {
+        margin-left: 5% !important;
+        margin-right: 5% !important;
       }
-    }
   }
 }
