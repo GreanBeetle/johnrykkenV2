@@ -1,17 +1,31 @@
 <section class="section is-small">
   <div class="container">
-
-    <form>
-      <div class="form-group">
-        <label for="camera">Date</label>
-        <input type=date #picDate>
+    <div class="columns is-mobile">
+      <div class="column is-3" style="text-align:center;">
+        <img src="/assets/img/nasa-logo.png" style="max-height:50px;">
       </div>
-      <button (click)="getAPOD(picDate.value)">GET</button>
-    </form>
+      <div class="column is-3">
+        <p>Just for fun, here is NASA's APOD (astronomy photo of the day) api.</p>
+      </div>
+      <div class="column is-6" style="text-align:center;">
+        <form>
+          <div class="form-group">
+            <label for="camera">Pick a date</label>
+            <br>
+            <input type=date #picDate>
+          </div>
+          <br>
+          <button (click)="getAPOD(picDate.value)">Get APOD</button>
+        </form>
+      </div>
+    </div>
 
-    <div *ngIf='paydirt'>
-      {{ paydirt.explanation }}
-      <img src={{paydirt.hdurl}}>
+    <div *ngIf='paydirt' class="card">
+      <p>
+        {{ paydirt.explanation }}
+      </p>
+      <br>
+      <img src={{paydirt.hdurl}} class="nasa-img">
     </div>
 
   </div>
