@@ -3,7 +3,7 @@
 .section {
     height: 100% !important;
     min-height: 100% !important;
-    background-color: $dark-gray;
+    background-color: $light-gray;
     text-align: center;
 
     h1 {
@@ -14,8 +14,8 @@
     .card {
       max-width: 400px;
       margin: 0 auto;
-      background-color: $extra-dark-gray;
-      border: none;
+      background-color: $dark-gray;
+      // border: 1px solid $extra-dark-gray;
       padding: 20px;
       margin-top: 10%;
 
@@ -24,7 +24,6 @@
         text-align: center;
         font-family: $font-raleway;
         font-weight: bold;
-        color: #000000 !important;
         min-width: 300px;
       }
 
