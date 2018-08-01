@@ -34,3 +34,12 @@
   margin: 0 auto;
   padding-bottom: 20px;
 }
+
+@media only screen and (min-width: 0px) and (max-width: 500px) {
+  .heroTitle {
+    font-size: 1.5em;
+  }
+  .subtitle {
+    font-size: 1em;
+  }
+}
