@@ -1,19 +1,13 @@
-<section class="section is-medium">
-  <div class="container" style="text-align: center;">
-    <img src="assets/img/under_construction.png" style="max-height:150px;">
-    <div class="card" style="margin:0 auto; text-align:center;">
-      <!-- <a class="button is-black" (click)="githubLogin()">Github Login</a> -->
-      <a class="button is-gray" (click)="googleLogin()">Google Login</a>
-      <br>
-      <a (click)="logout()">logout</a>
-    </div>
-    <div class="card" style="text-align:center;">
-      <h4 class="subtitle">login with email and password</h4>
-      <form>
-        <input type="email" placeholder="email" #email><br><br>
-        <input type="password" placeholder="password" #password><br><br>
-        <button type="button" name="button" (click)="login(email.value, password.value)">Login</button>
-      </form>
-    </div>
+<section class="section">
+  <div class="card">
+    <h1 class="title">login</h1>
+    <form>
+      <input type="email" placeholder="email" #email><br><br>
+      <input type="password" placeholder="password" #password><br><br>
+      <a class="button is-black"
+         (click)="login(email.value, password.value)">
+         login
+      </a>
+    </form>
   </div>
 </section>
