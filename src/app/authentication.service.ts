@@ -56,6 +56,13 @@ export class AuthenticationService {
     this.afAuth.auth.signOut().then((res) => this.router.navigate(['/']));
   }
 
+  resetPassword(email: string) {
+    const auth = firebase.auth();
+    return auth.sendPasswordResetEmail(email)
+               .then(() => console.log('email sent'))
+               .catch((error) => console.log(error));
+  }
+
   // ####################
   // google login works but is not used
   googleLogin() {

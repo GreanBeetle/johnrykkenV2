@@ -10,11 +10,23 @@ import { AuthenticationService } from '../authentication.service';
 })
 
 export class UserLoginComponent {
-
+  isActive = 'modal';
   constructor(private authServ: AuthenticationService, private router: Router) { }
 
   login(email, password) {
     this.authServ.login(email, password);
+  }
+
+  logout() {
+    this.authServ.logout();
+  }
+
+  forgotPassword() {
+    if (this.isActive === 'modal') {
+      this.isActive = 'modal is-active';
+    } else {
+      this.isActive = 'modal';
+    }
   }
 
   googleLogin() {
@@ -24,8 +36,5 @@ export class UserLoginComponent {
       console.log('Google login error: ' + err));
   }
 
-  logout() {
-    this.authServ.logout();
-  }
 
 }

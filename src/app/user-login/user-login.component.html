@@ -9,5 +9,15 @@
          login
       </a>
     </form>
+    <br>
+    <a (click)="forgotPassword()" class="forgotPassword"><small>Forgot your password?</small></a>
   </div>
 </section>
+
+<div [class]="isActive">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <!-- Any other Bulma elements you want -->
+  </div>
+  <button class="modal-close is-large" aria-label="close" (click)="forgotPassword()"></button>
+</div>
