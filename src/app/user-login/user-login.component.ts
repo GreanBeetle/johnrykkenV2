@@ -29,12 +29,9 @@ export class UserLoginComponent {
     }
   }
 
-  googleLogin() {
-    this.authServ.googleLogin().then((res) => {
-      this.router.navigate(['/']);
-    }).catch((err) =>
-      console.log('Google login error: ' + err));
+  sendPasswordResetEmail(email) {
+    alert('Password reset clicked. An email has been sent to ' + email);
+    this.authServ.resetPassword(email);
   }
-
 
 }

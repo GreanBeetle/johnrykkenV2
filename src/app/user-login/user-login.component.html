@@ -10,14 +10,27 @@
       </a>
     </form>
     <br>
-    <a (click)="forgotPassword()" class="forgotPassword"><small>Forgot your password?</small></a>
+    <small>
+      <span (click)="forgotPassword()" class="forgotPassword">Forgot password?</span>
+      or
+      <span class="createAccount">Create account</span>
+    </small>
   </div>
 </section>
 
 <div [class]="isActive">
   <div class="modal-background"></div>
-  <div class="modal-content">
-    <!-- Any other Bulma elements you want -->
+  <div class="modal-content" style="text-align: center;">
+    <div class="card resetPasswordCard" style="text-align: center;">
+      <p>Enter your email address to reset your password</p>
+      <form>
+        <input type="email" placeholder="email" #resetEmail><br><br>
+        <a class="button is-black"
+           (click)="sendPasswordResetEmail(resetEmail.value)">
+           send email
+        </a>
+      </form>
+    </div>
   </div>
   <button class="modal-close is-large" aria-label="close" (click)="forgotPassword()"></button>
 </div>

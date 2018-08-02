@@ -18,6 +18,7 @@
         padding: 20px;
         margin-top: 10%;
         padding-bottom: 25px;
+        box-shadow: 1px 1px 1px #000;
 
         input {
           padding: 5px;
@@ -33,6 +34,16 @@
           font-family: $font-nova-norm;
           padding: 5px;
         }
+
+        small {
+          font-family: $font-nova-norm
+        }
+
+        .login, .login:hover {
+          color: $blue;
+          cursor: pointer;
+        }
+        
     }
 }
 

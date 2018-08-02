@@ -18,6 +18,7 @@
         padding: 20px;
         margin-top: 10%;
         padding-bottom: 25px;
+        box-shadow: 1px 1px 1px #000;
 
         input {
           padding: 5px;
@@ -34,7 +35,12 @@
           padding: 5px;
         }
 
-        .forgotPassword {
+        small {
+          font-family: $font-nova-norm;
+        }
+
+        .createAccount, .forgotPassword, .createAccount:hover, .forgotPassword:hover {
+          cursor: pointer;
           color: $blue;
         }
     }
