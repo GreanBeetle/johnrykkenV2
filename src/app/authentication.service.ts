@@ -32,11 +32,13 @@ export class AuthenticationService {
               }
 
   createUser(displayName, email, password) {
-    firebase.auth().createUserWithEmailAndPassword(email, password).then( response => {
-        const id = response.user.uid;
-        this.userService.addUser(id, email, displayName);
-      }).catch((err) => {
-        alert(err);
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then( response => {
+          const id = response.user.uid;
+          this.userService.addUser(id, email, displayName);
+      })
+      .catch((err) => {
+          alert(err);
       });
     this.router.navigate(['/']);
   }
@@ -63,7 +65,7 @@ export class AuthenticationService {
                .catch((error) => console.log(error));
   }
 
-  // ####################
+  // ###################################
   // google login works but is not used
   googleLogin() {
     return new Promise<any>((resolve, reject) => {
@@ -78,6 +80,6 @@ export class AuthenticationService {
     });
   }
   // end google login
-  // ####################
+  // ###################################
 
 }

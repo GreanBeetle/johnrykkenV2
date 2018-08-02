@@ -60,3 +60,31 @@
         }
     }
 }
+
+// reset password modal window
+.resetPasswordCard {
+    max-width: 300px;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: $light-gray;
+
+    p {
+      font-family: $font-nova-norm;
+    }
+
+    input {
+      width: 200px;
+      padding: 5px;
+      text-align: center;
+    }
+
+    ::placeholder {
+      font-family: $font-raleway;
+    }
+
+    .button {
+      min-width: 200px;
+      font-family: $font-nova-norm;
+    }
+
+}

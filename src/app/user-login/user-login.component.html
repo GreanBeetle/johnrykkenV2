@@ -22,12 +22,16 @@
   <div class="modal-background"></div>
   <div class="modal-content" style="text-align: center;">
     <div class="card resetPasswordCard" style="text-align: center;">
-      <p>Enter your email address to reset your password</p>
+      <p>Enter your email address to reset password</p>
+      <br>
       <form>
-        <input type="email" placeholder="email" #resetEmail><br><br>
+        <input type="email"
+               placeholder="email address"
+               #resetEmail>
+        <br><br>
         <a class="button is-black"
            (click)="sendPasswordResetEmail(resetEmail.value)">
-           send email
+           reset
         </a>
       </form>
     </div>
