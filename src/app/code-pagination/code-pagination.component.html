@@ -1,0 +1,7 @@
+<div class="card" style="margin: 0 auto; text-align: center;">
+  <ul>
+    <li *ngFor="let item of collection | paginate: { itemsPerPage: 3, currentPage: p }"> {{ item }} </li>
+  </ul>
+
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

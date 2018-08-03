@@ -30,6 +30,8 @@ import { UserService } from './user.service';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CodePaginationComponent } from './code-pagination/code-pagination.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -56,7 +58,8 @@ export const firebaseConfig = {
     WelcomeWritingComponent,
     NasaApiComponent,
     UserSignupComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    CodePaginationComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +71,8 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     AngularFirestoreModule,
     ToastModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxPaginationModule
   ],
   providers: [
     AuthenticationService,
