@@ -62,11 +62,17 @@
 }
 
 // reset password modal window
+
+.modal-content {
+  text-align: center;
+}
+
 .resetPasswordCard {
     max-width: 300px;
     padding: 20px;
     margin: 0 auto;
     background-color: $light-gray;
+    text-align: center;
 
     p {
       font-family: $font-nova-norm;
@@ -86,5 +92,4 @@
       min-width: 200px;
       font-family: $font-nova-norm;
     }
-
 }

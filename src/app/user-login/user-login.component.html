@@ -19,9 +19,11 @@
 </section>
 
 <div [class]="isActive">
-  <div class="modal-background"></div>
-  <div class="modal-content" style="text-align: center;">
-    <div class="card resetPasswordCard" style="text-align: center;">
+  <div class="modal-background">
+    <p-toast position="top-left"></p-toast>
+  </div>
+  <div class="modal-content">
+    <div class="card resetPasswordCard">
       <p>Enter your email address to reset password</p>
       <br>
       <form>
@@ -30,7 +32,7 @@
                #resetEmail>
         <br><br>
         <a class="button is-black"
-           (click)="sendPasswordResetEmail(resetEmail.value)">
+           (click)="sendPasswordResetEmail(resetEmail.value)" (click)="showToast(resetEmail.value)">
            reset
         </a>
       </form>
