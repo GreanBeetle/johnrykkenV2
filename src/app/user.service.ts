@@ -23,7 +23,6 @@ export class UserService {
    }
 
   addUser(uid, email, displayName) {
-    alert('You hit add user');
     this.afs.collection('users').doc(uid).set({'email': email, 'displayName': displayName, 'admin': false});
   }
 
