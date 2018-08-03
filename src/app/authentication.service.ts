@@ -40,7 +40,6 @@ export class AuthenticationService {
       .catch((err) => {
           alert(err);
       });
-    this.router.navigate(['/']);
   }
 
   login(email, password) {
