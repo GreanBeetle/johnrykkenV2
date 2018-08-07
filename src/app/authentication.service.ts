@@ -16,19 +16,13 @@ import {
 })
 
 export class AuthenticationService {
-  usersCollection: AngularFirestoreCollection<User>;
-  users: Observable<User[]>;
   user: Observable<firebase.User>;
-  userdetails: AngularFirestoreDocument<User>;
-  username;
 
   constructor(private afAuth: AngularFireAuth,
               private router: Router,
               public userService: UserService,
               private afs: AngularFirestore ) {
                 this.user = afAuth.authState;
-                this.usersCollection = this.afs.collection('users');
-                this.users = this.usersCollection.valueChanges();
               }
 
   createUser(displayName, email, password) {
