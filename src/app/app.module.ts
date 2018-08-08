@@ -33,6 +33,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CodePaginationComponent } from './code-pagination/code-pagination.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ArticleAddComponent } from './article-add/article-add.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+library.add(fas);
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -74,7 +78,8 @@ export const firebaseConfig = {
     AngularFirestoreModule,
     ToastModule,
     BrowserAnimationsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FontAwesomeModule
   ],
   providers: [
     AuthenticationService,
