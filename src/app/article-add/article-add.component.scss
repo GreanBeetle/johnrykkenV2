@@ -2,11 +2,20 @@
 
 section {
     .container {
-        max-width: 500px;
+        max-width: 600px;
+
+        .title {
+          font-family: $font-nova-lite;
+          font-size: 2em;
+        }
 
         .label {
           font-family: $font-nova-lite;
           font-size: 1em;
+        }
+
+        ::placeholder, option, select {
+          font-family: $font-raleway
         }
 
     }

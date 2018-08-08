@@ -4,8 +4,8 @@ export class Article {
     public title: string,
     public subtitle: string,
     public date: string,
+    public category: string,
     public content: string,
-    public keywords: string,
-    public category: string
+    public keywords: string
     ) {}
 }
