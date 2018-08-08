@@ -34,7 +34,7 @@ export class ArticleAddComponent {
         'subtitle': subtitle,
         'date': date,
         'content': content,
-        'keywords': string
+        'keywords': keywords
     });
   }
 
