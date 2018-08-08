@@ -41,8 +41,11 @@ export class ArticleAddComponent {
   }
 
   onKey(event: any, title) {
-    alert('Event is ' + event + title.length);
-    // this.values += event.target.value + ' | ';
+    if (title.length > 4) {
+      this.checkmarkClass = 'bright-green';
+    } else {
+      this.checkmarkClass = '';
+    }
   }
 
 }
