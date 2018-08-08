@@ -55,7 +55,7 @@ export class AuthenticationService {
     const auth = firebase.auth();
     return auth.sendPasswordResetEmail(email)
                .then(() => console.log('email sent!'))
-               .catch((error) => console.log(error));
+               .catch((error) => alert(error));
   }
 
   // ###################################
