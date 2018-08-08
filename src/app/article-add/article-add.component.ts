@@ -21,11 +21,21 @@ export class ArticleAddComponent {
 
 
   constructor(private afs: AngularFirestore) {
-
+    this.articlesCollection = this.afs.collection('articles');
+    this.articles = this.articlesCollection.valueChanges();
   }
 
-  addArticle(uid, email, displayName) {
-    this.afs.collection('users').doc(uid).set({'email': email, 'displayName': displayName, 'admin': false});
+  addArticle(title, subtitle, date, content, keywords) {
+    alert('add article clicked');
+    const id = this.afs.createId();
+    this.articlesCollection.doc(id).set( {
+        'id': id,
+        'title': title,
+        'subtitle': subtitle,
+        'date': date,
+        'content': content,
+        'keywords': string
+    });
   }
 
 }
