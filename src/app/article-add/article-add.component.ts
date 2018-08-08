@@ -15,35 +15,44 @@ import { Article } from '../models/article.model';
   styleUrls: ['./article-add.component.scss'],
   providers: [ AuthenticationService ]
 })
+
 export class ArticleAddComponent {
   articlesCollection: AngularFirestoreCollection<Article>;
   articles: Observable<Article[]>;
-  titleokay;
-  subtitleokay;
+  category = 'coding and programming';
 
   constructor(private afs: AngularFirestore) {
     this.articlesCollection = this.afs.collection('articles');
     this.articles = this.articlesCollection.valueChanges();
   }
 
-  addArticle(title, subtitle, date, content, keywords, category) {
+  addArticle(title, subtitle, date, content, keywords) {
     alert('add article clicked');
     const id = this.afs.createId();
+    const category = this.category;
     this.articlesCollection.doc(id).set({
         'id': id,
         'title': title,
         'subtitle': subtitle,
         'date': date,
+        'category': category,
         'content': content,
-        'keywords': keywords,
-        'category': category
+        'keywords': keywords
     });
   }
 
+  setCategory(event: any) {
+    this.category = event.target.value;
+    alert('Category is ' + this.category);
+  }
+
+  // ############# input boxes 'keyUp' events. currently unused.
   onKey(event: any, input, type) {
     if (input.length >= 5) {
       console.log('onKey method still works.');
     }
   }
+  // ############# input boxes 'keyUp' events. currently unused.
+
 
 }

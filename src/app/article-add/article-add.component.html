@@ -53,12 +53,12 @@
         <div class="field is-narrow">
           <div class="control">
             <div class="select is-fullwidth is-primary">
-              <select>
-                <option>Coding and programming</option>
-                <option>Writing</option>
-                <option>Backpacking</option>
-                <option>Movies</option>
-                <option>Books</option>
+              <select (change)="setType($event)">
+                <option value="coding and programming">Coding and programming</option>
+                <option value="writing">Writing</option>
+                <option value="backpacking">Backpacking</option>
+                <option value="movies">Movies</option>
+                <option value="books">Books</option>
               </select>
             </div>
           </div>
@@ -102,8 +102,13 @@
       <div class="field-body">
         <div class="field">
           <div class="control">
-            <button class="button is-black"
-                    (click)="addArticle()" >
+            <button
+              class="button is-black"
+              (click)="addArticle(title.value,
+                       subtitle.value,
+                       date.value,
+                       content.value,
+                       keywords.value)">
               Create Post
             </button>
           </div>
