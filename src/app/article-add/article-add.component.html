@@ -5,13 +5,13 @@
     <div class="field">
       <label class="label">Title</label>
       <!-- class 'control' contains inputs, buttons, radios, icons -->
-      <div class="control has-icons-left has-icons-right">
-        <input class="input" placeholder="Write these with elan, flair">
-        <span class="icon is-small is-left">
-          <fa-icon icon="coffee"></fa-icon>
-        </span>
+      <div class="control has-icons-right">
+        <input class="input"
+               (keyup)="onKey($event, title.value)"
+               placeholder="Write these with elan, flair"
+               #title>
         <span class="icon is-small is-right">
-          <i class="fas fa-check fa-xs"></i>
+          <fa-icon icon="check" [class]="checkmarkClass"></fa-icon>
         </span>
       </div>
     </div>
@@ -33,6 +33,7 @@
     'testSubtitle2',
     '8.7.18',
     'this is sample content',
-    'keyword1, keyword2, keyword3'
+    'keyword1, keyword2, keyword3',
+    'category example'
   )">click to add</p>
 </div>

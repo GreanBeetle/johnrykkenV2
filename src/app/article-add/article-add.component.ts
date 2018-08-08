@@ -18,6 +18,7 @@ import { Article } from '../models/article.model';
 export class ArticleAddComponent {
   articlesCollection: AngularFirestoreCollection<Article>;
   articles: Observable<Article[]>;
+  checkmarkClass;
 
 
   constructor(private afs: AngularFirestore) {
@@ -25,17 +26,23 @@ export class ArticleAddComponent {
     this.articles = this.articlesCollection.valueChanges();
   }
 
-  addArticle(title, subtitle, date, content, keywords) {
+  addArticle(title, subtitle, date, content, keywords, category) {
     alert('add article clicked');
     const id = this.afs.createId();
-    this.articlesCollection.doc(id).set( {
+    this.articlesCollection.doc(id).set({
         'id': id,
         'title': title,
         'subtitle': subtitle,
         'date': date,
         'content': content,
-        'keywords': keywords
+        'keywords': keywords,
+        'category': category
     });
+  }
+
+  onKey(event: any, title) {
+    alert('Event is ' + event + title.length);
+    // this.values += event.target.value + ' | ';
   }
 
 }
