@@ -32,6 +32,7 @@ import { MessageService } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CodePaginationComponent } from './code-pagination/code-pagination.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { ArticleAddComponent } from './article-add/article-add.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -59,7 +60,8 @@ export const firebaseConfig = {
     NasaApiComponent,
     UserSignupComponent,
     UserLoginComponent,
-    CodePaginationComponent
+    CodePaginationComponent,
+    ArticleAddComponent
   ],
   imports: [
     BrowserModule,
