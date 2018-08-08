@@ -66,11 +66,50 @@
       </div>
     </div>
 
+    <!-- content -->
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">Content</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <textarea class="textarea is-primary" placeholder="The bulk of your content goes here"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    public date: string,
-    public content: string,
-    public keywords: string
-    public category: string
+    <!-- keywords -->
+    <div class="field is-horizontal">
+        <label class="label field-label">Keywords</label>
+        <div class="control field-body has-icons-right">
+          <input class="input is-primary"
+                 (keyup)="onKey($event, keywords.value)"
+                 placeholder="Be descriptive!"
+                 #subtitle>
+          <span class="icon is-small is-right">
+            <fa-icon icon="check"></fa-icon>
+          </span>
+        </div>
+    </div>
+
+    <!-- button -->
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <!-- empty for spacing -->
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <button class="button is-black"
+                    (click)="addArticle()" >
+              Create Post
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>

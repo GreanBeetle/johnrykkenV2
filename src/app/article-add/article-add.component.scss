@@ -15,7 +15,11 @@ section {
         }
 
         ::placeholder, option, select {
-          font-family: $font-raleway
+          font-family: $font-raleway;
+        }
+
+        button {
+          font-family: $font-nova-lite;
         }
 
     }
