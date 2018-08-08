@@ -1,0 +1,12 @@
+@import "../../variables.scss";
+
+section {
+    .container {
+        text-align: left;
+
+        .label {
+          font-family: $font-nova-lite;
+          font-size: 1em;
+        }
+    }
+}
