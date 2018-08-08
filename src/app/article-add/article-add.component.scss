@@ -16,6 +16,7 @@ section {
 
         ::placeholder, option, select {
           font-family: $font-raleway;
+          opacity: 1 !important;
         }
 
         button {
