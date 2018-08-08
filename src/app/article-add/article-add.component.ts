@@ -18,8 +18,8 @@ import { Article } from '../models/article.model';
 export class ArticleAddComponent {
   articlesCollection: AngularFirestoreCollection<Article>;
   articles: Observable<Article[]>;
-  checkmarkClass;
-
+  titleokay;
+  subtitleokay;
 
   constructor(private afs: AngularFirestore) {
     this.articlesCollection = this.afs.collection('articles');
@@ -40,11 +40,9 @@ export class ArticleAddComponent {
     });
   }
 
-  onKey(event: any, title) {
-    if (title.length > 4) {
-      this.checkmarkClass = 'bright-green';
-    } else {
-      this.checkmarkClass = '';
+  onKey(event: any, input, type) {
+    if (input.length >= 5) {
+      console.log('onKey method still works.');
     }
   }
 

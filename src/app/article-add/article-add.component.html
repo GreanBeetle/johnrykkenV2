@@ -1,27 +1,75 @@
 <section class="section is-medium">
   <div class="container">
 
-    <!-- class 'field' is a container for a label, a form control, optional help text -->
-    <div class="field">
-      <label class="label">Title</label>
-      <!-- class 'control' contains inputs, buttons, radios, icons -->
-      <div class="control has-icons-right">
-        <input class="input"
-               (keyup)="onKey($event, title.value)"
-               placeholder="Write these with elan, flair"
-               #title>
-        <span class="icon is-small is-right">
-          <fa-icon icon="check" [class]="checkmarkClass"></fa-icon>
-        </span>
+    <!-- title -->
+    <div class="field is-horizontal">
+        <label class="label field-label">Title</label>
+        <div class="control field-body has-icons-right">
+          <input class="input is-primary"
+                 (keyup)="onKey($event, title.value)"
+                 placeholder="Write a precise, compelling title"
+                 #title>
+          <span class="icon is-small is-right">
+            <fa-icon icon="check"></fa-icon>
+          </span>
+        </div>
+    </div>
+
+    <!-- subtitle -->
+    <div class="field is-horizontal">
+        <label class="label field-label">Subtitle</label>
+        <div class="control field-body has-icons-right">
+          <input class="input is-primary"
+                 (keyup)="onKey($event, subtitle.value)"
+                 placeholder="Be descriptive!"
+                 #subtitle>
+          <span class="icon is-small is-right">
+            <fa-icon icon="check"></fa-icon>
+          </span>
+        </div>
+    </div>
+
+    <!-- date -->
+    <div class="field is-horizontal">
+        <label class="label field-label">Date</label>
+        <div class="control field-body has-icons-right">
+          <input class="input is-primary"
+                 (keyup)="onKey($event, date.value)"
+                 placeholder="Be descriptive!"
+                 #date>
+          <span class="icon is-small is-right">
+            <fa-icon icon="check"></fa-icon>
+          </span>
+        </div>
+    </div>
+
+    <!-- category -->
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">Category</label>
+      </div>
+      <div class="field-body">
+        <div class="field is-narrow">
+          <div class="control">
+            <div class="select is-fullwidth is-primary">
+              <select>
+                <option>Coding and programming</option>
+                <option>Writing</option>
+                <option>Backpacking</option>
+                <option>Movies</option>
+                <option>Books</option>
+              </select>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    public id: string,
-    public title: string,
-    public subtitle: string,
+
+
     public date: string,
     public content: string,
     public keywords: string
-
+    public category: string
 
   </div>
 </section>
