@@ -2,6 +2,14 @@
   <p-toast position="top-left"></p-toast>
 </div>
 
+<div class="card" style="margin:0 auto; width: 500px;">
+  <a class="button is-black" (click)="testUserService()">Test User Service</a>
+  {{ currentUser.displayName | async }}
+  {{ currentUser.email }}
+  {{ currentUser.admin }}
+
+</div>
+
 <section class="section is-medium">
   <div class="container">
     <h1 class="title">Create New Blog Post</h1>

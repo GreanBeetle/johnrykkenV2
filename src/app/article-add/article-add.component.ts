@@ -9,12 +9,15 @@ import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
 import { Article } from '../models/article.model';
 import { MessageService } from 'primeng/api';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-article-add',
   templateUrl: './article-add.component.html',
   styleUrls: ['./article-add.component.scss'],
-  providers: [ AuthenticationService, MessageService ]
+  providers: [ AuthenticationService,
+               MessageService,
+               UserService ]
 })
 
 export class ArticleAddComponent {
@@ -23,9 +26,15 @@ export class ArticleAddComponent {
   category = 'coding and programming';
 
   constructor(private afs: AngularFirestore,
-              private toast: MessageService) {
+              private toast: MessageService,
+              private userService: UserService) {
     this.articlesCollection = this.afs.collection('articles');
     this.articles = this.articlesCollection.valueChanges();
+  }
+
+  testUserService() {
+    const id = 'NmmLKZ2UvyfmxyhE6PZEOXaLolU2';
+    this.userService.findUser(id);
   }
 
   showToast(message, severity) {

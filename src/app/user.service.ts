@@ -26,10 +26,16 @@ export class UserService {
     this.afs.collection('users').doc(uid).set({'email': email, 'displayName': displayName, 'admin': false});
   }
 
-  // this.usersCollection.doc(uid).valueChanges().subscribe(value => {
-  //   this.username = value.displayName;
-  // });
+  findUser(uid) {
+    const docRef = this.afs.doc<User>(`users/${uid}`);
+    docRef.ref.get().then( documentSnapshot => {
+      return documentSnapshot.data();
+    });
+  }
 
+  // this.usersCollection.doc(`${uid}`).ref.get().then((doc) => {
+  //   user = doc;
+  // });
 
 
 }
