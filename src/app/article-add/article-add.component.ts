@@ -32,10 +32,12 @@ export class ArticleAddComponent {
     this.articles = this.articlesCollection.valueChanges();
   }
 
+  // ######################## RETURN TO THIS!
   testUserService() {
-    const id = 'NmmLKZ2UvyfmxyhE6PZEOXaLolU2';
+    const id = 'gWcGexQXZYagRiyBQIEXPw0w11p1';
     this.userService.findUser(id);
   }
+  // ######################## RETURN TO THIS!
 
   showToast(message, severity) {
     this.toast.add({
