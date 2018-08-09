@@ -68,36 +68,29 @@ export class ArticleAddComponent {
   }
 
   addArticle(title, subtitle, date, content, keywords) {
-    let message = '';
-    let severity = '';
-    if ( this.isAdmin === false ) {
-      message = 'You must be an administrator to use this';
-      severity = 'info';
-      this.showToast(message, severity);
-    } else if ( title.length === 0 ||
-         subtitle.length === 0 ||
-         date.length === 0 ||
-         content.length === 0 ||
-         keywords.length === 0 ) {
-           message = 'Dude! Seriously. Fill out all the fields.';
-           severity = 'error';
-           this.showToast(message, severity);
-    } else {
-      message = `${title} has been added to your article collection!`;
-      severity = 'success';
-      const id = this.afs.createId();
-      const category = this.category;
-      this.articlesCollection.doc(id).set({
-        'id': id,
-        'title': title,
-        'subtitle': subtitle,
-        'date': date,
-        'category': category,
-        'content': content,
-        'keywords': keywords
-      });
-      this.showToast(message, severity);
-    }
+      if ( this.isAdmin === false ) {
+        this.showToast('You must be an administrator to use this', 'info');
+      } else if ( title.length === 0 ||
+                  subtitle.length === 0 ||
+                  date.length === 0 ||
+                  content.length === 0 ||
+                  keywords.length === 0 ) {
+        this.showToast('Dude! Seriously. Fill out all the fields.', 'error');
+      } else {
+        const message = `${title} has been added to your article collection!`;
+        const id = this.afs.createId();
+        const category = this.category;
+        this.articlesCollection.doc(id).set({
+          'id': id,
+          'title': title,
+          'subtitle': subtitle,
+          'date': date,
+          'category': category,
+          'content': content,
+          'keywords': keywords
+        });
+        this.showToast(message, 'success');
+      }
   }
 
   setCategory(event: any) {
@@ -106,7 +99,7 @@ export class ArticleAddComponent {
   }
 
   // ############# input boxes 'keyUp' events. currently unused.
-  onKey(event: any, input, type) {
+  onKey(event: any, input) {
     if (input.length >= 5) {
       console.log('onKey method still works.');
     }
