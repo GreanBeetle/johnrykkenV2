@@ -24,20 +24,40 @@ export class ArticleAddComponent {
   articlesCollection: AngularFirestoreCollection<Article>;
   articles: Observable<Article[]>;
   category = 'coding and programming';
+  loggedIn;
+  user;
+  isAdmin: boolean;
 
   constructor(private afs: AngularFirestore,
               private toast: MessageService,
-              private userService: UserService) {
+              private userService: UserService,
+              private authService: AuthenticationService) {
     this.articlesCollection = this.afs.collection('articles');
     this.articles = this.articlesCollection.valueChanges();
+    // ##################### REPLACE WITH USER SERVICE METHOD #####################
+    this.authService.user.subscribe(user => {
+      if (user == null) {
+        this.loggedIn = false;
+        this.isAdmin = false;
+      } else {
+        this.loggedIn = true;
+        this.user = user;
+        this.afs.collection('users').doc(`${user.uid}`).ref.get().then((doc) => {
+          this.isAdmin = doc.data().admin;
+        });
+      }
+    });
+    // ##################### REPLACE WITH USER SERVICE METHOD #####################
   }
 
-  // ######################## RETURN TO THIS!
+
+  // ######################## RETURN TO THIS! ########################
   testUserService() {
     const id = 'gWcGexQXZYagRiyBQIEXPw0w11p1';
     this.userService.findUser(id);
   }
-  // ######################## RETURN TO THIS!
+  // ######################## RETURN TO THIS! ########################
+
 
   showToast(message, severity) {
     this.toast.add({
@@ -50,7 +70,11 @@ export class ArticleAddComponent {
   addArticle(title, subtitle, date, content, keywords) {
     let message = '';
     let severity = '';
-    if ( title.length === 0 ||
+    if ( this.isAdmin === false ) {
+      message = 'You must be an administrator to use this';
+      severity = 'info';
+      this.showToast(message, severity);
+    } else if ( title.length === 0 ||
          subtitle.length === 0 ||
          date.length === 0 ||
          content.length === 0 ||
