@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
+import { UserAuthService } from '../user-auth.service';
 import {
   AngularFirestore,
   AngularFirestoreDocument,
@@ -14,11 +15,12 @@ import {
   styleUrls: ['./navbar.component.scss'],
   providers: [
     AuthenticationService,
-    UserService
+    UserService,
+    UserAuthService
   ]
 })
 
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
   user;
   loggedIn;
   showMenu = false;
@@ -27,8 +29,9 @@ export class NavbarComponent implements OnInit {
   constructor(public authServ: AuthenticationService,
               private router: Router,
               private userserv: UserService,
-              private afs: AngularFirestore) {
-    this.authServ.user.subscribe(user => {
+              private afs: AngularFirestore,
+              private userauth: UserAuthService) {
+    this.userauth.user.subscribe(user => {
       if (user == null) {
         this.loggedIn = false;
       } else {
@@ -42,7 +45,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    this.authServ.logout();
+    this.userauth.logout();
     this.user = null;
   }
 
@@ -52,9 +55,6 @@ export class NavbarComponent implements OnInit {
     } else {
       this.showMenu = false;
     }
-  }
-
-  ngOnInit() {
   }
 
 }
