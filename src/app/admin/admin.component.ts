@@ -1,21 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
+import { Component } from '@angular/core';
+import { UserAuthService } from '../user-auth.service';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss'],
-  providers: [ UserService ]
+  providers: [ UserAuthService ]
 })
 
-export class AdminComponent implements OnInit {
+export class AdminComponent {
   users;
 
-  constructor(private userServ: UserService) {
-    this.users = this.userServ.users;
+  constructor(private userauth: UserAuthService) {
+    this.users = this.userauth.users;
   }
-
-  ngOnInit() {
-  }
-
 }

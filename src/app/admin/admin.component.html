@@ -2,5 +2,10 @@
   <div class="container" style="text-align: center;">
     <img src="assets/img/under_construction.png" style="max-height:100px;">
     <app-article-add></app-article-add>
+    <ng-container *ngFor="let user of users | async">
+      <li> {{ user.displayName }}</li>
+      <li> {{ user.email }}</li>
+      <li> {{ user.admin }} </li>
+    </ng-container>
   </div>
 </section>
