@@ -2,22 +2,25 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 import { MessageService } from 'primeng/api';
+import { UserAuthService } from '../user-auth.service';
 
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.scss'],
-  providers: [ AuthenticationService, MessageService ]
+  providers: [ AuthenticationService, MessageService, UserAuthService ]
 })
 
 export class UserLoginComponent {
   isActive = 'modal';
   constructor(private authServ: AuthenticationService,
               private router: Router,
-              private toast: MessageService) { }
+              private toast: MessageService,
+              private userauth: UserAuthService) { }
 
+  // done!
   login(email, password) {
-    this.authServ.login(email, password);
+    this.userauth.login(email, password);
   }
 
   logout() {
