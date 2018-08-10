@@ -29,14 +29,21 @@ export class UserAuthService {
 
   // ###################### AUTHENTICATION ######################
   createUser(displayName, email, password) {
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then( response => {
-            const id = response.user.uid;
-            this.addUser(id, email, displayName);
-        })
-        .catch((err) => {
-            alert(err);
-        });
+    firebase.auth().createUserWithEmailAndPassword(email, password).then( response => {
+        const id = response.user.uid;
+        this.addUser(id, email, displayName);
+    }).catch((err) => {
+        alert(err);
+    });
+  }
+
+  login(email, password) {
+    firebase.auth().signInWithEmailAndPassword(email, password).then( response => {
+        console.log('User ID is: ' + response.user.uid);
+    }).catch((err) => {
+        alert(err);
+    });
+    this.router.navigate(['/']);
   }
   // ###################### AUTHENTICATION ######################
 
