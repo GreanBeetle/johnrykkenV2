@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '../authentication.service';
 import { MessageService } from 'primeng/api';
 import { UserAuthService } from '../user-auth.service';
 
@@ -8,13 +7,12 @@ import { UserAuthService } from '../user-auth.service';
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.scss'],
-  providers: [ AuthenticationService, MessageService, UserAuthService ]
+  providers: [ MessageService, UserAuthService ]
 })
 
 export class UserLoginComponent {
   isActive = 'modal';
-  constructor(private authServ: AuthenticationService,
-              private router: Router,
+  constructor(private router: Router,
               private toast: MessageService,
               private userauth: UserAuthService) { }
 
