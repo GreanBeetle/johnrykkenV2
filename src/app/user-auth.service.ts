@@ -18,14 +18,33 @@ export class UserAuthService {
   usersCollection: AngularFirestoreCollection<User>;
   users: Observable<User[]>;
   user: Observable<firebase.User>;
+  loggedIn: boolean;
+  username: string;
+  useremail: string;
+  isAdmin: boolean;
 
   constructor(private afAuth: AngularFireAuth,
               private router: Router,
               private afs: AngularFirestore) {
-                this.usersCollection = this.afs.collection('users');
-                this.users = this.usersCollection.valueChanges();
-                this.user = afAuth.authState;
-              }
+      this.usersCollection = this.afs.collection('users');
+      this.users = this.usersCollection.valueChanges();
+      this.user = afAuth.authState;
+
+      this.user.subscribe(user => {
+          if (user === null) {
+            this.loggedIn = false;
+          } else {
+            this.loggedIn = true;
+            this.usersCollection.doc(`${user.uid}`).ref.get().then((doc) => {
+              alert('From user-auth' + doc.data().displayName);
+              this.username = doc.data().displayName;
+              this.useremail = doc.data().email;
+              this.isAdmin = doc.data().admin;
+            });
+          }
+      });
+      alert('User-auth isAdmin ' + this.isAdmin);
+   }
 
   // ###################### AUTHENTICATION ######################
   createUser(displayName, email, password) {

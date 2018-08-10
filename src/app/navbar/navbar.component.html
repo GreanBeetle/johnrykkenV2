@@ -6,6 +6,12 @@
     </nav>
   </div>
   <div class="navbar-end">
+    <!-- ######### TEST ######### -->
+    <a href="#"> ADMIN IS: {{ ADMIN }}</a>
+    <a href="#"> USERNAME IS: {{ USERNAME }}</a>
+
+    <!-- ######### TEST ######### -->
+
     <div *ngIf="loggedIn" class="navbar-item">
       <small class="authItem"> {{ username }} </small>
       <small class="authItem logoutButton" (click)="logout()">&nbsp;&nbsp;logout</small>

@@ -25,12 +25,15 @@ export class NavbarComponent {
   loggedIn;
   showMenu = false;
   username;
+  USERNAME: string;
+  ADMIN: boolean;
 
   constructor(public authServ: AuthenticationService,
               private router: Router,
               private userserv: UserService,
               private afs: AngularFirestore,
               private userauth: UserAuthService) {
+                this.ADMIN = this.userauth.isAdmin;
     this.userauth.user.subscribe(user => {
       if (user == null) {
         this.loggedIn = false;
