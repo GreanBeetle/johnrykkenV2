@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../authentication.service';
+import { Component } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { UserAuthService } from '../user-auth.service';
 
@@ -10,10 +9,9 @@ import { UserAuthService } from '../user-auth.service';
   providers: [ UserAuthService,
                MessageService ]
 })
-export class UserSignupComponent implements OnInit {
+export class UserSignupComponent {
 
-  constructor(private authservice: AuthenticationService,
-              private toast: MessageService,
+  constructor(private toast: MessageService,
               private userauth: UserAuthService) { }
 
   signup(displayname, email, password) {
@@ -27,9 +25,6 @@ export class UserSignupComponent implements OnInit {
       summary: `Account for ${username} successfully created`,
       life: 4000
     });
-  }
-
-  ngOnInit() {
   }
 
 }
