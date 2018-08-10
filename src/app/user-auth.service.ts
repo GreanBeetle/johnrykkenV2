@@ -26,4 +26,30 @@ export class UserAuthService {
                 this.users = this.usersCollection.valueChanges();
                 this.user = afAuth.authState;
               }
+
+  // ###################### AUTHENTICATION ######################
+  createUser(displayName, email, password) {
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then( response => {
+            const id = response.user.uid;
+            this.addUser(id, email, displayName);
+        })
+        .catch((err) => {
+            alert(err);
+        });
+  }
+  // ###################### AUTHENTICATION ######################
+
+
+  // ###################### FIRESTORE USERS COLLECTION ######################
+  addUser(uid, email, displayName) {
+    this.afs.collection('users').doc(uid).set({
+        'email': email,
+        'displayName': displayName,
+        'admin': false});
+  }
+  // ###################### FIRESTORE USERS COLLECTION ######################
+
+
+
 }
