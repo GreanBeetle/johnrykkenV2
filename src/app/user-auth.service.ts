@@ -4,7 +4,6 @@ import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { User } from './models/user.model';
-import { UserService } from './user.service';
 import {
   AngularFirestore,
   AngularFirestoreDocument,
@@ -14,7 +13,10 @@ import {
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserAuthService {
 
-  constructor() { }
+  constructor(private afAuth: AngularFireAuth,
+              private router: Router,
+              private afs: AngularFirestore) { }
 }
