@@ -15,12 +15,15 @@ import {
 })
 
 export class UserAuthService {
+  usersCollection: AngularFirestoreCollection<User>;
+  users: Observable<User[]>;
   user: Observable<firebase.User>;
 
   constructor(private afAuth: AngularFireAuth,
               private router: Router,
               private afs: AngularFirestore) {
+                this.usersCollection = this.afs.collection('users');
+                this.users = this.usersCollection.valueChanges();
                 this.user = afAuth.authState;
-
               }
 }
