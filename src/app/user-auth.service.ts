@@ -49,6 +49,13 @@ export class UserAuthService {
   logout() {
     this.afAuth.auth.signOut().then((res) => this.router.navigate(['/']));
   }
+
+  resetPassword(email: string) {
+    const auth = firebase.auth();
+    return auth.sendPasswordResetEmail(email)
+               .then(() => console.log('email sent!'))
+               .catch((error) => alert(error));
+  }
   // ###################### AUTHENTICATION ######################
 
 

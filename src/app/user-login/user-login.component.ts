@@ -27,16 +27,16 @@ export class UserLoginComponent {
     this.userauth.logout();
   }
 
+  sendPasswordResetEmail(email) {
+    this.userauth.resetPassword(email);
+  }
+
   forgotPassword() {
     if (this.isActive === 'modal') {
       this.isActive = 'modal is-active';
     } else {
       this.isActive = 'modal';
     }
-  }
-
-  sendPasswordResetEmail(email) {
-    this.authServ.resetPassword(email);
   }
 
   showToast(email) {
