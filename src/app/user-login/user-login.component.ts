@@ -24,7 +24,7 @@ export class UserLoginComponent {
   }
 
   logout() {
-    this.authServ.logout();
+    this.userauth.logout();
   }
 
   forgotPassword() {

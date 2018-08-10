@@ -45,6 +45,10 @@ export class UserAuthService {
     });
     this.router.navigate(['/']);
   }
+
+  logout() {
+    this.afAuth.auth.signOut().then((res) => this.router.navigate(['/']));
+  }
   // ###################### AUTHENTICATION ######################
 
 
