@@ -36,14 +36,12 @@ export class UserAuthService {
           } else {
             this.loggedIn = true;
             this.usersCollection.doc(`${user.uid}`).ref.get().then((doc) => {
-              alert('From user-auth' + doc.data().displayName);
               this.username = doc.data().displayName;
               this.useremail = doc.data().email;
               this.isAdmin = doc.data().admin;
             });
           }
       });
-      alert('User-auth isAdmin ' + this.isAdmin);
    }
 
   // ###################### AUTHENTICATION ######################
