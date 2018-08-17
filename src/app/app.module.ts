@@ -36,6 +36,7 @@ import { ArticleAddComponent } from './article-add/article-add.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { PortfolioFomoChurchComponent } from './portfolio-fomo-church/portfolio-fomo-church.component';
 library.add(fas);
 
 export const firebaseConfig = {
@@ -65,7 +66,8 @@ export const firebaseConfig = {
     UserSignupComponent,
     UserLoginComponent,
     CodePaginationComponent,
-    ArticleAddComponent
+    ArticleAddComponent,
+    PortfolioFomoChurchComponent
   ],
   imports: [
     BrowserModule,
