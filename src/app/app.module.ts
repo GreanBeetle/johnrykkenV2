@@ -37,6 +37,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { PortfolioFomoChurchComponent } from './portfolio-fomo-church/portfolio-fomo-church.component';
+import { PortfolioBianchiBrewComponent } from './portfolio-bianchi-brew/portfolio-bianchi-brew.component';
+import { PortfolioTaoOregonComponent } from './portfolio-tao-oregon/portfolio-tao-oregon.component';
+import { PortfolioWestOaksComponent } from './portfolio-west-oaks/portfolio-west-oaks.component';
 library.add(fas);
 
 export const firebaseConfig = {
@@ -67,7 +70,10 @@ export const firebaseConfig = {
     UserLoginComponent,
     CodePaginationComponent,
     ArticleAddComponent,
-    PortfolioFomoChurchComponent
+    PortfolioFomoChurchComponent,
+    PortfolioBianchiBrewComponent,
+    PortfolioTaoOregonComponent,
+    PortfolioWestOaksComponent
   ],
   imports: [
     BrowserModule,
