@@ -24,8 +24,7 @@ export class NavbarComponent {
   user;
   loggedIn;
   showMenu = false;
-  username;
-  public get USERNAME(): string {
+  public get username(): string {
     return this.userauth.username;
   }
 
@@ -40,9 +39,6 @@ export class NavbarComponent {
       } else {
         this.loggedIn = true;
         this.user = user;
-        this.afs.collection('users').doc(`${user.uid}`).ref.get().then((doc) => {
-          this.username = doc.data().displayName;
-        });
       }
     });
   }

@@ -1,0 +1,17 @@
+@import "../../variables.scss";
+
+.section {
+  text-align: center;
+
+  .subtitle {
+    font-size: 3em;
+    font-family: $font-nova-lite;
+    // display: inline-block;
+    // float: right;
+    font-weight: 400;
+  }
+
+  // #portfolio {
+  //   float: left;
+  // }
+}
