@@ -6,21 +6,20 @@
     </nav>
   </div>
   <div class="navbar-end">
-    <!-- ######### TEST ######### -->
 
-    <a href="#"> USERNAME IS: {{ USERNAME }}</a>
-
-    <!-- ######### TEST ######### -->
-
+    <!-- logged in -->
     <div *ngIf="loggedIn" class="navbar-item">
       <small class="authItem"> {{ username }} </small>
       <small class="authItem logoutButton" (click)="logout()">&nbsp;&nbsp;logout</small>
     </div>
+
+    <!-- not logged in -->
     <div *ngIf="!loggedIn" class="navbar-item">
       <small class="authItem" routerLink="login">login&nbsp;</small><br>
       <small class="or" > or&nbsp;</small><br>
-      <small class="authItem"routerLink="signup">sign up</small>
+      <small class="authItem" routerLink="signup">sign up</small>
     </div>
+
     <a routerLink="/" class="navbar-item">home</a>
     <a routerLink="/crux" class="navbar-item">crux</a>
     <a routerLink="/code" class="navbar-item code">&lt;&#47;code&#62;</a>
