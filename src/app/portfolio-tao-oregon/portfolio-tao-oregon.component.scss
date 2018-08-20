@@ -27,7 +27,7 @@
 
     a {
       font-size: 3em;
-      color: $blue-green;
+      color: $blue;
     }
 
     a:hover {
@@ -35,7 +35,15 @@
     }
 
     .card-content {
-      text-align: left;
+        text-align: left;
+
+        img {
+          height: 50px;
+        }
+
+        .githublink {
+          font-size: 2em;
+        }
     }
   }
 
