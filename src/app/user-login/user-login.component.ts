@@ -16,7 +16,6 @@ export class UserLoginComponent {
               private toast: MessageService,
               private userauth: UserAuthService) { }
 
-  // done!
   login(email, password) {
     this.userauth.login(email, password);
   }

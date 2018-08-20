@@ -1,3 +1,13 @@
 <section class="section">
-  <!-- intentionally blank -->
+  <div [class]="isActive">
+    <div class="modal-background">
+      <p-toast position="top-left"></p-toast>
+    </div>
+    <div class="modal-content">
+      <div class="card resetPasswordCard">
+        <p>Project Summary Here</p>
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" (click)="forgotPassword()"></button>
+  </div>
 </section>
