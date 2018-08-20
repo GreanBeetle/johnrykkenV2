@@ -9,10 +9,34 @@
 }
 
 .section:hover {
-  // transform: scale(1.05);
   cursor: pointer;
 }
 
-header {
-  color: $green !important;
+.w3-modal {
+  text-align: center;
+
+  .card-header-title {
+    font-family: $font-nova-lite;
+    font-size: 3em;
+  }
+
+  .card {
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 15px;
+
+    a {
+      font-size: 3em;
+      color: $blue-green;
+    }
+
+    a:hover {
+      color: $light-gray;
+    }
+
+    .card-content {
+      text-align: left;
+    }
+  }
+
 }
