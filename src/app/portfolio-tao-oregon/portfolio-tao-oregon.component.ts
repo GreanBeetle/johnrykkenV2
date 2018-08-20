@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class PortfolioTaoOregonComponent {
-  display = false;
+  display = true;
 
   constructor() { }
 

@@ -1,50 +1,62 @@
 @import "../../variables.scss";
 
 .section {
-  background-image: url("/assets/img/portfolio-tao-oregon.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 500px;
-  padding: 0px;
+    background-image: url("/assets/img/portfolio-tao-oregon.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    padding: 0px;
 }
 
 .section:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .w3-modal {
-  text-align: center;
+    text-align: center;
 
-  .card-header-title {
-    font-family: $font-nova-lite;
-    font-size: 3em;
-  }
+    header {
+      box-shadow: none;
+    }
 
-  .card {
-    margin: 0 auto;
-    max-width: 900px;
-    padding: 15px;
-
-    a {
+    .card-header-title {
+      font-family: $font-nova-lite;
       font-size: 3em;
-      color: $blue;
+      color: #000 !important;
     }
 
-    a:hover {
-      color: $light-gray;
-    }
+    .card {
+        margin: 0 auto;
+        max-width: 900px;
+        padding: 15px;
+        border-radius: 3px;
 
-    .card-content {
-        text-align: left;
-
-        img {
-          height: 50px;
+        a {
+          font-size: 3em;
+          color: #E5001C;
         }
 
-        .githublink {
-          font-size: 2em;
+        a:hover {
+          color: $light-gray;
+        }
+
+        p, .githublink, .subtitle {
+          font-family: $font-raleway;
+          color: $dark-gray;
+        }
+
+        .card-content {
+            text-align: left;
+
+            img {
+              height: 50px;
+            }
+
+            .githublink, .githublink:hover {
+              font-size: 2em;
+              cursor: pointer;
+            }
         }
     }
-  }
 
 }
