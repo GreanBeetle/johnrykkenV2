@@ -5,15 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: './portfolio-tao-oregon.component.html',
   styleUrls: ['./portfolio-tao-oregon.component.scss']
 })
+
 export class PortfolioTaoOregonComponent {
   display = true;
 
   constructor() { }
-
-
-  aFunction() {
-    return 'red';
-  }
 
   displayType() {
     if ( this.display === true ) {
@@ -23,13 +19,11 @@ export class PortfolioTaoOregonComponent {
     }
   }
 
-  toggleDisplay() {
-    alert('clicked');
+  toggle() {
     if (this.display === false) {
       this.display = true;
     } else {
       this.display = false;
     }
   }
-
 }
