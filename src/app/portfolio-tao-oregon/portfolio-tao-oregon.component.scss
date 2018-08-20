@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .section {
   background-image: url("/assets/img/portfolio-tao-oregon.png");
   background-size: cover;
@@ -9,4 +11,8 @@
 .section:hover {
   // transform: scale(1.05);
   cursor: pointer;
+}
+
+header {
+  color: $green !important;
 }

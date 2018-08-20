@@ -6,18 +6,34 @@
 
 
 <div class="w3-container">
- <div class="w3-modal w3-animate-opacity"
-     [style.display]="displayType()">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal">
-        <span (click)="toggle()"
-              class="w3-button w3-large w3-display-topright">
-              &times;
-        </span>
-      </header>
-      <div class="w3-container">
-        <p>text</p>
-      </div>
+ <div class="w3-modal w3-animate-opacity" [style.display]="displayType()">
+
+
+    <div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      Component
+    </p>
+    <a (click)="toggle()" class="card-header-icon">
+      <span class="icon">
+        <i class="fas fa-angle-down" ></i>
+      </span>
+    </a>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+      <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+      <br>
+      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
     </div>
+  </div>
+  <footer class="card-footer">
+    <a href="#" class="card-footer-item">Save</a>
+    <a href="#" class="card-footer-item">Edit</a>
+    <a href="#" class="card-footer-item">Delete</a>
+  </footer>
+</div>
+
   </div>
 </div>
