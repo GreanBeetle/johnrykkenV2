@@ -40,9 +40,16 @@
           color: $light-gray;
         }
 
-        p, .githublink, .subtitle {
+        p, .subtitle {
           font-family: $font-raleway;
           color: $dark-gray;
+        }
+
+        .githublink, .githublink:hover {
+          color: blue;
+          font-family: $font-raleway;
+          font-size: 2em;
+          cursor: pointer;
         }
 
         .card-content {
@@ -50,11 +57,6 @@
 
             img {
               height: 50px;
-            }
-
-            .githublink, .githublink:hover {
-              font-size: 2em;
-              cursor: pointer;
             }
         }
     }
