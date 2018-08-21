@@ -1,3 +1,40 @@
-<p>
-  portfolio-john-rykken-v1 works!
-</p>
+<div class="container">
+  <section class="section" (click)="toggle()">
+
+  </section>
+</div>
+
+<div class="w3-container">
+ <div class="w3-modal w3-animate-opacity" [style.display]="displayType()">
+
+    <div class="card">
+
+      <header class="card-header">
+          <p class="card-header-title">
+            johnrykken.com (original version)
+          </p>
+          <a (click)="toggle()" class="card-header-icon">
+            &times;
+          </a>
+      </header>
+
+      <div class="card-content">
+          <p class="subtitle">Rails, Ruby, Javascript, Postgres, Heroku, Bulma, SCSS</p>
+          <p>I built the original version of this site with Ruby on Rails. It had ActiveAdmin for CMS, Devise for authentication, and Paperclip for file upload. After realizing how front-end heavy it was going to be, I switched to Angular. The <a href="https://github.com/GreanBeetle/johnrykkenV2">repository for the current site (the website you're on now) is here.</a></p>
+          <br><br>
+          <a class="oldJDRlink"
+             href="https://pure-cliffs-95105.herokuapp.com/">
+            <span><img src="/assets/img/icon-crux.png" ></span>
+            &nbsp;&nbsp;&nbsp;Visit the old site
+          </a>
+          <br><br>
+          <a class="githublink"
+             href="https://github.com/GreanBeetle/john-rykken">
+            <span><img src="/assets/img/github-icon.png" ></span>
+            &nbsp;&nbsp;&nbsp;View Github repository
+          </a>
+      </div>
+    </div>
+
+  </div>
+</div>
