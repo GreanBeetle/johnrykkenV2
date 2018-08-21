@@ -31,7 +31,7 @@
         padding: 15px;
         border-radius: 3px;
 
-        a {
+        .card-header-icon {
           font-size: 3em;
           color: #E5001C;
         }
@@ -40,9 +40,13 @@
           color: $light-gray;
         }
 
-        p, .githublink, .subtitle {
+        p, .githublink, .subtitle, .westOaksLink {
           font-family: $font-raleway;
           color: $dark-gray;
+        }
+
+        .githublink, .westOaksLink {
+          color: blue;
         }
 
         .card-content {
