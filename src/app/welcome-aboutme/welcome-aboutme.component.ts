@@ -6,10 +6,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome-aboutme.component.scss']
 })
 export class WelcomeAboutmeComponent implements OnInit {
+  month: string;
+  year: number;
 
   constructor() { }
 
   ngOnInit() {
+    const date = new Date();
+    const monthNames = ['January',
+                        'February',
+                        'March',
+                        'April',
+                        'May',
+                        'June',
+                        'July',
+                        'August',
+                        'September',
+                        'October',
+                        'November',
+                        'December'
+                      ];
+    this.month = monthNames[date.getMonth()];
+    this.year = date.getFullYear();
   }
 
 }
