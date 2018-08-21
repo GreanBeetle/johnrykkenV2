@@ -1,9 +1,62 @@
+@import "../../variables.scss";
+
 .section {
-  background-image: url("/assets/img/portfolio-fomo-church.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 500px;
-  padding: 0px;
+    background-image: url("/assets/img/portfolio-fomo-church.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    padding: 0px;
 }
 
-.section:hover { transform: scale(1.05); }
+.section:hover {
+    cursor: pointer;
+}
+
+.w3-modal {
+    text-align: center;
+
+    header {
+      box-shadow: none;
+    }
+
+    .card-header-title {
+      font-family: $font-nova-lite !important;
+      font-size: 3em;
+      color: #000 !important;
+    }
+
+    .card {
+        margin: 0 auto;
+        max-width: 900px;
+        padding: 15px;
+        border-radius: 3px;
+
+        a {
+          font-size: 3em;
+          color: #E5001C;
+        }
+
+        a:hover {
+          color: $light-gray;
+        }
+
+        p, .githublink, .subtitle {
+          font-family: $font-raleway;
+          color: $dark-gray;
+        }
+
+        .card-content {
+            text-align: left;
+
+            img {
+              height: 50px;
+            }
+
+            .githublink, .githublink:hover {
+              font-size: 2em;
+              cursor: pointer;
+            }
+        }
+    }
+
+}
