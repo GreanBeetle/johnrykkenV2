@@ -31,7 +31,7 @@
         padding: 15px;
         border-radius: 3px;
 
-        a {
+        .card-header-icon {
           font-size: 3em;
           color: #E5001C;
         }
@@ -55,6 +55,7 @@
             .githublink, .githublink:hover {
               font-size: 2em;
               cursor: pointer;
+              color: blue;
             }
         }
     }
