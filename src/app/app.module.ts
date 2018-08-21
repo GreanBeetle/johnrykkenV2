@@ -43,6 +43,7 @@ import { PortfolioWestOaksComponent } from './portfolio-west-oaks/portfolio-west
 import { PortfolioUpworkCloneComponent } from './portfolio-upwork-clone/portfolio-upwork-clone.component';
 import { PortfolioFilmFanaticComponent } from './portfolio-film-fanatic/portfolio-film-fanatic.component';
 import { PortfolioEpicoinComponent } from './portfolio-epicoin/portfolio-epicoin.component';
+import { PortfolioJohnRykkenV1Component } from './portfolio-john-rykken-v1/portfolio-john-rykken-v1.component';
 library.add(fas);
 
 export const firebaseConfig = {
@@ -79,7 +80,8 @@ export const firebaseConfig = {
     PortfolioWestOaksComponent,
     PortfolioUpworkCloneComponent,
     PortfolioFilmFanaticComponent,
-    PortfolioEpicoinComponent
+    PortfolioEpicoinComponent,
+    PortfolioJohnRykkenV1Component
   ],
   imports: [
     BrowserModule,
