@@ -1,0 +1,35 @@
+<div class="container">
+  <section class="section" (click)="toggle()">
+
+  </section>
+</div>
+
+<div class="w3-container">
+ <div class="w3-modal w3-animate-opacity" [style.display]="displayType()">
+
+    <div class="card">
+
+      <header class="card-header">
+          <p class="card-header-title">
+            Epicoin
+          </p>
+          <a (click)="toggle()" class="card-header-icon">
+            &times;
+          </a>
+      </header>
+
+
+      <div class="card-content">
+          <p class="subtitle">Ruby, Javascript, Sass, ActiveRecord, Sinatra, PostgreSQL</p>
+          <p>This complex little application <i>mimics</i> the process of building a blockchain. (It's not decentralized. We used a database for the blocks.) It was a 5-man team project meant to educate users about the mechanics of blockchain technology, without actually being a blockchain.</p>
+          <br>
+          <a class="githublink"
+             href="https://github.com/dlewiski/epicoin">
+            <span><img src="/assets/img/github-icon.png" ></span>
+            &nbsp;&nbsp;&nbsp;On Github
+          </a>
+      </div>
+    </div>
+
+  </div>
+</div>
