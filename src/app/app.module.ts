@@ -45,6 +45,7 @@ import { PortfolioFilmFanaticComponent } from './portfolio-film-fanatic/portfoli
 import { PortfolioEpicoinComponent } from './portfolio-epicoin/portfolio-epicoin.component';
 import { PortfolioJohnRykkenV1Component } from './portfolio-john-rykken-v1/portfolio-john-rykken-v1.component';
 import { AdminArticleListComponent } from './admin-article-list/admin-article-list.component';
+import { ArticleDetailComponent } from './article-detail/article-detail.component';
 library.add(fas);
 
 export const firebaseConfig = {
@@ -83,7 +84,8 @@ export const firebaseConfig = {
     PortfolioFilmFanaticComponent,
     PortfolioEpicoinComponent,
     PortfolioJohnRykkenV1Component,
-    AdminArticleListComponent
+    AdminArticleListComponent,
+    ArticleDetailComponent
   ],
   imports: [
     BrowserModule,

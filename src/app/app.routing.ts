@@ -7,6 +7,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AdminComponent } from './admin/admin.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
 import { UserLoginComponent } from './user-login/user-login.component';
+import { ArticleDetailComponent } from './article-detail/article-detail.component';
 
 const appRoutes: Routes = [
   {
@@ -29,7 +30,11 @@ const appRoutes: Routes = [
   },
   {
     path: 'login', component: UserLoginComponent
-  }
+  },
+  {
+    path: 'article/:id',
+    component: ArticleDetailComponent
+  },
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
