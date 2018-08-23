@@ -19,9 +19,15 @@ export class AdminArticleListComponent {
   articles: Observable<Article[]>;
 
 
-  constructor(private afs: AngularFirestore) {
+  constructor(private afs: AngularFirestore,
+              private router: Router) {
     this.articlesCollection = this.afs.collection('articles');
     this.articles = this.articlesCollection.valueChanges();
+  }
+
+  visitArticle(article) {
+    console.log('ID is ' + article.id);
+    this.router.navigate([`/article/${article.id}`]);
   }
 
 }
