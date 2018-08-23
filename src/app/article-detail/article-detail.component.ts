@@ -6,6 +6,7 @@ import {
   AngularFirestoreDocument,
   AngularFirestoreCollection
 } from 'angularfire2/firestore';
+import { Article } from '../models/article.model';
 
 @Component({
   selector: 'app-article-detail',
@@ -14,16 +15,26 @@ import {
 })
 
 export class ArticleDetailComponent implements OnInit, OnDestroy {
-  ID;
+  private articleDoc: AngularFirestoreDocument<Article>;
+  article: Observable<Article>;
   private sub: any;
+  ID;
 
-  constructor(private route: ActivatedRoute,
-              private afs: AngularFirestore) { }
+  constructor (private route: ActivatedRoute,
+               private afs: AngularFirestore) {
+               alert(this.ID);
+  }
+
+  // getArticle(id) {
+  //   const article = this.afs.collection('articles').doc(id);
+  //   return article;
+  // }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
        this.ID = params['id'];
-       alert('Your ID is ' + params['id']);
+       this.articleDoc = this.afs.doc<Article>(`articles/${this.ID}`);
+       this.article = this.articleDoc.valueChanges();
     });
   }
 

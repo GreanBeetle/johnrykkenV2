@@ -18,7 +18,6 @@ export class AdminArticleListComponent {
   articlesCollection: AngularFirestoreCollection<Article>;
   articles: Observable<Article[]>;
 
-
   constructor(private afs: AngularFirestore,
               private router: Router) {
     this.articlesCollection = this.afs.collection('articles');

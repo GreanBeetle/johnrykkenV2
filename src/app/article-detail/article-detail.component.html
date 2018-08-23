@@ -1,3 +1,17 @@
-<p>
-  article-detail works!
-</p>
+{{ article.title }}
+
+<br>
+
+{{ article.subtitle }}
+
+<br>
+
+{{ (article | async).date }}
+
+<br>
+
+{{ (article | async).keywords }}
+<br>
+{{ (article | async).title }}
+<br>
+text
