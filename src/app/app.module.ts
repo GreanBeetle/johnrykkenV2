@@ -44,6 +44,7 @@ import { PortfolioUpworkCloneComponent } from './portfolio-upwork-clone/portfoli
 import { PortfolioFilmFanaticComponent } from './portfolio-film-fanatic/portfolio-film-fanatic.component';
 import { PortfolioEpicoinComponent } from './portfolio-epicoin/portfolio-epicoin.component';
 import { PortfolioJohnRykkenV1Component } from './portfolio-john-rykken-v1/portfolio-john-rykken-v1.component';
+import { AdminArticleListComponent } from './admin-article-list/admin-article-list.component';
 library.add(fas);
 
 export const firebaseConfig = {
@@ -81,7 +82,8 @@ export const firebaseConfig = {
     PortfolioUpworkCloneComponent,
     PortfolioFilmFanaticComponent,
     PortfolioEpicoinComponent,
-    PortfolioJohnRykkenV1Component
+    PortfolioJohnRykkenV1Component,
+    AdminArticleListComponent
   ],
   imports: [
     BrowserModule,

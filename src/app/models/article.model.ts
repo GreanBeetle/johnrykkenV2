@@ -7,5 +7,5 @@ export class Article {
     public category: string,
     public content: string,
     public keywords: string
-    ) {}
+  ) { }
 }
