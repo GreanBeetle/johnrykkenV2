@@ -26,7 +26,6 @@ export class AdminArticleListComponent {
   }
 
   visitArticle(article) {
-    console.log('ID is ' + article.id);
     this.router.navigate([`/article/${article.id}`]);
   }
 
