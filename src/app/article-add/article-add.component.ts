@@ -34,7 +34,7 @@ export class ArticleAddComponent {
               private authService: AuthenticationService) {
     this.articlesCollection = this.afs.collection('articles');
     this.articles = this.articlesCollection.valueChanges();
-    // ##################### REPLACE WITH USER SERVICE METHOD #####################
+    // ##################### REPLACE WITH USER-AUTH SERVICE METHOD #####################
     this.authService.user.subscribe(user => {
       if (user == null) {
         this.loggedIn = false;
@@ -47,17 +47,8 @@ export class ArticleAddComponent {
         });
       }
     });
-    // ##################### REPLACE WITH USER SERVICE METHOD #####################
+    // ##################### REPLACE WITH USER-AUTH SERVICE METHOD #####################
   }
-
-
-  // ######################## RETURN TO THIS! ########################
-  testUserService() {
-    const id = 'gWcGexQXZYagRiyBQIEXPw0w11p1';
-    this.userService.findUser(id);
-  }
-  // ######################## RETURN TO THIS! ########################
-
 
   showToast(message, severity) {
     this.toast.add({

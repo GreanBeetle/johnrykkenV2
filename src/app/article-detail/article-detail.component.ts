@@ -1,6 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import {
+  AngularFirestore,
+  AngularFirestoreDocument,
+  AngularFirestoreCollection
+} from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-article-detail',
@@ -12,7 +17,8 @@ export class ArticleDetailComponent implements OnInit, OnDestroy {
   ID;
   private sub: any;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+              private afs: AngularFirestore) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
