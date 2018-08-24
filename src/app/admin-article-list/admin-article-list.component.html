@@ -4,35 +4,20 @@
     <table class="table is-striped is-narrow is-hoverable is-fullwidth">
       <thead>
         <tr>
-          <th>Title</th>
-          <th>Subtitle</th>
-          <th>Date</th>
-          <th>Category</th>
-          <th>Keywords</th>
-          <th>Edit</th>
-          <th>Delete</th>
+          <th class='categoryTitle'><b>Title</b></th>
+          <th class='categoryTitle'><b>Date</b></th>
+          <th class='categoryTitle'><b>Category</b></th>
+          <th class='categoryTitle'><b>Edit</b></th>
+          <th class='categoryTitle'><b>Delete</b></th>
         </tr>
       </thead>
-      <tfoot>
-        <tr>
-          <th>Title</th>
-          <th>Subtitle</th>
-          <th>Date</th>
-          <th>Category</th>
-          <th>Keywords</th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-      </tfoot>
       <tbody>
         <ng-container *ngFor="let article of articles | async">
-          <tr>
-            <th>{{ article.title }}</th>
-            <td>{{ article.subtitle }}</td>
-            <td>{{ article.date }}</td>
-            <td>{{ article.category }}</td>
-            <td>{{ article.keywords }}</td>
-            <td (click)="visitArticle(article)">edit</td>
+          <tr (click)="visitArticle(article)">
+            <th class="titleCell">{{ article.title }}</th>
+            <td class="dateCell">{{ article.date }}</td>
+            <td class="categoryCell">{{ article.category }}</td>
+            <td>edit</td>
             <td>delete</td>
           </tr>
         </ng-container>

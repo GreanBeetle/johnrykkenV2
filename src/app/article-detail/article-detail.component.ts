@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import {
   AngularFirestore,
-  AngularFirestoreDocument,
   AngularFirestoreCollection
 } from 'angularfire2/firestore';
 import { Article } from '../models/article.model';
