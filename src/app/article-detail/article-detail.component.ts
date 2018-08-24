@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import {
@@ -14,13 +14,11 @@ import { Article } from '../models/article.model';
   styleUrls: ['./article-detail.component.scss']
 })
 
-export class ArticleDetailComponent implements OnInit, OnDestroy {
+export class ArticleDetailComponent {
   articlesCollection: AngularFirestoreCollection<Article>;
   articles: Observable<Article[]>;
-  private articleDoc: AngularFirestoreDocument<Article>;
   article: any;
-  private sub: any;
-  id;
+  id: any;
 
   constructor (private route: ActivatedRoute,
                private afs: AngularFirestore) {
@@ -30,33 +28,11 @@ export class ArticleDetailComponent implements OnInit, OnDestroy {
           this.id = params['id'];
       });
       this.articlesCollection.doc(`${this.id}`).ref.get().then((doc) => {
-        alert('Doc data is ' + doc.data().title);
         this.article = doc.data();
       });
   }
 
 
-  ngOnInit() {
-    // this.sub = this.route.params.subscribe(params => {
-    //    this.ID = params['id'];
-         // this.articleDoc = this.afs.doc<Article>(`articles/${this.ID}`);
-         // this.article = this.articleDoc.valueChanges();
-    //        this.afs.collection('articles').doc(this.ID).ref.get().then(function(doc) {
-    //        if (doc.exists) {
-    //          this.article = doc.data();
-    //          alert('Doc data is : ' + doc.data().title);
-    //          console.log('Document data:', doc.data());
-    //        } else {
-    //          console.log('No such document!');
-    //        }
-    //        }).catch(function(error) {
-    //          console.log('Error getting document:', error);
-    //        });
-    // });
-  }
 
-  ngOnDestroy() {
-    this.sub.unsubscribe();
-  }
 
 }
