@@ -26,14 +26,3 @@
 
   </div>
 </section>
-
-
-
-
-<div class="card"  *ngFor="let article of articles | async">
-  {{ article.title }}
-  <br>
-  {{ article.subtitle }}
-  <a (click)="visitArticle(article)"> visit article </a>
-  <hr>
-</div>
