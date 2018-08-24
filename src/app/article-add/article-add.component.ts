@@ -5,49 +5,32 @@ import {
   AngularFirestoreDocument,
   AngularFirestoreCollection
 } from 'angularfire2/firestore';
-import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
 import { Article } from '../models/article.model';
 import { MessageService } from 'primeng/api';
-import { UserService } from '../user.service';
+import { UserAuthService } from '../user-auth.service';
 
 @Component({
   selector: 'app-article-add',
   templateUrl: './article-add.component.html',
   styleUrls: ['./article-add.component.scss'],
-  providers: [ AuthenticationService,
-               MessageService,
-               UserService ]
+  providers: [ MessageService,
+               UserAuthService ]
 })
 
 export class ArticleAddComponent {
   articlesCollection: AngularFirestoreCollection<Article>;
   articles: Observable<Article[]>;
   category = 'coding and programming';
-  loggedIn;
-  user;
-  isAdmin: boolean;
+  public get isAdmin(): boolean {
+    return this.userauth.isAdmin;
+  }
 
   constructor(private afs: AngularFirestore,
               private toast: MessageService,
-              private userService: UserService,
-              private authService: AuthenticationService) {
+              private userauth: UserAuthService) {
     this.articlesCollection = this.afs.collection('articles');
     this.articles = this.articlesCollection.valueChanges();
-    // ##################### REPLACE WITH USER-AUTH SERVICE METHOD #####################
-    this.authService.user.subscribe(user => {
-      if (user == null) {
-        this.loggedIn = false;
-        this.isAdmin = false;
-      } else {
-        this.loggedIn = true;
-        this.user = user;
-        this.afs.collection('users').doc(`${user.uid}`).ref.get().then((doc) => {
-          this.isAdmin = doc.data().admin;
-        });
-      }
-    });
-    // ##################### REPLACE WITH USER-AUTH SERVICE METHOD #####################
   }
 
   showToast(message, severity) {
@@ -86,16 +69,6 @@ export class ArticleAddComponent {
 
   setCategory(event: any) {
     this.category = event.target.value;
-    alert('Category is ' + this.category);
   }
-
-  // ############# input boxes 'keyUp' events. currently unused.
-  onKey(event: any, input) {
-    if (input.length >= 5) {
-      console.log('onKey method still works.');
-    }
-  }
-  // ############# input boxes 'keyUp' events. currently unused.
-
 
 }
