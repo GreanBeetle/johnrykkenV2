@@ -13,12 +13,21 @@
       </thead>
       <tbody>
         <ng-container *ngFor="let article of articles | async">
-          <tr (click)="visitArticle(article)">
-            <th class="titleCell">{{ article.title }}</th>
-            <td class="dateCell">{{ article.date }}</td>
-            <td class="categoryCell">{{ article.category }}</td>
+          <tr>
+            <th class="titleCell"
+                (click)="visitArticle(article)">
+                {{ article.title }}
+            </th>
+            <td class="dateCell"
+                (click)="visitArticle(article)">
+                {{ article.date }}
+            </td>
+            <td class="categoryCell"
+                (click)="visitArticle(article)">
+                {{ article.category }}
+            </td>
             <td>edit</td>
-            <td>delete</td>
+            <td (click)="deleteArticle(article)">delete</td>
           </tr>
         </ng-container>
       </tbody>
