@@ -6,9 +6,14 @@
       font-weight: 400 !important;
     }
 
-    
-
-    td, .titleCell {
+    td, .titleCell, td:hover, .titleCell:hover {
       font-family: $font-raleway;
+      cursor: pointer;
     }
+
+    .deleteCell, .deleteCell:hover {
+      color: #E5001C;
+      cursor: pointer;
+    }
+
 }

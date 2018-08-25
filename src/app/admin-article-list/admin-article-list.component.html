@@ -27,7 +27,10 @@
                 {{ article.category }}
             </td>
             <td>edit</td>
-            <td (click)="deleteArticle(article)">delete</td>
+            <td class="deleteCell"
+                (click)="deleteArticle(article)">
+                delete
+            </td>
           </tr>
         </ng-container>
       </tbody>
