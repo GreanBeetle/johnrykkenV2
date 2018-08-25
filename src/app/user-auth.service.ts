@@ -33,6 +33,7 @@ export class UserAuthService {
       this.user.subscribe(user => {
           if (user === null) {
             this.loggedIn = false;
+            this.isAdmin = false;
           } else {
             this.loggedIn = true;
             this.usersCollection.doc(`${user.uid}`).ref.get().then((doc) => {
