@@ -31,7 +31,7 @@ import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CodePaginationComponent } from './code-pagination/code-pagination.component';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ArticleAddComponent } from './article-add/article-add.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -47,6 +47,7 @@ import { PortfolioJohnRykkenV1Component } from './portfolio-john-rykken-v1/portf
 import { AdminArticleListComponent } from './admin-article-list/admin-article-list.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { CruxTitleComponent } from './crux-title/crux-title.component';
+import { UserAuthService } from './user-auth.service';
 library.add(fas);
 
 export const firebaseConfig = {
@@ -106,7 +107,8 @@ export const firebaseConfig = {
   providers: [
     AuthenticationService,
     UserService,
-    MessageService
+    MessageService,
+    UserAuthService
   ],
   bootstrap: [AppComponent]
 })

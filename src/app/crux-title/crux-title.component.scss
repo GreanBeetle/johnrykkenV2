@@ -1,0 +1,9 @@
+@import "../../variables.scss";
+
+.section {
+    text-align: center;
+    
+    .title, .subtitle {
+      font-family: $font-nova-lite;
+    }
+}
