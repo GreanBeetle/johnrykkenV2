@@ -46,6 +46,7 @@ import { PortfolioEpicoinComponent } from './portfolio-epicoin/portfolio-epicoin
 import { PortfolioJohnRykkenV1Component } from './portfolio-john-rykken-v1/portfolio-john-rykken-v1.component';
 import { AdminArticleListComponent } from './admin-article-list/admin-article-list.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
+import { CruxTitleComponent } from './crux-title/crux-title.component';
 library.add(fas);
 
 export const firebaseConfig = {
@@ -85,7 +86,8 @@ export const firebaseConfig = {
     PortfolioEpicoinComponent,
     PortfolioJohnRykkenV1Component,
     AdminArticleListComponent,
-    ArticleDetailComponent
+    ArticleDetailComponent,
+    CruxTitleComponent
   ],
   imports: [
     BrowserModule,
