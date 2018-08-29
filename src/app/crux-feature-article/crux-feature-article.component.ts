@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Router } from '@angular/router';
 
@@ -7,13 +7,42 @@ import { Router } from '@angular/router';
   templateUrl: './crux-feature-article.component.html',
   styleUrls: ['./crux-feature-article.component.scss']
 })
-export class CruxFeatureArticleComponent {
+
+export class CruxFeatureArticleComponent implements OnInit {
+  const articleId: string = '3mjniyJYpIm7KTkhVEis';
   featureArticle;
+  month: string;
+  year: number;
+  day: number;
 
   constructor(private afs: AngularFirestore, private router: Router) {
-    this.afs.doc('articles/3mjniyJYpIm7KTkhVEis').ref.get().then((doc) => {
+    this.afs.doc(`articles/${this.articleId}`).ref.get().then((doc) => {
       this.featureArticle = doc.data();
     });
+  }
+
+  visitFeatureArticle() {
+    this.router.navigate([`/article/${this.articleId}`]);
+  }
+
+  ngOnInit () {
+    const date = new Date();
+    const monthNames = ['January',
+                        'February',
+                        'March',
+                        'April',
+                        'May',
+                        'June',
+                        'July',
+                        'August',
+                        'September',
+                        'October',
+                        'November',
+                        'December'
+                      ];
+    this.month = monthNames[date.getMonth()];
+    this.year = date.getFullYear();
+    this.day = date.getDay();
   }
 
 }

@@ -30,8 +30,8 @@ export class AdminArticleListComponent {
 
   deleteArticle(article) {
     if (confirm('Are you sure you want to delete this?')) {
-      const artToDelete = this.articlesCollection.doc(article.id);
-      artToDelete.delete();
+      const articleToDelete = this.articlesCollection.doc(article.id);
+      articleToDelete.delete();
     }
   }
 

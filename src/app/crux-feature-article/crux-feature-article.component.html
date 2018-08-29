@@ -1,21 +1,20 @@
 <section class="section">
-  <div class="container" style="text-align: center;">
-    <h1 class="title">This week's featured article</h1>
-    <div class="columns">
-      <div class="column is-two-thirds">
-        <h1 class="title"> {{ featureArticle.title }}</h1>
-        <hr>
+  <div class="container">
+    <p>
+      <span class="date">
+        <b>{{ day }} {{ month }}, {{ year }}</b>
+      </span>
+      This weeks featured Article is
+    </p>
+      {{ featureArticle.title }}
+
         {{ featureArticle.content }}
-        <hr>
+
         {{ featureArticle.subtitle }}
-        <hr>
-        {{ featureArticle.keywords }}
 
+        {{ featureArticle.id }}
 
-      </div>
-      <div class="column">
-        <img src="/assets/img/DOMTREE.jpg">
-      </div>
-    </div>
+        <a (click)="visitFeatureArticle()">link</a>
+
   </div>
 </section>
