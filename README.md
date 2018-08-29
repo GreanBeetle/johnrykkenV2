@@ -58,7 +58,7 @@ Built with Angular, Bulma, Firestore and Firebase, this is my personal website. 
   * Additional functionality will be added as necessary  
 
 
-## SPECS 8.29.18
+## DAILY SPECS 8.29.18
   * Display featured article synopsis on Crux page
   * Beneath synopsis, add link to article
   * Ensure link correctly routes to the featured article
