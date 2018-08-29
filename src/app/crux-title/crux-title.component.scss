@@ -2,8 +2,18 @@
 
 .section {
     text-align: center;
-    
+
+    img {
+      max-height: 200px;
+    }
+
     .title, .subtitle {
       font-family: $font-nova-lite;
+      color: $dark-gray;
+    }
+
+    .title {
+      font-size: 3em;
+      font-weight: lighter;
     }
 }

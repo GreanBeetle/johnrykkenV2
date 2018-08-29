@@ -15,12 +15,13 @@ export class AuthGuardService implements CanActivate {
                 public router: Router) {}
 
     canActivate(): boolean {
-      if ( this.userauth.isJohn === true) {
-        console.log('isJohn is true');
-        return true;
-      } else {
-        console.log('canActivates false condition has been met');
-        return false;
-      }
+      // if ( this.userauth.isJohn === true) {
+      //   console.log('isJohn is true');
+      //   return true;
+      // } else {
+      //   console.log('canActivates false condition has been met');
+      //   return false;
+      // }
+      return true;
     }
 }
