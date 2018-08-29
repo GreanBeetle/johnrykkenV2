@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
-import { UserService } from '../user.service';
 import { UserAuthService } from '../user-auth.service';
 import {
   AngularFirestore,
@@ -13,11 +11,7 @@ import {
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  providers: [
-    AuthenticationService,
-    UserService,
-    UserAuthService
-  ]
+  providers: [ UserAuthService ]
 })
 
 export class NavbarComponent {
@@ -28,9 +22,7 @@ export class NavbarComponent {
     return this.userauth.username;
   }
 
-  constructor(public authServ: AuthenticationService,
-              private router: Router,
-              private userserv: UserService,
+  constructor(private router: Router,
               private afs: AngularFirestore,
               private userauth: UserAuthService) {
     this.userauth.user.subscribe(user => {
