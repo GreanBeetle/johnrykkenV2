@@ -2,6 +2,7 @@
 
 .section {
     text-align: center;
+    // max-height: 400px;
 
     img {
       max-height: 150px;
@@ -19,10 +20,12 @@
 
     .subtitle {
       margin-bottom: 5px;
+      font-size: 2em;
     }
 
     .tagline {
       font-family: $font-raleway;
       color: $dark-gray;
+      font-size: 1.5em;
     }
 }

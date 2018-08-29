@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 
 export class CruxFeatureArticleComponent implements OnInit {
-  const articleId: string = '3mjniyJYpIm7KTkhVEis';
+  articleId: string = '3mjniyJYpIm7KTkhVEis';
   featureArticle;
   month: string;
   year: number;
@@ -42,7 +42,7 @@ export class CruxFeatureArticleComponent implements OnInit {
                       ];
     this.month = monthNames[date.getMonth()];
     this.year = date.getFullYear();
-    this.day = date.getDay();
+    this.day = date.getDate();
   }
 
 }
