@@ -1,11 +1,9 @@
 
-# johnrykken.com
+[johnrykken.com](https://johnrykken.com)
 
 ### April 27, 2018
 
 ### _John Rykken_
-
-_7/12/18  Upcoming builds will be deployed to Firebase. Link soon to follow._
 
 Built with Angular, Bulma, Firestore and Firebase, this is my personal website. I'm aiming for a smooth UX and dark-themed UI. The site has 5 sections: Home, Crux, Code!, Portfolio, and Admin.   
 
@@ -60,9 +58,17 @@ Built with Angular, Bulma, Firestore and Firebase, this is my personal website. 
   * Additional functionality will be added as necessary  
 
 
-## Other functionality
-  * Authentication
-  * Authorization  
+## SPECS 8.29.18
+  * Display featured article synopsis on Crux page
+  * Beneath synopsis, add link to article
+  * Ensure link correctly routes to the featured article
+  * Add pertinent image to synopsis
+  * Remove user.service from app.module
+  * Delete user.service completely
+  * Remove auth.service from app.module
+  * Delete auth.service completely
+  * Add `@media` queries to portfolio page
+  * Ensure that project synopses and pictures resize appropriately for mobile, tablet, etc.
 
 ## Setup
 

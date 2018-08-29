@@ -48,6 +48,7 @@ import { AdminArticleListComponent } from './admin-article-list/admin-article-li
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { CruxTitleComponent } from './crux-title/crux-title.component';
 import { UserAuthService } from './user-auth.service';
+import { CruxFeatureArticleComponent } from './crux-feature-article/crux-feature-article.component';
 library.add(fas);
 
 export const firebaseConfig = {
@@ -88,7 +89,8 @@ export const firebaseConfig = {
     PortfolioJohnRykkenV1Component,
     AdminArticleListComponent,
     ArticleDetailComponent,
-    CruxTitleComponent
+    CruxTitleComponent,
+    CruxFeatureArticleComponent
   ],
   imports: [
     BrowserModule,
