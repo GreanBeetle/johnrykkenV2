@@ -1,3 +1,21 @@
-<p>
-  crux-feature-article works!
-</p>
+<section class="section">
+  <div class="container" style="text-align: center;">
+    <h1 class="title">This week's featured article</h1>
+    <div class="columns">
+      <div class="column is-two-thirds">
+        <h1 class="title"> {{ featureArticle.title }}</h1>
+        <hr>
+        {{ featureArticle.content }}
+        <hr>
+        {{ featureArticle.subtitle }}
+        <hr>
+        {{ featureArticle.keywords }}
+
+
+      </div>
+      <div class="column">
+        <img src="/assets/img/DOMTREE.jpg">
+      </div>
+    </div>
+  </div>
+</section>
