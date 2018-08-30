@@ -7,68 +7,84 @@
       <hr>
 
       <div class="columns">
-
         <!-- form column -->
         <div class="column">
-
-          <!-- new title -->
-          <div class="field is-horizontal">
-              <label class="label field-label">title</label>
-              <div class="control field-body has-icons-right">
-                <input class="input is-primary"
-                       [(ngModel)]="article.title"
-                       #newTitle
-                       type="text"
-                       name="title">
-              </div>
-          </div>
-
-          <!-- new date -->
-          <div class="field is-horizontal">
-              <label class="label field-label">date</label>
-              <div class="control field-body has-icons-right">
-                <input class="input is-primary"
-                       [(ngModel)]="article.date"
-                       #newDate
-                       type="text"
-                       name="date">
-              </div>
-          </div>
-
-          <!-- new subtitle -->
-          <div class="field is-horizontal">
-              <label class="label field-label">subtitle</label>
-              <div class="control field-body has-icons-right">
-                <input class="input is-primary"
-                       [(ngModel)]="article.subtitle"
-                       #newSubtitle
-                       type="text"
-                       name="subtitle">
-              </div>
-          </div>
-
-          <!-- category -->
-          <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">category</label>
+            <!-- new title -->
+            <div class="field is-horizontal">
+                <label class="label field-label">title</label>
+                <div class="control field-body has-icons-right">
+                  <input class="input is-primary"
+                         [(ngModel)]="article.title"
+                         #newTitle
+                         type="text"
+                         name="title">
+                </div>
             </div>
-            <div class="field-body">
-              <div class="field is-narrow">
-                <div class="control">
-                  <div class="select is-fullwidth is-primary">
-                    <select (change)="updateCategory($event)">
-                      <option value="articleCategory">{{ articleCategory }}</option>
-                      <option value="coding and programming">Coding and programming</option>
-                      <option value="writing">Writing</option>
-                      <option value="backpacking">Backpacking</option>
-                      <option value="movies">Movies</option>
-                      <option value="books">Books</option>
-                    </select>
+
+            <!-- new date -->
+            <div class="field is-horizontal">
+                <label class="label field-label">date</label>
+                <div class="control field-body has-icons-right">
+                  <input class="input is-primary"
+                         [(ngModel)]="article.date"
+                         #newDate
+                         type="text"
+                         name="date">
+                </div>
+            </div>
+
+            <!-- new subtitle -->
+            <div class="field is-horizontal">
+                <label class="label field-label">subtitle</label>
+                <div class="control field-body has-icons-right">
+                  <input class="input is-primary"
+                         [(ngModel)]="article.subtitle"
+                         #newSubtitle
+                         type="text"
+                         name="subtitle">
+                </div>
+            </div>
+
+            <!-- category -->
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label">category</label>
+                </div>
+                <div class="field-body">
+                  <div class="field is-narrow">
+                    <div class="control">
+                      <div class="select is-fullwidth is-primary">
+                        <select (change)="updateCategory($event)">
+                          <option value="articleCategory">{{ articleCategory }}</option>
+                          <option value="coding and programming">Coding and programming</option>
+                          <option value="writing">Writing</option>
+                          <option value="backpacking">Backpacking</option>
+                          <option value="movies">Movies</option>
+                          <option value="books">Books</option>
+                        </select>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
             </div>
-          </div>
+
+            <!-- content -->
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label">content</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <textarea class="textarea is-primary"
+                                #newContent
+                                [(ngModel)]="article.content"
+                                type="text">
+                      </textarea>
+                    </div>
+                  </div>
+                </div>
+            </div>
 
 
 
@@ -76,7 +92,8 @@
                   <button (click)="update(newTime.value, newDate.value, newPlace.value, newAddress.value, newCityState.value, newNotes.value)" class="button is-dark is-text-centered">UPDATE</button>
 
 
-        </div>
+        </div> <!-- end form column -->
+
 
         <!-- current article display -->
         <div class="column">
@@ -87,6 +104,8 @@
           {{ article.subtitle }}
           <br>
           {{ articleCategory }}
+          <br>
+          {{ article.content }}
         </div>
 
       </div>
