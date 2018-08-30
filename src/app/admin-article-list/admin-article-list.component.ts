@@ -28,6 +28,10 @@ export class AdminArticleListComponent {
     this.router.navigate([`/article/${article.id}`]);
   }
 
+  editArticle(article) {
+    this.router.navigate([`/article-edit/${article.id}`]);
+  }
+
   deleteArticle(article) {
     if (confirm('Are you sure you want to delete this?')) {
       const articleToDelete = this.articlesCollection.doc(article.id);

@@ -26,7 +26,10 @@
                 (click)="visitArticle(article)">
                 {{ article.category }}
             </td>
-            <td>edit</td>
+            <td class="editCell"
+                (click)="editArticle(article)" >
+                edit
+            </td>
             <td class="deleteCell"
                 (click)="deleteArticle(article)">
                 delete
