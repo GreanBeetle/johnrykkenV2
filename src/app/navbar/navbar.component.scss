@@ -44,6 +44,7 @@ a:hover, .authItem:hover {
   color: #fff;
 }
 
+
 // mobile menu and sideBar
 @media only screen and (min-width: 0px) and (max-width: 1088px)  {
 
@@ -97,4 +98,9 @@ a:hover, .authItem:hover {
       margin-top: 10px;
     }
   }
+}
+
+
+#adminLink {
+  color: #E5001C !important;
 }
