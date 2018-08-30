@@ -5,8 +5,18 @@
 
     .title {
       font-family: $font-nova-lite;
-      font-size: 3em;
+      font-size: 2.5em;
       font-weight: lighter;
+    }
+
+    .field {
+        .label, ::placeholder {
+          font-family: $font-raleway;
+        }
+
+        .label {
+          margin-bottom: 0px;
+        }
     }
 
 }

@@ -1,23 +1,70 @@
 <section class="section is-large">
-  <h1 class="title">Edit Article</h1>
-  <div class="columns">
-    <div class="column">
-      <form>
-              <input [(ngModel)]="article.title" #newTitle type="text" name="title">
-              <input [(ngModel)]="article.date" #newDate type="text" name="subtitle">
+  <div class="container">
 
-              <!-- <textarea [(ngModel)]="m.notes" #newNotes type="text" name="notes" class="textarea is-primary"></textarea> -->
-              <!-- <br>
-            <div class="foot" style="text-align:center;">
-              <button (click)="update(newTime.value, newDate.value, newPlace.value, newAddress.value, newCityState.value, newNotes.value)" class="button is-dark is-text-centered">UPDATE</button>
-            </div> -->
-      </form>
-    </div>
-    <div class="column">
-      {{ article.title }}
-      {{ article.date }}
-    </div>
+      <h1 class="title">
+        E&nbsp;d&nbsp;i&nbsp;t&nbsp; A&nbsp;r&nbsp;t&nbsp;i&nbsp;c&nbsp;l&nbsp;e
+      </h1>
+      <hr>
+
+      <div class="columns">
+
+        <!-- form column -->
+        <div class="column">
+
+          <!-- new title -->
+          <div class="field is-horizontal">
+              <label class="label field-label">title</label>
+              <div class="control field-body has-icons-right">
+                <input class="input is-primary"
+                       [(ngModel)]="article.title"
+                       #newTitle
+                       type="text"
+                       name="title">
+              </div>
+          </div>
+
+          <!-- new date -->
+          <div class="field is-horizontal">
+              <label class="label field-label">date</label>
+              <div class="control field-body has-icons-right">
+                <input class="input is-primary"
+                       [(ngModel)]="article.date"
+                       #newDate
+                       type="text"
+                       name="date">
+              </div>
+          </div>
+
+          <!-- new subtitle -->
+          <div class="field is-horizontal">
+              <label class="label field-label">subtitle</label>
+              <div class="control field-body has-icons-right">
+                <input class="input is-primary"
+                       [(ngModel)]="article.subtitle"
+                       #newSubtitle
+                       type="text"
+                       name="subtitle">
+              </div>
+          </div>
+
+
+
+
+                  <button (click)="update(newTime.value, newDate.value, newPlace.value, newAddress.value, newCityState.value, newNotes.value)" class="button is-dark is-text-centered">UPDATE</button>
+
+
+        </div>
+
+        <!-- current article display -->
+        <div class="column">
+          {{ article.title }}
+          <br>
+          {{ article.date }}
+          <br>
+          {{ article.subtitle }}
+        </div>
+
+      </div>
 
   </div>
-
 </section>
