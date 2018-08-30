@@ -98,12 +98,15 @@
                 </div>
             </div>
 
-
-
-
-                  <button (click)="update(newTime.value, newDate.value, newPlace.value, newAddress.value, newCityState.value, newNotes.value)" class="button is-dark is-text-centered">UPDATE</button>
-
-
+            <button class="button is-dark is-text-centered"
+                    (click)="updateArticle(
+                             newTitle.value,
+                             newDate.value,
+                             newSubtitle.value,
+                             newContent.value,
+                             newKeywords.value)">
+                             UPDATE
+            </button>
         </div> <!-- end form column -->
 
 

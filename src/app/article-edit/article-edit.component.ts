@@ -16,6 +16,7 @@ import { Article } from '../models/article.model';
 export class ArticleEditComponent {
   articlesCollection: AngularFirestoreCollection<Article>;
   articles: Observable<Article[]>;
+  articleToUpdate: AngularFirestoreDocument<Article>;
   article: any;
   articleCategory: string;
   id: any;
@@ -26,6 +27,7 @@ export class ArticleEditComponent {
       this.articles = this.articlesCollection.valueChanges();
       this.route.params.subscribe(params => {
           this.id = params['id'];
+          this.articleToUpdate = this.articlesCollection.doc(`${this.id}`);
       });
       this.articlesCollection.doc(`${this.id}`).ref.get().then((doc) => {
         this.article = doc.data();
@@ -35,6 +37,18 @@ export class ArticleEditComponent {
 
   updateCategory(event: any) {
     this.articleCategory = event.target.value;
+  }
+
+  updateArticle(newtitle, newdate, newsubtitle, newcontent, newkeywords) {
+    console.log('Title: ' + newtitle + ' Date: ' + newdate + ' Subtitle: ' + newsubtitle + ' Content: ' + newcontent + ' Keywords: ' + newkeywords + ' Category ' + this.articleCategory);
+    this.articleToUpdate.update({
+      title: newtitle,
+      date: newdate,
+      subtitle: newsubtitle,
+      content: newcontent,
+      keywords: newkeywords,
+      category: this.articleCategory
+    });
   }
 
 }
