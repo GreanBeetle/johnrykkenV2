@@ -8,6 +8,8 @@ import { AdminComponent } from './admin/admin.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
+import { ArticleEditComponent } from './article-edit/article-edit.component';
+
 
 const appRoutes: Routes = [
   {
@@ -34,6 +36,10 @@ const appRoutes: Routes = [
   {
     path: 'article/:id',
     component: ArticleDetailComponent
+  },
+  {
+    path: 'article-edit/:id',
+    component: ArticleEditComponent
   },
 ];
 
