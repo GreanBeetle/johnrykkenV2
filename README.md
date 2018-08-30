@@ -58,15 +58,12 @@ Built with Angular, Bulma, Firestore and Firebase, this is my personal website. 
   * Additional functionality will be added as necessary  
 
 
-## DAILY SPECS 8.29.18
-  * Display featured article synopsis on Crux page
-  * Beneath synopsis, add link to article
-  * Ensure link correctly routes to the featured article
-  * Add pertinent image to synopsis
-  * Remove user.service from app.module
-  * Delete user.service completely
-  * Remove auth.service from app.module
-  * Delete auth.service completely
+## DAILY SPECS 8.30.18
+  * Generate edit article component.
+  * Build edit-article functionality.
+  * Write a list of what the feature article component ought to include.
+  * Style the feature article component.
+  * Add image to feature article.
   * Add `@media` queries to portfolio page
   * Ensure that project synopses and pictures resize appropriately for mobile, tablet, etc.
 
