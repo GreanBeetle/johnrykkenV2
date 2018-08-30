@@ -21,6 +21,9 @@ export class NavbarComponent {
   public get username(): string {
     return this.userauth.username;
   }
+  public get isAdmin(): boolean {
+    return this.userauth.isAdmin;
+  }
 
   constructor(private router: Router,
               private afs: AngularFirestore,
