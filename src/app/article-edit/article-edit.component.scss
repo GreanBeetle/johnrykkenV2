@@ -1,0 +1,12 @@
+@import "../../variables.scss";
+
+.section {
+    text-align: center;
+
+    .title {
+      font-family: $font-nova-lite;
+      font-size: 3em;
+      font-weight: lighter;
+    }
+
+}
