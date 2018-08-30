@@ -17,6 +17,7 @@ export class ArticleEditComponent {
   articlesCollection: AngularFirestoreCollection<Article>;
   articles: Observable<Article[]>;
   article: any;
+  articleCategory: string;
   id: any;
 
   constructor (private route: ActivatedRoute,
@@ -28,7 +29,12 @@ export class ArticleEditComponent {
       });
       this.articlesCollection.doc(`${this.id}`).ref.get().then((doc) => {
         this.article = doc.data();
+        this.articleCategory = doc.data().category;
       });
+  }
+
+  updateCategory(event: any) {
+    this.articleCategory = event.target.value;
   }
 
 }

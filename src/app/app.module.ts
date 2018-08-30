@@ -48,6 +48,7 @@ import { CruxTitleComponent } from './crux-title/crux-title.component';
 import { UserAuthService } from './user-auth.service';
 import { CruxFeatureArticleComponent } from './crux-feature-article/crux-feature-article.component';
 import { ArticleEditComponent } from './article-edit/article-edit.component';
+import { AuthGuardService } from './auth-guard.service';
 library.add(fas);
 
 export const firebaseConfig = {
@@ -108,7 +109,8 @@ export const firebaseConfig = {
   ],
   providers: [
     MessageService,
-    UserAuthService
+    UserAuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

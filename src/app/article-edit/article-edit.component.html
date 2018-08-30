@@ -47,6 +47,29 @@
               </div>
           </div>
 
+          <!-- category -->
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">category</label>
+            </div>
+            <div class="field-body">
+              <div class="field is-narrow">
+                <div class="control">
+                  <div class="select is-fullwidth is-primary">
+                    <select (change)="updateCategory($event)">
+                      <option value="articleCategory">{{ articleCategory }}</option>
+                      <option value="coding and programming">Coding and programming</option>
+                      <option value="writing">Writing</option>
+                      <option value="backpacking">Backpacking</option>
+                      <option value="movies">Movies</option>
+                      <option value="books">Books</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
 
 
 
@@ -62,6 +85,8 @@
           {{ article.date }}
           <br>
           {{ article.subtitle }}
+          <br>
+          {{ articleCategory }}
         </div>
 
       </div>
