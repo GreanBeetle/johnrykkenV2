@@ -1,4 +1,4 @@
-<section class="section is-large">
+<section class="section is-medium">
   <div class="container">
 
       <h1 class="title">
@@ -8,11 +8,11 @@
 
       <div class="columns">
         <!-- form column -->
-        <div class="column">
+        <div class="column inputFields">
             <!-- new title -->
             <div class="field is-horizontal">
                 <label class="label field-label">title</label>
-                <div class="control field-body has-icons-right">
+                <div class="control field-body">
                   <input class="input is-primary"
                          [(ngModel)]="article.title"
                          #newTitle
@@ -24,7 +24,7 @@
             <!-- new date -->
             <div class="field is-horizontal">
                 <label class="label field-label">date</label>
-                <div class="control field-body has-icons-right">
+                <div class="control field-body">
                   <input class="input is-primary"
                          [(ngModel)]="article.date"
                          #newDate
@@ -36,7 +36,7 @@
             <!-- new subtitle -->
             <div class="field is-horizontal">
                 <label class="label field-label">subtitle</label>
-                <div class="control field-body has-icons-right">
+                <div class="control field-body">
                   <input class="input is-primary"
                          [(ngModel)]="article.subtitle"
                          #newSubtitle
@@ -89,7 +89,7 @@
             <!-- keywords -->
             <div class="field is-horizontal">
                 <label class="label field-label">keywords</label>
-                <div class="control field-body has-icons-right">
+                <div class="control field-body">
                   <input class="input is-primary"
                          [(ngModel)]="article.keywords"
                          #newKeywords

@@ -9,14 +9,16 @@
       font-weight: lighter;
     }
 
-    .field {
-        .label, ::placeholder {
-          font-family: $font-raleway;
-        }
-
+    // everything inside the form column
+    .inputFields {
         .label {
+          font-family: $font-nova-lite;
           margin-bottom: 0px;
         }
-    }
 
+        input[type="text"], textarea[type="text"], option, select {
+          font-family: $font-raleway;
+          font-size: 12pt;
+        }
+    }
 }
