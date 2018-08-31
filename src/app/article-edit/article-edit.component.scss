@@ -9,7 +9,7 @@
       font-weight: lighter;
     }
 
-    // everything inside the form column
+    // form column
     .inputFields {
         .label {
           font-family: $font-nova-lite;
@@ -20,5 +20,43 @@
           font-family: $font-raleway;
           font-size: 12pt;
         }
+    }
+
+    // oldArticle
+    .oldArticle {
+        max-height: 400px;
+        overflow: scroll;
+
+        .titleGroup {
+            text-align: center;
+            .articleTitle {
+              font-family: $font-raleway;
+              font-size: 2em;
+            }
+
+            .articleSubtitle {
+              font-family: $font-raleway;
+              font-size: 1.5em;
+            }
+        }
+
+        .keywordsAndCategory {
+            text-align: left;
+            .keywords, .category {
+              font-family: $font-raleway;
+              font-size: .8em;
+            }
+        }
+
+        .articleContent {
+          text-align: justify;
+          font-family: $font-raleway;
+        }
+    }
+
+    button {
+      font-family: $font-nova-lite;
+      max-width: 500px;
+      margin: 0 auto;
     }
 }

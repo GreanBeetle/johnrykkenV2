@@ -1,14 +1,13 @@
 <section class="section is-medium">
   <div class="container">
-
       <h1 class="title">
         E&nbsp;d&nbsp;i&nbsp;t&nbsp; A&nbsp;r&nbsp;t&nbsp;i&nbsp;c&nbsp;l&nbsp;e
       </h1>
       <hr>
-
       <div class="columns">
         <!-- form column -->
         <div class="column inputFields">
+
             <!-- new title -->
             <div class="field is-horizontal">
                 <label class="label field-label">title</label>
@@ -97,35 +96,31 @@
                          name="keywords">
                 </div>
             </div>
-
-            <button class="button is-dark is-text-centered"
-                    (click)="updateArticle(
-                             newTitle.value,
-                             newDate.value,
-                             newSubtitle.value,
-                             newContent.value,
-                             newKeywords.value)">
-                             UPDATE
-            </button>
         </div> <!-- end form column -->
 
-
         <!-- current article display -->
-        <div class="column">
-          {{ article.title }}
+        <div class="column oldArticle">
+          <div class="titleGroup">
+            <h1 class="articleTitle">{{ article.title }}</h1>
+            <p><i>{{ article.date }}</i></p>
+            <h3 class="articleSubtitle">{{ article.subtitle }}</h3>
+          </div>
           <br>
-          {{ article.date }}
+          <div class="keywordsAndCategory">
+            <p class="category"><b>Category:</b> {{ articleCategory }}</p>
+            <p class="keywords"><b>Keywords:</b> {{ article.keywords }}</p>
+          </div>
           <br>
-          {{ article.subtitle }}
-          <br>
-          {{ articleCategory }}
-          <br>
-          {{ article.content }}
-          <br>
-          {{ article.keywords }}
+          <div class="articleContent">
+            {{ article.content }}
+          </div>
         </div>
-
-      </div>
+      </div> <!-- end columns -->
+      <br>
+      <button class="button is-black is-text-centered is-medium is-fullwidth"
+              (click)="updateArticle(newTitle.value, newDate.value, newSubtitle.value, newContent.value, newKeywords.value)">
+              u&nbsp;p&nbsp;d&nbsp;a&nbsp;t&nbsp;e
+      </button>
 
   </div>
 </section>
