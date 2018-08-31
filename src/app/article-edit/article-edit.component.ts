@@ -7,12 +7,15 @@ import {
   AngularFirestoreDocument
 } from 'angularfire2/firestore';
 import { Article } from '../models/article.model';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-article-edit',
   templateUrl: './article-edit.component.html',
-  styleUrls: ['./article-edit.component.scss']
+  styleUrls: ['./article-edit.component.scss'],
+  providers: [ MessageService ]
 })
+
 export class ArticleEditComponent {
   articlesCollection: AngularFirestoreCollection<Article>;
   articles: Observable<Article[]>;
@@ -22,17 +25,20 @@ export class ArticleEditComponent {
   id: any;
 
   constructor (private route: ActivatedRoute,
-               private afs: AngularFirestore) {
-      this.articlesCollection = this.afs.collection('articles');
-      this.articles = this.articlesCollection.valueChanges();
-      this.route.params.subscribe(params => {
-          this.id = params['id'];
-          this.articleToUpdate = this.articlesCollection.doc(`${this.id}`);
-      });
-      this.articlesCollection.doc(`${this.id}`).ref.get().then((doc) => {
-        this.article = doc.data();
-        this.articleCategory = doc.data().category;
-      });
+               private afs: AngularFirestore,
+               private toast: MessageService) {
+    this.articlesCollection = this.afs.collection('articles');
+    this.articles = this.articlesCollection.valueChanges();
+
+    this.route.params.subscribe(params => {
+        this.id = params['id'];
+        this.articleToUpdate = this.articlesCollection.doc(`${this.id}`);
+    });
+
+    this.articlesCollection.doc(`${this.id}`).ref.get().then((doc) => {
+      this.article = doc.data();
+      this.articleCategory = doc.data().category;
+    });
   }
 
   updateCategory(event: any) {
@@ -40,7 +46,6 @@ export class ArticleEditComponent {
   }
 
   updateArticle(newtitle, newdate, newsubtitle, newcontent, newkeywords) {
-    console.log('Title: ' + newtitle + ' Date: ' + newdate + ' Subtitle: ' + newsubtitle + ' Content: ' + newcontent + ' Keywords: ' + newkeywords + ' Category ' + this.articleCategory);
     this.articleToUpdate.update({
       title: newtitle,
       date: newdate,
@@ -48,6 +53,15 @@ export class ArticleEditComponent {
       content: newcontent,
       keywords: newkeywords,
       category: this.articleCategory
+    });
+    this.showToast(newtitle);
+  }
+
+  showToast(title) {
+    this.toast.add({
+      severity: 'success',
+      summary: `${title} updated!`,
+      life: 5000
     });
   }
 
