@@ -49,6 +49,10 @@ import { UserAuthService } from './user-auth.service';
 import { CruxFeatureArticleComponent } from './crux-feature-article/crux-feature-article.component';
 import { ArticleEditComponent } from './article-edit/article-edit.component';
 import { AuthGuardService } from './auth-guard.service';
+// share buttons
+import { ShareDirectiveModule } from 'ngx-sharebuttons';
+import { HttpClientModule } from '@angular/common/http';
+// end share buttons
 library.add(fas);
 
 export const firebaseConfig = {
@@ -105,7 +109,9 @@ export const firebaseConfig = {
     ToastModule,
     BrowserAnimationsModule,
     NgxPaginationModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule, // (Required) for share counts
+    ShareDirectiveModule.forRoot(), // share buttons
   ],
   providers: [
     MessageService,
