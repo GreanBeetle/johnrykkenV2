@@ -50,7 +50,8 @@ import { CruxFeatureArticleComponent } from './crux-feature-article/crux-feature
 import { ArticleEditComponent } from './article-edit/article-edit.component';
 import { AuthGuardService } from './auth-guard.service';
 // share buttons
-import { ShareDirectiveModule } from 'ngx-sharebuttons';
+// documentation at https://github.com/MurhafSousli/ngx-sharebuttons/wiki/Share-Button-Directive
+import { ShareModule } from '@ngx-share/core';
 import { HttpClientModule } from '@angular/common/http';
 // end share buttons
 library.add(fas);
@@ -111,7 +112,7 @@ export const firebaseConfig = {
     NgxPaginationModule,
     FontAwesomeModule,
     HttpClientModule, // (Required) for share counts
-    ShareDirectiveModule.forRoot(), // share buttons
+    ShareModule.forRoot(), // share buttons
   ],
   providers: [
     MessageService,
