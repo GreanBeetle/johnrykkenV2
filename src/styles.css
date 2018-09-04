@@ -1,3 +1,6 @@
+@import '~@ngx-share/button/styles/share-buttons.css';
+@import '~@ngx-share/button/styles/themes/circles/circles-light-theme.css';
+
 @font-face {
   font-family: novacento-norm;
   src: url("/assets/fonts/novacento-normal.otf") format('opentype');

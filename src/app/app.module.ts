@@ -54,6 +54,7 @@ import { AuthGuardService } from './auth-guard.service';
 import { ShareModule } from '@ngx-share/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ShareButtonsComponent } from './share-buttons/share-buttons.component';
+import { ShareButtonModule } from '@ngx-share/button';
 // end share buttons
 library.add(fas);
 
@@ -115,6 +116,7 @@ export const firebaseConfig = {
     FontAwesomeModule,
     HttpClientModule, // (Required) for share counts
     ShareModule.forRoot(), // share buttons
+    ShareButtonModule.forRoot() // share buttons
   ],
   providers: [
     MessageService,
