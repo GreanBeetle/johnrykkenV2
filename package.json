@@ -23,6 +23,7 @@
     "@fortawesome/angular-fontawesome": "^0.1.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
     "@fortawesome/free-solid-svg-icons": "^5.2.0",
+    "@ngx-share/button": "^6.0.1",
     "@ngx-share/core": "^6.0.1",
     "angular-bulma": "^0.3.1",
     "angular-font-awesome": "^3.1.2",

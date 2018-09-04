@@ -53,6 +53,7 @@ import { AuthGuardService } from './auth-guard.service';
 // documentation at https://github.com/MurhafSousli/ngx-sharebuttons/wiki/Share-Button-Directive
 import { ShareModule } from '@ngx-share/core';
 import { HttpClientModule } from '@angular/common/http';
+import { ShareButtonsComponent } from './share-buttons/share-buttons.component';
 // end share buttons
 library.add(fas);
 
@@ -96,7 +97,8 @@ export const firebaseConfig = {
     ArticleDetailComponent,
     CruxTitleComponent,
     CruxFeatureArticleComponent,
-    ArticleEditComponent
+    ArticleEditComponent,
+    ShareButtonsComponent
   ],
   imports: [
     BrowserModule,
