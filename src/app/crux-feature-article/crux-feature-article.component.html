@@ -4,17 +4,13 @@
       <span class="date">
         <b>{{ day }} {{ month }}, {{ year }}</b>
       </span>
-      This weeks featured Article is
     </p>
-      {{ featureArticle.title }}
-
-        {{ featureArticle.content }}
-
-        {{ featureArticle.subtitle }}
-
-        {{ featureArticle.id }}
-
-        <a (click)="visitFeatureArticle()">link</a>
+    <span><h4><b> Feature Article:&nbsp;</b></h4>{{ featureArticle.title }}</span>
+    <span><h6>{{ featureArticle.subtitle }}</h6></span>
+    <br>
+    {{ featureArticle.id }}
+    <br>
+    <a (click)="visitFeatureArticle()">View Article</a>
 
   </div>
 </section>
