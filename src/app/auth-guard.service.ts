@@ -10,18 +10,20 @@ import { Observable } from 'rxjs';
 })
 
 export class AuthGuardService implements CanActivate {
+    isAdmin: boolean = false;
 
     constructor(public userauth: UserAuthService,
-                public router: Router) {}
+                public router: Router) {
+                  this.isAdmin = this.userauth.isAdmin;
+                }
 
     canActivate(): boolean {
-      // if ( this.userauth.isJohn === true) {
-      //   console.log('isJohn is true');
-      //   return true;
-      // } else {
-      //   console.log('canActivates false condition has been met');
-      //   return false;
-      // }
-      return true;
+      if (this.isAdmin === false) {
+        this.router.navigate(['/']);
+      } else if ( this.isAdmin === true) {
+        return true;
+      } else {
+        return false;
+      }
     }
 }
