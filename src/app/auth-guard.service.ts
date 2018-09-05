@@ -4,25 +4,27 @@ import { Router, CanActivate } from '@angular/router';
 import { map, filter, switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
+// ##### hastily added code REVISE THIS #####
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthGuardService implements CanActivate {
-    isAdmin: boolean = false;
+    user: Observable<firebase.User>;
+    public admin: boolean;
 
     constructor(public userauth: UserAuthService,
-                public router: Router) {
-                  this.isAdmin = this.userauth.isAdmin;
-                }
+                public router: Router,
+                public afAuth: AngularFireAuth) { this.user = afAuth.authState; }
 
     canActivate(): boolean {
-      if (this.isAdmin === false) {
-        this.router.navigate(['/']);
-      } else if ( this.isAdmin === true) {
+      if (this.userauth.isAdmin === true) {
+        alert('userauth isAdmin is true');
         return true;
       } else {
+        alert('you hit the else condition');
         return false;
       }
     }

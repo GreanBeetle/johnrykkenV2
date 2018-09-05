@@ -7,6 +7,11 @@ import {
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { Article } from '../models/article.model';
+// ########## REMOVE THIS ##########
+import { UserAuthService } from '../user-auth.service';
+// ########## REMOVE THIS ##########
+
+
 
 @Component({
   selector: 'app-admin-article-list',
@@ -17,9 +22,15 @@ import { Article } from '../models/article.model';
 export class AdminArticleListComponent {
   articlesCollection: AngularFirestoreCollection<Article>;
   articles: Observable<Article[]>;
-
+  public get isAdmin(): boolean {
+    return this.userauth.isAdmin;
+  }
   constructor(private afs: AngularFirestore,
-              private router: Router) {
+              private router: Router,
+              // ########## REMOVE THIS ##########
+              private userauth: UserAuthService
+              // ########## REMOVE THIS ##########
+            ) {
     this.articlesCollection = this.afs.collection('articles');
     this.articles = this.articlesCollection.valueChanges();
   }
@@ -28,14 +39,24 @@ export class AdminArticleListComponent {
     this.router.navigate([`/article/${article.id}`]);
   }
 
+  // ########## REMOVE IF ELSE STATEMENT! ##########
   editArticle(article) {
-    this.router.navigate([`/article-edit/${article.id}`]);
+    if (this.isAdmin === true) {
+      this.router.navigate([`/article-edit/${article.id}`]);
+    } else {
+      alert('You must be an administrator to edit an article');
+    }
   }
 
+  // ########## REMOVE IF ELSE STATEMENT! ##########
   deleteArticle(article) {
-    if (confirm('Are you sure you want to delete this?')) {
-      const articleToDelete = this.articlesCollection.doc(article.id);
-      articleToDelete.delete();
+    if (this.isAdmin === true) {
+      if (confirm('Are you sure you want to delete this?')) {
+        const articleToDelete = this.articlesCollection.doc(article.id);
+        articleToDelete.delete();
+      }
+    } else {
+      alert('You must be an administrator to delete an article');
     }
   }
 
