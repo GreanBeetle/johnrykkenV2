@@ -6,6 +6,7 @@ export class Article {
     public date: string,
     public category: string,
     public content: string,
-    public keywords: string
+    public keywords: string,
+    public isFeature: boolean
   ) { }
 }

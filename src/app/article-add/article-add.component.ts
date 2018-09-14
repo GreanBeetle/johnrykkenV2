@@ -61,7 +61,8 @@ export class ArticleAddComponent {
           'date': date,
           'category': category,
           'content': content,
-          'keywords': keywords
+          'keywords': keywords,
+          'isFeature': false
         });
         this.showToast(message, 'success');
       }
