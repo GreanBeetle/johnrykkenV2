@@ -67,7 +67,18 @@ export class AdminArticleListComponent {
       payload.forEach( item => {
         const artID = item.payload.doc.data().id;
         const artTITLE = item.payload.doc.data().title;
-        alert('TITLE: ' + artTITLE + ' ID is: ' + artID);
+        const artToUpdate = this.articlesCollection.doc(`${artID}`);
+        if (artID === id) {
+          artToUpdate.update({
+            isFeature: true
+          });
+          alert(artTITLE + ' isFeature is TRUE!');
+        } else if (artID !== id) {
+          artToUpdate.update({
+            isFeature: false
+          });
+          alert(artTITLE + ' isFeature is FALSE!');
+        }
       });
     });
 
