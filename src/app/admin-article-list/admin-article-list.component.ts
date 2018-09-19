@@ -60,4 +60,31 @@ export class AdminArticleListComponent {
     }
   }
 
+  featureArticle(article) {
+    const id = article.id;
+    const articleArray = this.articlesCollection.snapshotChanges();
+    articleArray.subscribe( payload =>  {
+      payload.forEach( item => {
+        const artID = item.payload.doc.data().id;
+        const artTITLE = item.payload.doc.data().title;
+        alert('TITLE: ' + artTITLE + ' ID is: ' + artID);
+      });
+    });
+
+    // this.categories = this.categoryCollection.snapshotChanges().map((actions: any) => {
+    //   return actions.map(action => {
+    //     const data = action.payload.doc.data();
+    //     const key = action.payload.doc.id;
+    //     return {key, ...data};
+    //   });
+    // });
+    //
+    // this.articles.subscribe(payload => {
+    //     payload.forEach( payArticle => {
+    //       alert('FeatureArticle loop: ' + payArticle.id);
+    //     });
+    // });
+
+  }
+
 }
