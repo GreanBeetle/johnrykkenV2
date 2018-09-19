@@ -9,6 +9,7 @@
           <th class='categoryTitle'><b>Category</b></th>
           <th class='categoryTitle'><b>Edit</b></th>
           <th class='categoryTitle'><b>Delete</b></th>
+          <th class='categoryTitle'><b>Feature</b></th>
         </tr>
       </thead>
       <tbody>
@@ -33,6 +34,10 @@
             <td class="deleteCell"
                 (click)="deleteArticle(article)">
                 delete
+            </td>
+            <td class="featureCell"
+                (click)="featureArticle(article)">
+                &#9989;
             </td>
           </tr>
         </ng-container>
