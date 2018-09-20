@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreDocument,
@@ -20,10 +20,11 @@ import { UserAuthService } from '../user-auth.service';
   styleUrls: ['./admin-article-list.component.scss']
 })
 
-export class AdminArticleListComponent {
+export class AdminArticleListComponent implements OnInit {
   articlesCollection: AngularFirestoreCollection<Article>;
   articles: Observable<Article[]>;
   articleArray: Observable<Article[]>;
+  IDs: Array<any> = [];
   public get isAdmin(): boolean {
     return this.userauth.isAdmin;
   }
@@ -35,13 +36,13 @@ export class AdminArticleListComponent {
             ) {
     this.articlesCollection = this.afs.collection('articles');
     this.articles = this.articlesCollection.valueChanges();
-    this.articleArray = this.articlesCollection.snapshotChanges().pipe(
-      map(actions => actions.map(a => {
-        const data = a.payload.doc.data() as Article;
-        const id = a.payload.doc.id;
-        return { id, ...data };
-      }))
-    );
+    this.articlesCollection.snapshotChanges().forEach( a => {
+      a.forEach( item => {
+        const id = item.payload.doc.data().id;
+        this.IDs.push(id);
+      });
+    });
+
   }
 
   visitArticle(article) {
@@ -70,8 +71,23 @@ export class AdminArticleListComponent {
   }
 
   featureArticle(article) {
-    alert('clicked');
-
+    for (let id of this.IDs) {
+      const document = this.articlesCollection.doc(`${id}`);
+      const articleID = article.id;
+      if (id === articleID) {
+        document.update({
+          isFeature: true
+        });
+        console.log(`${id} is true`);
+      } else if (id !== articleID) {
+        document.update({
+          isFeature: false
+        });
+        console.log(`${id} is false`);
+      } else {
+        console.log('Error updating feature Article');
+      }
+    }
   }
 
   // featureArticle(article) {
@@ -94,5 +110,8 @@ export class AdminArticleListComponent {
   //     });
   //   });
   // }
+
+  ngOnInit() {
+  }
 
 }
