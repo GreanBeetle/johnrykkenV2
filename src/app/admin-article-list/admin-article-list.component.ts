@@ -7,6 +7,7 @@ import {
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { Article } from '../models/article.model';
+import { map, take } from 'rxjs/operators';
 // ########## REMOVE THIS ##########
 import { UserAuthService } from '../user-auth.service';
 // ########## REMOVE THIS ##########
@@ -61,24 +62,22 @@ export class AdminArticleListComponent {
   }
 
   featureArticle(article) {
-    const ID = article.id;
     const articleArray = this.articlesCollection.snapshotChanges();
-    articleArray.subscribe( payload =>  {
-      payload.forEach( item => {
+    articleArray.subscribe( subscribedArticle => {
+      subscribedArticle.forEach( item => {
+        const ID = article.id;
         const articleID = item.payload.doc.data().id;
-        const articleToUpdate = this.articlesCollection.doc(`${articleID}`);
-        if (articleID === ID) {
-          articleToUpdate.update({
+        if (ID === articleID) {
+          this.articlesCollection.doc(`${articleID}`).update({
             isFeature: true
           });
-        } else if (articleID !== ID) {
-          articleToUpdate.update({
+        } else {
+          this.articlesCollection.doc(`${articleID}`).update({
             isFeature: false
           });
         }
       });
     });
-
   }
 
 }
