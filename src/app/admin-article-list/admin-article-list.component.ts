@@ -23,6 +23,7 @@ import { UserAuthService } from '../user-auth.service';
 export class AdminArticleListComponent {
   articlesCollection: AngularFirestoreCollection<Article>;
   articles: Observable<Article[]>;
+  articleArray: Observable<Article[]>;
   public get isAdmin(): boolean {
     return this.userauth.isAdmin;
   }
@@ -34,6 +35,13 @@ export class AdminArticleListComponent {
             ) {
     this.articlesCollection = this.afs.collection('articles');
     this.articles = this.articlesCollection.valueChanges();
+    this.articleArray = this.articlesCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as Article;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
   }
 
   visitArticle(article) {
@@ -62,24 +70,29 @@ export class AdminArticleListComponent {
   }
 
   featureArticle(article) {
-    const articleArray = this.articlesCollection.snapshotChanges();
-    articleArray.subscribe( a => {
-      a.forEach( item => {
-        const ID = article.id;
-        const articleID = item.payload.doc.data().id;
-        const title = item.payload.doc.data().title;
-        if (ID === articleID) {
-          this.articlesCollection.doc(`${articleID}`).update({
-            isFeature: true
-          });
-        } else {
-          this.articlesCollection.doc(`${articleID}`).update({
-            isFeature: false
-          });
-        }
-        console.log(`${title} with ${articleID} has been updated`);
-      });
-    });
+    alert('clicked');
+
   }
+
+  // featureArticle(article) {
+  //   const articleArray = this.articlesCollection.snapshotChanges();
+  //   articleArray.subscribe( a => {
+  //     a.forEach( item => {
+  //       const ID = article.id;
+  //       const articleID = item.payload.doc.data().id;
+  //       const title = item.payload.doc.data().title;
+  //       if (ID === articleID) {
+  //         this.articlesCollection.doc(`${articleID}`).update({
+  //           isFeature: true
+  //         });
+  //       } else {
+  //         this.articlesCollection.doc(`${articleID}`).update({
+  //           isFeature: false
+  //         });
+  //       }
+  //       console.log(`${title} with ${articleID} has been updated`);
+  //     });
+  //   });
+  // }
 
 }
