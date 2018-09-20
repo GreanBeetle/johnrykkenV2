@@ -63,10 +63,11 @@ export class AdminArticleListComponent {
 
   featureArticle(article) {
     const articleArray = this.articlesCollection.snapshotChanges();
-    articleArray.subscribe( subscribedArticle => {
-      subscribedArticle.forEach( item => {
+    articleArray.subscribe( a => {
+      a.forEach( item => {
         const ID = article.id;
         const articleID = item.payload.doc.data().id;
+        const title = item.payload.doc.data().title;
         if (ID === articleID) {
           this.articlesCollection.doc(`${articleID}`).update({
             isFeature: true
@@ -76,6 +77,7 @@ export class AdminArticleListComponent {
             isFeature: false
           });
         }
+        console.log(`${title} with ${articleID} has been updated`);
       });
     });
   }
