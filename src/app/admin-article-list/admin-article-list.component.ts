@@ -61,40 +61,23 @@ export class AdminArticleListComponent {
   }
 
   featureArticle(article) {
-    const id = article.id;
+    const ID = article.id;
     const articleArray = this.articlesCollection.snapshotChanges();
     articleArray.subscribe( payload =>  {
       payload.forEach( item => {
-        const artID = item.payload.doc.data().id;
-        const artTITLE = item.payload.doc.data().title;
-        const artToUpdate = this.articlesCollection.doc(`${artID}`);
-        if (artID === id) {
-          artToUpdate.update({
+        const articleID = item.payload.doc.data().id;
+        const articleToUpdate = this.articlesCollection.doc(`${articleID}`);
+        if (articleID === ID) {
+          articleToUpdate.update({
             isFeature: true
           });
-          alert(artTITLE + ' isFeature is TRUE!');
-        } else if (artID !== id) {
-          artToUpdate.update({
+        } else if (articleID !== ID) {
+          articleToUpdate.update({
             isFeature: false
           });
-          alert(artTITLE + ' isFeature is FALSE!');
         }
       });
     });
-
-    // this.categories = this.categoryCollection.snapshotChanges().map((actions: any) => {
-    //   return actions.map(action => {
-    //     const data = action.payload.doc.data();
-    //     const key = action.payload.doc.id;
-    //     return {key, ...data};
-    //   });
-    // });
-    //
-    // this.articles.subscribe(payload => {
-    //     payload.forEach( payArticle => {
-    //       alert('FeatureArticle loop: ' + payArticle.id);
-    //     });
-    // });
 
   }
 
