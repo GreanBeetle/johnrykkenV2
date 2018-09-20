@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreDocument,
@@ -20,10 +20,9 @@ import { UserAuthService } from '../user-auth.service';
   styleUrls: ['./admin-article-list.component.scss']
 })
 
-export class AdminArticleListComponent implements OnInit {
+export class AdminArticleListComponent {
   articlesCollection: AngularFirestoreCollection<Article>;
   articles: Observable<Article[]>;
-  articleArray: Observable<Article[]>;
   IDs: Array<any> = [];
   public get isAdmin(): boolean {
     return this.userauth.isAdmin;
@@ -78,40 +77,14 @@ export class AdminArticleListComponent implements OnInit {
         document.update({
           isFeature: true
         });
-        console.log(`${id} is true`);
       } else if (id !== articleID) {
         document.update({
           isFeature: false
         });
-        console.log(`${id} is false`);
       } else {
         console.log('Error updating feature Article');
       }
     }
-  }
-
-  // featureArticle(article) {
-  //   const articleArray = this.articlesCollection.snapshotChanges();
-  //   articleArray.subscribe( a => {
-  //     a.forEach( item => {
-  //       const ID = article.id;
-  //       const articleID = item.payload.doc.data().id;
-  //       const title = item.payload.doc.data().title;
-  //       if (ID === articleID) {
-  //         this.articlesCollection.doc(`${articleID}`).update({
-  //           isFeature: true
-  //         });
-  //       } else {
-  //         this.articlesCollection.doc(`${articleID}`).update({
-  //           isFeature: false
-  //         });
-  //       }
-  //       console.log(`${title} with ${articleID} has been updated`);
-  //     });
-  //   });
-  // }
-
-  ngOnInit() {
   }
 
 }
