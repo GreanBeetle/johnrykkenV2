@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { Article } from '../models/article.model';
+import {
+  AngularFirestore,
+  AngularFirestoreDocument,
+  AngularFirestoreCollection
+} from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-crux-feature-article',
@@ -9,22 +15,33 @@ import { Router } from '@angular/router';
 })
 
 export class CruxFeatureArticleComponent implements OnInit {
-  articleId = '3mjniyJYpIm7KTkhVEis';
+  articlesCollection: AngularFirestoreCollection<Article>;
+  articles: Observable<Article[]>;
   featureArticle;
-  article;
   month: string;
   year: number;
   day: number;
 
   constructor(private afs: AngularFirestore, private router: Router) {
-    this.afs.doc(`articles/${this.articleId}`).ref.get().then((doc) => {
-      this.featureArticle = doc.data();
+    this.articlesCollection = this.afs.collection('articles');
+    this.articles = this.articlesCollection.valueChanges();
+    this.articlesCollection.snapshotChanges().forEach( a => {
+      a.forEach( item => {
+        const isFeature = item.payload.doc.data().isFeature;
+        if ( isFeature === true ) {
+          this.featureArticle = item.payload.doc.data();
+        }
+      });
     });
+
+    // this.afs.doc(`articles/${this.articleId}`).ref.get().then((doc) => {
+    //   this.featureArticle = doc.data();
+    // });
 
   }
 
-  visitFeatureArticle() {
-    this.router.navigate([`/article/${this.articleId}`]);
+  visitFeatureArticle(id) {
+    this.router.navigate([`/article/${id}`]);
   }
 
   ngOnInit () {

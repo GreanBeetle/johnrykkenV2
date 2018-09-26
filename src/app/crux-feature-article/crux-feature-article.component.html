@@ -8,9 +8,15 @@
     <span><h4><b> Feature Article:&nbsp;</b></h4></span>
     <span><h6></h6></span>
     <br>
-    
+    {{ featureArticle.title }}
     <br>
-    <a (click)="visitFeatureArticle()">View Article</a>
+    {{ featureArticle.id }}
+    <br>
+    {{ featureArticle.category }}
+    <br>
+    {{ featureArticle.content }}
+
+    <a (click)="visitFeatureArticle(featureArticle.id)">View Article</a>
 
 
   </div>
