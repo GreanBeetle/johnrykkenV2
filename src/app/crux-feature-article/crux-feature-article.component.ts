@@ -9,8 +9,9 @@ import { Router } from '@angular/router';
 })
 
 export class CruxFeatureArticleComponent implements OnInit {
-  articleId: string = '3mjniyJYpIm7KTkhVEis';
+  articleId = '3mjniyJYpIm7KTkhVEis';
   featureArticle;
+  article;
   month: string;
   year: number;
   day: number;
@@ -19,6 +20,7 @@ export class CruxFeatureArticleComponent implements OnInit {
     this.afs.doc(`articles/${this.articleId}`).ref.get().then((doc) => {
       this.featureArticle = doc.data();
     });
+
   }
 
   visitFeatureArticle() {
