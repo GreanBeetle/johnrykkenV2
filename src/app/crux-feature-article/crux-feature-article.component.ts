@@ -18,6 +18,7 @@ export class CruxFeatureArticleComponent implements OnInit {
   articlesCollection: AngularFirestoreCollection<Article>;
   articles: Observable<Article[]>;
   featureArticle;
+  archivedArticles: Array<any> = [];
   month: string;
   year: number;
   day: number;
@@ -30,6 +31,8 @@ export class CruxFeatureArticleComponent implements OnInit {
         const isFeature = item.payload.doc.data().isFeature;
         if ( isFeature === true ) {
           this.featureArticle = item.payload.doc.data();
+        } else {
+          this.archivedArticles.push(item.payload.doc.data());
         }
       });
     });
