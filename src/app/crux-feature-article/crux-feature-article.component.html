@@ -17,7 +17,15 @@
     {{ featureArticle.content }}
 
     <a (click)="visitFeatureArticle(featureArticle.id)">View Article</a>
-
+    <br>
+    <hr>
+    <h1>ARCHIVED ARTICLES HERE</h1>
+    <hr>
+    <ng-container *ngFor="let article of archivedArticles">
+      <h1>{{ article.title }}</h1>
+      <h1>{{ article.id }}</h1>
+      <br>
+    </ng-container>
 
   </div>
 </section>
