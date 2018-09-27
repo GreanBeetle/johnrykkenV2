@@ -33,11 +33,6 @@ export class CruxFeatureArticleComponent implements OnInit {
         }
       });
     });
-
-    // this.afs.doc(`articles/${this.articleId}`).ref.get().then((doc) => {
-    //   this.featureArticle = doc.data();
-    // });
-
   }
 
   visitFeatureArticle(id) {
