@@ -14,7 +14,19 @@ import {
 })
 
 export class CruxArchivedArticlesComponent {
+  articlesCollection: AngularFirestoreCollection<Article>;
+  archivedArticles: Array<any> = [];
 
-  constructor() { }
+  constructor(private afs: AngularFirestore, private router: Router) {
+    this.articlesCollection = this.afs.collection('articles');
+    this.articlesCollection.snapshotChanges().forEach( a => {
+      a.forEach( item => {
+        const isFeature = item.payload.doc.data().isFeature;
+        if ( isFeature !== true ) {
+          this.archivedArticles.push(item.payload.doc.data());
+        }
+      });
+    });
+  }
 
 }
