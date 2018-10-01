@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { Article } from '../models/article.model';
 import {
   AngularFirestore,
-  AngularFirestoreDocument,
   AngularFirestoreCollection
 } from 'angularfire2/firestore';
 
@@ -16,26 +14,18 @@ import {
 
 export class CruxFeatureArticleComponent implements OnInit {
   articlesCollection: AngularFirestoreCollection<Article>;
-  articles: Observable<Article[]>;
   featureArticle;
   month: string;
   year: number;
   day: number;
-  // MOVE TO OWN COMPONENT!!!!
-  archivedArticles: Array<any> = [];
-  // MOVE TO OWN COMPONENT!!!!
 
   constructor(private afs: AngularFirestore, private router: Router) {
     this.articlesCollection = this.afs.collection('articles');
-    this.articles = this.articlesCollection.valueChanges();
     this.articlesCollection.snapshotChanges().forEach( a => {
       a.forEach( item => {
         const isFeature = item.payload.doc.data().isFeature;
         if ( isFeature === true ) {
           this.featureArticle = item.payload.doc.data();
-        } else {
-          // MOVE TO OWN COMPONENT!!!!
-          this.archivedArticles.push(item.payload.doc.data());
         }
       });
     });
