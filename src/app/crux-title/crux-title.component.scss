@@ -1,33 +1,24 @@
 @import "../../variables.scss";
 
 .section {
-    text-align: center;
-
-    img {
-      max-height: 150px;
-    }
-
-    .title, .subtitle {
-      font-family: $font-nova-lite;
-      color: $extra-dark-gray;
-    }
-
     .title {
+      font-family: $font-nova-lite;
       font-size: 3.5em;
       font-weight: lighter;
+      color: $extra-dark-gray;
+      margin: 0px;
+      padding: 0px;
     }
 
-    .subtitle {
-      margin-bottom: 5px;
-      font-size: 2em;
+    h4 {
+      font-family: $font-nova-lite;
+      font-size: 1.5em;
+      color: $dark-gray;
     }
 
     .tagline {
       font-family: $font-raleway;
       color: $dark-gray;
-      font-size: 1.5em;
-      padding-left: 15%;
-      padding-right: 15%;
+      font-size: 1.2em;
     }
-
 }
