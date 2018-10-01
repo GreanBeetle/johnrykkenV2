@@ -27,6 +27,7 @@ export class AdminArticleListComponent {
   public get isAdmin(): boolean {
     return this.userauth.isAdmin;
   }
+
   constructor(private afs: AngularFirestore,
               private router: Router,
               // ########## REMOVE THIS ##########

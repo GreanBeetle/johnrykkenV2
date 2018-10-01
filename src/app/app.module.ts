@@ -55,6 +55,7 @@ import { ShareModule } from '@ngx-share/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ShareButtonsComponent } from './share-buttons/share-buttons.component';
 import { ShareButtonModule } from '@ngx-share/button';
+import { CruxArchivedArticlesComponent } from './crux-archived-articles/crux-archived-articles.component';
 // end share buttons
 library.add(fas);
 
@@ -99,7 +100,8 @@ export const firebaseConfig = {
     CruxTitleComponent,
     CruxFeatureArticleComponent,
     ArticleEditComponent,
-    ShareButtonsComponent
+    ShareButtonsComponent,
+    CruxArchivedArticlesComponent
   ],
   imports: [
     BrowserModule,
