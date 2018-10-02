@@ -50,7 +50,6 @@ import { CruxFeatureArticleComponent } from './crux-feature-article/crux-feature
 import { ArticleEditComponent } from './article-edit/article-edit.component';
 import { AuthGuardService } from './auth-guard.service';
 // share buttons
-// documentation at https://github.com/MurhafSousli/ngx-sharebuttons/wiki/Share-Button-Directive
 import { ShareModule } from '@ngx-share/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ShareButtonsComponent } from './share-buttons/share-buttons.component';
