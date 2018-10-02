@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
 .section {
-  background-image: url("/assets/img/crux-background.jpeg");
+  background-image: url("/assets/img/crux-title-woods.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -21,7 +21,7 @@
         h4 {
           font-family: $font-nova-lite;
           font-size: 1.5em;
-          color: $dark-gray;
+          color: #fff;
           margin-left: 15px;
         }
     }
@@ -38,7 +38,7 @@
         vertical-align: middle;
         .tagline {
           font-family: $font-raleway;
-          color: $dark-gray;
+          color: #fff;
           font-size: 1.2em;
         }
     }
