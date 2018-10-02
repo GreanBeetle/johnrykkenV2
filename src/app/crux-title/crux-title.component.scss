@@ -16,7 +16,7 @@
           font-family: $font-nova-lite;
           font-size: 3.5em;
           font-weight: lighter;
-          color: $extra-dark-gray;
+          color: 		#101010;
         }
         h4 {
           font-family: $font-nova-lite;
@@ -43,12 +43,14 @@
         }
     }
     .shareSpan {
-        left: 25px;
+        float: left;
+        margin-left: 150px;
         p {
           display: inline-block;
           font-family: $font-raleway;
           font-size: .8em;
           margin-right: 25px;
+          color: $light-gray;
         }
         .shareButtons {
           display: inline-block;
