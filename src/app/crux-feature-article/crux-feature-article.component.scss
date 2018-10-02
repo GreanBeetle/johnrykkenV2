@@ -1,14 +1,15 @@
 @import "../../variables.scss";
 
-.section {
+.container {
+    padding-left: 15%;
+    padding-right: 15%;
+    .subtitle {
+      font-size: 2em;
+      font-family: $font-raleway;
+      margin: 0;
+    }
     .date {
       font-family: $font-raleway;
+      margin: 0;
     }
-
-    .container {
-      text-align: justify;
-      padding-left: 15%;
-      padding-right: 15%;
-    }
-
 }

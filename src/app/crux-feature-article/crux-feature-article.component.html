@@ -1,24 +1,17 @@
-<section class="section">
+<section class="section is-medium">
   <div class="container">
-    <p>
-      <span class="date">
-        <b>{{ day }} {{ month }}, {{ year }}</b>
-      </span>
-    </p>
-    <span><h4><b> Feature Article:&nbsp;</b></h4></span>
-    <span><h6></h6></span>
-    <br>
-    {{ featureArticle.title }}
-    <br>
-    {{ featureArticle.id }}
-    <br>
-    {{ featureArticle.category }}
-    <br>
-    {{ featureArticle.content }}
-
-    <a (click)="visitFeatureArticle(featureArticle.id)">View Article</a>
-
-    
-
+    <p class="date"><b>Feature Article  {{ month }} {{ day }}, {{ year }}</b></p>
+    <div class="columns">
+      <div class="column is-one-third">
+        {{ featureArticle.title }}
+        {{ featureArticle.category }}
+        {{ featureArticle.subtitle }}
+        <p>published {{ featureArticle.date }}</p>
+        <a (click)="visitFeatureArticle(featureArticle.id)">Read</a>
+      </div>
+      <div class="column imageColumn">
+        <!-- leave blank -->
+      </div>
+    </div>
   </div>
 </section>
