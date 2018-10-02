@@ -1,24 +1,42 @@
 @import "../../variables.scss";
 
 .section {
-    .title {
-      font-family: $font-nova-lite;
-      font-size: 3.5em;
-      font-weight: lighter;
-      color: $extra-dark-gray;
-      margin: 0px;
-      padding: 0px;
-    }
+    .container {
+        text-align: center;
 
-    h4 {
-      font-family: $font-nova-lite;
-      font-size: 1.5em;
-      color: $dark-gray;
-    }
+        .titleContainer {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 25px;
+            .title {
+              font-family: $font-nova-lite;
+              font-size: 3.5em;
+              font-weight: lighter;
+              color: $extra-dark-gray;
+            }
+            h4 {
+              font-family: $font-nova-lite;
+              font-size: 1.5em;
+              color: $dark-gray;
+            }
+        }
 
-    .tagline {
-      font-family: $font-raleway;
-      color: $dark-gray;
-      font-size: 1.2em;
+        .verticalLine {
+          display: inline-block;
+          vertical-align: middle;
+          border-left: 1.5px solid $light-gray;
+          height: 100px;
+        }
+
+        .taglineContainer {
+            display: inline-block;
+            margin: 25px;
+            vertical-align: middle;
+            .tagline {
+              font-family: $font-raleway;
+              color: $dark-gray;
+              font-size: 1.2em;
+            }
+        }
     }
 }
