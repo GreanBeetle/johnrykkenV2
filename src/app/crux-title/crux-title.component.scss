@@ -1,45 +1,50 @@
 @import "../../variables.scss";
 
-.section {
-    .container {
-        text-align: center;
+.container {
+    text-align: center;
 
-        .titleContainer {
-            display: inline-block;
-            vertical-align: middle;
-            margin: 25px;
-            .title {
-              font-family: $font-nova-lite;
-              font-size: 3.5em;
-              font-weight: lighter;
-              color: $extra-dark-gray;
-            }
-            h4 {
-              font-family: $font-nova-lite;
-              font-size: 1.5em;
-              color: $dark-gray;
-            }
+    .titleContainer {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 25px;
+        .title {
+          font-family: $font-nova-lite;
+          font-size: 3.5em;
+          font-weight: lighter;
+          color: $extra-dark-gray;
         }
-
-        .verticalLine {
-          display: inline-block;
-          vertical-align: middle;
-          border-left: 1.5px solid $light-gray;
-          height: 100px;
-        }
-
-        .taglineContainer {
-            display: inline-block;
-            margin: 25px;
-            vertical-align: middle;
-            .tagline {
-              font-family: $font-raleway;
-              color: $dark-gray;
-              font-size: 1.2em;
-            }
+        h4 {
+          font-family: $font-nova-lite;
+          font-size: 1.5em;
+          color: $dark-gray;
+          margin-left: 15px;
         }
     }
+
+    .verticalLine {
+      display: inline-block;
+      vertical-align: middle;
+      border-left: 1.5px solid $light-gray;
+      height: 125px;
+      margin: 25px;
+    }
+
+    .taglineContainer {
+        display: inline-block;
+        margin: 25px;
+        vertical-align: middle;
+        .tagline {
+          font-family: $font-raleway;
+          color: $dark-gray;
+          font-size: 1.2em;
+        }
+    }
+
+    .shareButtons {
+      max-width: 200px;
+    }
 }
+
 
 @media only screen and (min-width: 0px) and (max-width: 950px) {
   .verticalLine {
