@@ -42,27 +42,51 @@
           font-size: 1.2em;
         }
     }
-    .shareSpan {
-        float: left;
-        margin-left: 150px;
-        p {
-          display: inline-block;
-          font-family: $font-raleway;
-          font-size: .8em;
-          margin-right: 25px;
-          color: $light-gray;
-        }
-        .shareButtons {
-          display: inline-block;
-          max-width: 200px;
-        }
-    }
 }
 
+.shareSpan {
+    margin-left: 25%;
+    p {
+      display: inline-block;
+      font-family: $font-raleway;
+      font-size: .8em;
+      margin-right: 25px;
+      color: $light-gray;
+    }
+    .shareButtons {
+      display: inline-block;
+      max-width: 200px;
+    }
+}
 
 
 @media only screen and (min-width: 0px) and (max-width: 975px) {
   .verticalLine {
     display: none !important;
+  }
+  #shareThisPage, .shareButtons {
+    display: none !important;
+  }
+}
+
+// share button media queries
+@media only screen and (min-width: 976px) and (max-width: 1024px) {
+  .shareSpan {
+    margin-left: 10%;
+  }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1199px) {
+  .shareSpan {
+    margin-left: 15%;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .shareSpan {
+    margin-left: 18%;
+  }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .shareSpan {
+    margin-left: 23%;
   }
 }
