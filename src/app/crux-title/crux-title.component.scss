@@ -1,10 +1,14 @@
 @import "../../variables.scss";
 
-.titleSection {
-    .container {
-      text-align: center;
+.section {
+  background-image: url("/assets/img/crux-background.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-      .titleContainer {
+.container {
+    text-align: center;
+    .titleContainer {
         display: inline-block;
         vertical-align: middle;
         margin: 25px;
@@ -20,17 +24,15 @@
           color: $dark-gray;
           margin-left: 15px;
         }
-      }
-
-      .verticalLine {
+    }
+    .verticalLine {
         display: inline-block;
         vertical-align: middle;
         border-left: 1.5px solid $light-gray;
         height: 125px;
         margin: 25px;
-      }
-
-      .taglineContainer {
+    }
+    .taglineContainer {
         display: inline-block;
         margin: 25px;
         vertical-align: middle;
@@ -39,15 +41,25 @@
           color: $dark-gray;
           font-size: 1.2em;
         }
-      }  
+    }
+    .shareSpan {
+        left: 25px;
+        p {
+          display: inline-block;
+          font-family: $font-raleway;
+          font-size: .8em;
+          margin-right: 25px;
+        }
+        .shareButtons {
+          display: inline-block;
+          max-width: 200px;
+        }
     }
 }
 
-.shareButtons {
-  max-width: 200px;
-}
 
-@media only screen and (min-width: 0px) and (max-width: 950px) {
+
+@media only screen and (min-width: 0px) and (max-width: 975px) {
   .verticalLine {
     display: none !important;
   }
