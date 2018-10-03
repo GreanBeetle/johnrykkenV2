@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$johns-theme-primary: mat-palette($mat-gray);
+$johns-theme-accent: mat-palette($mat-red, A200, A100, A400);
+
+$johns-theme: mat-dark-theme($johns-theme-primary, $johns-theme-accent);
+
+@include angular-material-theme($johns-theme);
