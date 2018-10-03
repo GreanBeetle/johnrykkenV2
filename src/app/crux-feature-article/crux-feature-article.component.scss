@@ -6,11 +6,13 @@
     .date {
       font-family: $font-raleway;
       margin: 0;
+      font-size: 1.3em;
     }
     .columns {
+      min-height: 300px;
         .imageColumn {
           background-image: url("/assets/img/feature-article-image.jpeg");
-          background-size: contain;
+          background-size: cover;
           background-repeat: no-repeat;
         }
     }
