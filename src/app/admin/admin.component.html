@@ -1,15 +1,12 @@
 <section class="section is-medium">
   <div class="container">
-    <div class="tabs">
-  <ul>
-    <li class="is-active"><a>Pictures</a></li>
-    <li><a>Music</a></li>
-
-  </ul>
-</div>
-    <app-article-add></app-article-add>
+    <mat-tab-group>
+      <mat-tab label="Add Article">
+        <app-admin-article-list></app-admin-article-list>
+      </mat-tab>
+      <mat-tab label="Articles">
+        <app-article-add></app-article-add>
+      </mat-tab>
+    </mat-tab-group>
   </div>
-</section>
-<section class="section">
-  <app-admin-article-list></app-admin-article-list>
 </section>
