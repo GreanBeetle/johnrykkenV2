@@ -1,5 +1,6 @@
 @import '~@ngx-share/button/styles/share-buttons.css';
 @import '~@ngx-share/button/styles/themes/circles/circles-light-theme.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 @font-face {
   font-family: novacento-norm;
