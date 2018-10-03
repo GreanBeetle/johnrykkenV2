@@ -42,9 +42,9 @@
 
 @media only screen and (min-width: 0px) and (max-width: 799px) {
   .articleImage {
-    display: none;
+    display: none !important;
   }
   .box {
-    padding: 25px;
+    padding: 25px !important;
   }
 }
