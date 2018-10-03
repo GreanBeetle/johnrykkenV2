@@ -1,0 +1,12 @@
+@import "../../variables.scss";
+
+.container {
+    padding-left: 15%;
+    padding-right: 15%;
+    .archivesTitle {
+      font-family: $font-raleway;
+      margin: 0;
+      font-size: 1.3em;
+      color: black;
+    }
+}
