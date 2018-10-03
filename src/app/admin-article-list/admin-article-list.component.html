@@ -1,52 +1,50 @@
-<section class="section">
-  <div class="container">
-
-    <table class="table is-striped is-narrow is-hoverable is-fullwidth">
-      <thead>
+<div class="box">
+  <p class="articlesTitle">a&nbsp;r&nbsp;t&nbsp;i&nbsp;c&nbsp;l&nbsp;e&nbsp;s</p>
+  <br>
+  <table class="table is-striped is-narrow is-hoverable">
+    <thead>
+      <tr>
+        <th class='categoryTitle'><b>Title</b></th>
+        <th class='categoryTitle'><b>Date</b></th>
+        <th class='categoryTitle'><b>Category</b></th>
+        <th class='categoryTitle'><b>Edit</b></th>
+        <th class='categoryTitle'><b>Delete</b></th>
+        <th class='categoryTitle'><b>Feature</b></th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let article of articles | async">
         <tr>
-          <th class='categoryTitle'><b>Title</b></th>
-          <th class='categoryTitle'><b>Date</b></th>
-          <th class='categoryTitle'><b>Category</b></th>
-          <th class='categoryTitle'><b>Edit</b></th>
-          <th class='categoryTitle'><b>Delete</b></th>
-          <th class='categoryTitle'><b>Feature</b></th>
+          <th class="titleCell"
+              (click)="visitArticle(article)">
+              {{ article.title }}
+          </th>
+          <td class="dateCell"
+              (click)="visitArticle(article)">
+              {{ article.date }}
+          </td>
+          <td class="categoryCell"
+              (click)="visitArticle(article)">
+              {{ article.category }}
+          </td>
+          <td class="editCell"
+              (click)="editArticle(article)" >
+              edit
+          </td>
+          <td class="deleteCell"
+              (click)="deleteArticle(article)">
+              delete
+          </td>
+          <td class="featureCell" (click)="featureArticle(article)">
+            <ng-container *ngIf="article.isFeature">
+              <span class="greenCheckmark">&#10004;</span>
+            </ng-container>
+            <ng-container *ngIf="!article.isFeature">
+              <span >&#10004;</span>
+            </ng-container>
+          </td>
         </tr>
-      </thead>
-      <tbody>
-        <ng-container *ngFor="let article of articles | async">
-          <tr>
-            <th class="titleCell"
-                (click)="visitArticle(article)">
-                {{ article.title }}
-            </th>
-            <td class="dateCell"
-                (click)="visitArticle(article)">
-                {{ article.date }}
-            </td>
-            <td class="categoryCell"
-                (click)="visitArticle(article)">
-                {{ article.category }}
-            </td>
-            <td class="editCell"
-                (click)="editArticle(article)" >
-                edit
-            </td>
-            <td class="deleteCell"
-                (click)="deleteArticle(article)">
-                delete
-            </td>
-            <td class="featureCell" (click)="featureArticle(article)">
-              <ng-container *ngIf="article.isFeature">
-                <span class="greenCheckmark">&#10004;</span>
-              </ng-container>
-              <ng-container *ngIf="!article.isFeature">
-                <span >&#10004;</span>
-              </ng-container>
-            </td>
-          </tr>
-        </ng-container>
-      </tbody>
-    </table>
-
-  </div>
-</section>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
