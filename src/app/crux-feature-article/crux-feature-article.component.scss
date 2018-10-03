@@ -9,12 +9,29 @@
       font-size: 1.3em;
     }
     .columns {
-      height: 300px;
-        .column {
-            vertical-align: middle;
+        min-height: 300px;
+        border-radius: 3px;
+        .articleColumn {
+            padding-right: 5%;
+            padding-top: 0px !important;
+            text-align: justify;
+            p {
+              font-family: $font-raleway;
+            }
+            .articleTitle {
+              font-size: 1.8em;
+              color: $extra-dark-gray;
+            }
+            .publishDate, .category {
+              color: $dark-gray;
+              font-size: .9em;
+            }
+            .articleSubtitle, .readOn {
+              font-size: 1.1em;
+            }
         }
         .imageColumn {
-          background-image: url("/assets/img/feature-article-image.jpeg");
+          background-image: url("/assets/img/dom-cathedral.jpeg");
           background-size: cover;
           background-repeat: no-repeat;
         }
