@@ -1,27 +1,26 @@
 @import "../../variables.scss";
 
 .toast {
-  margin-top: 100px;
+  z-index: 500 !important;
 }
 
-section {
-    .container {
-        max-width: 600px;
-        text-align: center;
-        .title {
-          font-family: $font-nova-lite;
-          font-size: 2em;
-        }
-        .label {
-          font-family: $font-nova-lite;
-          font-size: 1em;
-        }
-        ::placeholder, option, select {
-          font-family: $font-raleway;
-          opacity: 1 !important;
-        }
-        button {
-          font-family: $font-nova-lite;
-        }
+.box {
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+    .addArticleTitle {
+      font-size: 2.5em;
+      font-family: $font-nova-lite;
+    }
+    .label {
+      font-family: $font-nova-lite;
+      font-size: 1em;
+    }
+    ::placeholder, option, select {
+      font-family: $font-raleway;
+      opacity: 1 !important;
+    }
+    button {
+      font-family: $font-nova-lite;
     }
 }
