@@ -8,8 +8,14 @@
           <img src="assets/img/compsunglasses.png">
         </div>
         <div class="articleContent">
-          <h1>{{ article.title }}</h1>
-          <h1>{{ article.id }}</h1>
+          <p class="articleTitle">{{ article.title }}</p>
+          <p class="dateAndCategory">
+            <span class="articleDate"><i>Published {{ article.date }}</i></span>
+             &nbsp;&nbsp;|&nbsp;&nbsp; {{ article.category }}
+          </p>
+          
+          <p class="articleSubtitle">{{ article.subtitle }}</p>
+
         </div>
       </div>
       <br>

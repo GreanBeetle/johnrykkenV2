@@ -18,10 +18,33 @@
           display: inline-block;
         }
         img {
-          max-height: 150px;
+          height: 150px;
         }
-
+        .articleContent {
+            padding-left: 40px;
+            p, span {
+              font-family: $font-raleway;
+            }
+            .dateAndCategory {
+              color: $dark-gray;
+              font-size: .8em;
+            }
+            .articleTitle {
+              color: black;
+              font-size: 1.3em;
+            }
+            .articleSubtitle {
+              margin-top: 10px;
+            }
+        }
     }
+}
 
-
+@media only screen and (min-width: 0px) and (max-width: 799px) {
+  .articleImage {
+    display: none;
+  }
+  .box {
+    padding: 25px;
+  }
 }
