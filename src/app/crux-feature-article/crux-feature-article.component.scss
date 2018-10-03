@@ -3,13 +3,15 @@
 .container {
     padding-left: 15%;
     padding-right: 15%;
-    .subtitle {
-      font-size: 2em;
-      font-family: $font-raleway;
-      margin: 0;
-    }
     .date {
       font-family: $font-raleway;
       margin: 0;
+    }
+    .columns {
+        .imageColumn {
+          background-image: url("/assets/img/feature-article-image.jpeg");
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
     }
 }
