@@ -4,10 +4,10 @@
     padding-left: 15%;
     padding-right: 15%;
     .archivesTitle {
-      font-family: $font-raleway;
-      margin: 0;
-      font-size: 1.3em;
-      color: black;
+        font-family: $font-raleway;
+        margin: 0;
+        font-size: 1.3em;
+        color: black;
     }
     .box {
         border-radius: 0px;
@@ -15,26 +15,26 @@
         display: flex;
         align-items: center;
         .articleImage, .articleContent {
-          display: inline-block;
+            display: inline-block;
         }
         img {
-          height: 150px;
+            height: 150px;
         }
         .articleContent {
             padding-left: 40px;
             p, span {
-              font-family: $font-raleway;
+                font-family: $font-raleway;
             }
             .dateAndCategory {
-              color: $dark-gray;
-              font-size: .8em;
+                color: $dark-gray;
+                font-size: .8em;
             }
             .articleTitle {
-              color: black;
-              font-size: 1.3em;
+                color: black;
+                font-size: 1.3em;
             }
             .articleSubtitle {
-              margin-top: 10px;
+                margin-top: 10px;
             }
         }
     }
