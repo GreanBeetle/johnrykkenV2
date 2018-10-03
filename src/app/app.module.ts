@@ -50,7 +50,6 @@ import { UserAuthService } from './user-auth.service';
 import { CruxFeatureArticleComponent } from './crux-feature-article/crux-feature-article.component';
 import { ArticleEditComponent } from './article-edit/article-edit.component';
 import { AuthGuardService } from './auth-guard.service';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // share buttons
 import { ShareModule } from '@ngx-share/core';
 import { HttpClientModule } from '@angular/common/http';
