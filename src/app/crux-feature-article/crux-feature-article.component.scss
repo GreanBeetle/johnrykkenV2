@@ -9,7 +9,10 @@
       font-size: 1.3em;
     }
     .columns {
-      min-height: 300px;
+      height: 300px;
+        .column {
+            vertical-align: middle;
+        }
         .imageColumn {
           background-image: url("/assets/img/feature-article-image.jpeg");
           background-size: cover;
