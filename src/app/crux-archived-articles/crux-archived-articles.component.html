@@ -3,9 +3,18 @@
     <p class="archivesTitle">Archives</p>
     <br>
     <ng-container *ngFor="let article of archivedArticles">
-      <h1>{{ article.title }}</h1>
-      <h1>{{ article.id }}</h1>
-      <br>
+      <div class="box">
+        <article class="media">
+          <div class="media-left">
+            <img src="assets/img/under_construction.png" style="max-height:100px;">
+          </div>
+          <div class="media-content">
+            <h1>{{ article.title }}</h1>
+            <h1>{{ article.id }}</h1>
+          </div>
+        </article>
+      </div>
+
     </ng-container>
   </div>
 </section>
