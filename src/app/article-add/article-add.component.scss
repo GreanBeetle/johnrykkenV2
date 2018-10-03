@@ -7,25 +7,21 @@
 section {
     .container {
         max-width: 600px;
-
+        text-align: center;
         .title {
           font-family: $font-nova-lite;
           font-size: 2em;
         }
-
         .label {
           font-family: $font-nova-lite;
           font-size: 1em;
         }
-
         ::placeholder, option, select {
           font-family: $font-raleway;
           opacity: 1 !important;
         }
-
         button {
           font-family: $font-nova-lite;
         }
-
     }
 }
