@@ -10,6 +10,18 @@
       color: black;
     }
     .box {
-      border-radius: 0px;
+        border-radius: 0px;
+        padding: 0px;
+        display: flex;
+        align-items: center;
+        .articleImage, .articleContent {
+          display: inline-block;
+        }
+        img {
+          max-height: 150px;
+        }
+
     }
+
+
 }
