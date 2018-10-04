@@ -2,8 +2,20 @@
   <div class="card">
     <h1 class="title">Login</h1>
     <form>
-      <input type="email" placeholder="&#61447; email" #email><br><br>
-      <input type="password" placeholder="password" #password><br><br>
+      <div class="control field-body has-icons-left">
+        <input class="input" placeholder="email" #email>
+        <span class="icon is-small is-left">
+          <fa-icon icon="user"></fa-icon>
+        </span>
+      </div>
+      <br><br>
+      <div class="control field-body has-icons-left">
+        <input type="password" placeholder="password" #password>
+        <span class="icon is-small is-left">
+          <fa-icon icon="lock"></fa-icon>
+        </span>
+      </div>
+      <br><br>
       <a class="button is-black"
          (click)="login(email.value, password.value)">
          login
