@@ -3,8 +3,8 @@
 .box {
     text-align: center;
     .articlesTitle {
-      font-size: 2.5em;
-      font-family: $font-nova-lite;
+        font-size: 2.5em;
+        font-family: $font-nova-lite;
     }
     .table {
         margin: 0 auto;
@@ -12,27 +12,22 @@
           font-family: $font-nova-norm;
           font-weight: 400 !important;
         }
-
         td, .titleCell, td:hover, .titleCell:hover {
           font-family: $font-raleway;
           cursor: pointer;
         }
-
         .deleteCell, .deleteCell:hover {
           color: #E5001C;
           cursor: pointer;
         }
-
         .editCell, .editCell:hover {
           color: #00DCB4;
           cursor: pointer;
         }
-
         .featureCell, .featureCell:hover {
           text-align: center;
           cursor: pointer;
         }
-
         .greenCheckmark {
           color: #55efc4;
         }

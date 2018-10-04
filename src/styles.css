@@ -21,8 +21,8 @@ body { margin: 0; font-family: 'Raleway', sans-serif; }
 
 /* angular material styling */
 .mat-tab-label-content {
-  font-family: 'novacento-lite' !important;
-  font-size: 1.2em !important;
+  font-family: 'novacento-norm' !important;
+  font-size: 1.3em !important;
   color: #000000 !important;
 }
 /* angular material styling */
