@@ -3,8 +3,11 @@
 .section {
     height: 100% !important;
     min-height: 100% !important;
-    background-color: #fff;
+    // background-color: #fff;
     text-align: center;
+    background-image: url("/assets/img/blurred-lights.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
 
     .title {
       font-family: $font-nova-lite;
