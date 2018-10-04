@@ -1,17 +1,31 @@
 <p-toast position="top-left"></p-toast>
 <section class="section is-small">
   <div class="card">
-    <h1 class="title">Sign up</h1>
+    <p class="signupTitle">sign up</p><br>
     <form>
-      <input type="text" placeholder="username" #displayName><br><br>
-      <input type="email" placeholder="email" #email><br><br>
-      <input type="password" placeholder="password" #password><br><br>
-      <a class="button is-black"
-         (click)="signup(displayName.value, email.value, password.value)">
-         sign up
+      <div class="control field-body has-icons-left">
+        <input class="input" type="text" placeholder="username" #displayName>
+        <span class="icon is-small is-left">
+          <fa-icon icon="id-badge"></fa-icon>
+        </span>
+      </div><br>
+      <div class="control field-body has-icons-left">
+        <input class="input" type="email" placeholder="email" #email>
+        <span class="icon is-small is-left">
+          <fa-icon icon="envelope"></fa-icon>
+        </span>
+      </div><br>
+      <div class="control field-body has-icons-left">
+        <input class="input" type="password" placeholder="password" #password>
+        <span class="icon is-small is-left">
+          <fa-icon icon="lock"></fa-icon>
+        </span>
+      </div><br>
+      <a class="button is-black" (click)="signup(displayName.value, email.value, password.value)">
+        sign up
       </a>
     </form>
     <br>
-    <small>Already have an account?&nbsp;<span routerLink="/login" class="login">Log in</span></small>
+    <small>Have an account?&nbsp;<span routerLink="/login" class="login">Log in</span></small>
   </div>
 </section>
