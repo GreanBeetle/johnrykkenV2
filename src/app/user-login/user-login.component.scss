@@ -10,7 +10,7 @@
     .loginTitle {
         font-family: $font-raleway;
         font-size: 1.3em;
-        color: #000;
+        color: #fff;
         font-weight: lighter;
     }
     .card {
@@ -20,7 +20,7 @@
         background-color: $campfire;
         padding: 20px;
         margin-top: 10%;
-        box-shadow: 2px 2px 2px $dark-gray;
+        box-shadow: 2px 2px 2px #262626;
         input {
           padding: 5px;
           text-align: center;
@@ -31,6 +31,7 @@
           border-radius: 2px;
           font-family: $font-raleway;
           padding: 5px;
+          background-color: $campfire-red;
         }
         small {
           font-family: $font-raleway;
