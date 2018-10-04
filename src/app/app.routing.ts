@@ -18,9 +18,10 @@ const appRoutes: Routes = [
   {
     path: 'crux', component: CruxComponent
   },
-  {
-    path: 'code', component: CodeComponent
-  },
+  // removed until code component is complete
+  // {
+  //   path: 'code', component: CodeComponent
+  // },
   {
     path: 'portfolio', component: PortfolioComponent
   },

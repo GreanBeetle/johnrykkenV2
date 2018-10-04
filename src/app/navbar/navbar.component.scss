@@ -47,42 +47,33 @@ a:hover, .authItem:hover {
 
 // mobile menu and sideBar
 @media only screen and (min-width: 0px) and (max-width: 1088px)  {
-
   .mobile {
     display: block;
-
     .burger-icon {
       max-height: 30px;
       margin-left: 25px;
     }
-
     .w3-sidebar {
       top: 0px !important;
       z-index: 40;
       background-color: $dark-gray;
     }
-
     .w3-bar-item:hover {
       background-color: $light-gray !important;
     }
-
     a:hover {
       color: #000 !important;
     }
-
     button {
       height: 52px;
     }
-
     .signupLink:hover, .loginLink:hover {
       color: $blue !important;
     }
   }
-
   .mainNavbar {
     display: none;
   }
-
 }
 
 @media only screen and (min-width: 1089px) {
@@ -100,7 +91,13 @@ a:hover, .authItem:hover {
   }
 }
 
-
 #adminLink {
   color: #E5001C !important;
+}
+
+.cruxLink {
+  color: $blue-green;
+}
+.cruxLink:hover {
+  color: $blue;
 }
