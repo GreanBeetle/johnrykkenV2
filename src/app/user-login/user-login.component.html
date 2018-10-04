@@ -27,20 +27,24 @@
   </div>
 </section>
 
+<!-- modal window -->
 <div [class]="isActive">
   <div class="modal-background">
     <p-toast position="top-left"></p-toast>
   </div>
   <div class="modal-content">
     <div class="card resetPasswordCard">
-      <p>Enter your email address to reset password</p>
+      <p>Enter your email address</p>
       <br>
       <form>
-        <input type="email"
-               placeholder="email address"
-               #resetEmail>
-        <br><br>
-        <a class="button is-black"
+        <div class="control field-body has-icons-left">
+          <input class="input" type="email" placeholder="email" #resetEmail>
+          <span class="icon is-small is-left">
+            <fa-icon icon="envelope"></fa-icon>
+          </span>
+        </div>
+        <br>
+        <a class="button"
            (click)="sendPasswordResetEmail(resetEmail.value)" (click)="showToast(resetEmail.value)">
            reset
         </a>

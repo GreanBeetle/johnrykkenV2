@@ -21,10 +21,8 @@ export class AuthGuardService implements CanActivate {
 
     canActivate(): boolean {
       if (this.userauth.isAdmin === true) {
-        alert('userauth isAdmin is true');
         return true;
       } else {
-        alert('you hit the else condition');
         return false;
       }
     }

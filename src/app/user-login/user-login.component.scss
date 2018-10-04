@@ -60,34 +60,40 @@
 }
 
 // reset password modal window
-
 .modal-content {
-  text-align: center;
-}
-
-.resetPasswordCard {
-    max-width: 300px;
-    padding: 20px;
-    margin: 0 auto;
-    background-color: #fff;
     text-align: center;
-
-    p {
-      font-family: $font-raleway;
+    .resetPasswordCard {
+        border-radius: 5px;
+        max-width: 300px;
+        padding: 20px;
+        margin: 0 auto;
+        background-color: #000;
+        text-align: center;
+        p {
+          font-family: $font-raleway;
+          color: #fff;
+        }
+        .control {
+            text-align: center;
+            input {
+              padding: 5px;
+              text-align: center;
+              font-family: $font-raleway;
+            }
+            ::placeholder {
+              font-family: $font-raleway;
+              color: $extra-dark-gray;
+            }
+        }
+        .button {
+            font-family: $font-raleway;
+            width: 100%;
+            background-color: $campfire-red;
+            color: #fff;
+            border: none;
+        }
     }
-
-    input {
-      width: 200px;
-      padding: 5px;
-      text-align: center;
-    }
-
-    ::placeholder {
-      font-family: $font-raleway;
-    }
-
-    .button {
-      min-width: 200px;
-      font-family: $font-nova-norm;
-    }
+}
+.modal-close:hover {
+  background-color: $campfire-red !important;
 }
