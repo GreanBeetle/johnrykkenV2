@@ -44,7 +44,9 @@
 
   <!-- hidden mobile sidebar -->
   <div class="w3-sidebar w3-bar-block" id="mySidebar" *ngIf="showMenu">
-    <button (click)="toggleMenu()" class="w3-bar-item w3-large">close &times;</button>
+    <button (click)="toggleMenu()" class="w3-bar-item w3-large">
+      <span>close &times;</span>
+    </button>
     <a *ngIf="loggedIn" class="w3-bar-item w3-button">
       {{ username }} <span (click)="logout()">&nbsp;&nbsp;logout</span>
     </a>
