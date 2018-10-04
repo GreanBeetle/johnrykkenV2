@@ -45,17 +45,29 @@
   <!-- hidden mobile sidebar -->
   <div class="w3-sidebar w3-bar-block" id="mySidebar" *ngIf="showMenu">
     <button (click)="toggleMenu()" class="w3-bar-item w3-large">close &times;</button>
-    <a *ngIf="loggedIn" class="w3-bar-item w3-button"> {{ username }} <span (click)="logout()">&nbsp;&nbsp;logout</span></a>
-    <a *ngIf="!loggedIn" class="w3-bar-item w3-button">
-      <span routerLink="login" class="loginLink">login</span>
-      or
-      <span routerLink="signup" class="signupLink">sign up</span>
+    <a *ngIf="loggedIn" class="w3-bar-item w3-button">
+      {{ username }} <span (click)="logout()">&nbsp;&nbsp;logout</span>
     </a>
-    <a routerLink="/" class="w3-bar-item w3-button">home</a>
+    <a *ngIf="!loggedIn" class="w3-bar-item w3-button">
+      <span routerLink="login" class="loginLink" (click)="toggleMenu()">
+        login
+      </span>
+      <span>or</span>
+      <span routerLink="signup" class="signupLink" (click)="toggleMenu()">
+        sign up
+      </span>
+    </a>
+    <a routerLink="/" class="w3-bar-item w3-button" (click)="toggleMenu()">
+      home
+    </a>
     <!-- removed until code component is complete -->
     <!-- <a routerLink="/code" class="w3-bar-item w3-button">&lt;&#47;code&#62;</a> -->
-    <a routerLink="/crux" class="w3-bar-item w3-button cruxLink">&lt;&#47;blog&#62;</a>
-    <a routerLink="/portfolio" class="w3-bar-item w3-button">portfolio</a>
+    <a routerLink="/crux" class="w3-bar-item w3-button cruxLink"  (click)="toggleMenu()">
+      &lt;&#47;blog&#62;
+    </a>
+    <a routerLink="/portfolio" class="w3-bar-item w3-button" (click)="toggleMenu()">
+      portfolio
+    </a>
   </div>
 
 </div>
