@@ -3,47 +3,40 @@
 .section {
     height: 100% !important;
     min-height: 100% !important;
-    // background-color: #fff;
     text-align: center;
-    background-image: url("/assets/img/blurred-lights.jpeg");
+    background-image: url("/assets/img/blurred-lights-two.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
-
-    .title {
-      font-family: $font-nova-lite;
-      color: $extra-dark-gray !important;
-      font-weight: lighter;
+    .loginTitle {
+        font-family: $font-raleway;
+        font-size: 1.3em;
+        color: #000;
+        font-weight: lighter;
     }
-
     .card {
-        max-width: 400px;
+        border-radius: 5px;
+        max-width: 300px;
         margin: 0 auto;
-        background-color: $light-gray;
+        background-color: $campfire;
         padding: 20px;
         margin-top: 10%;
-        padding-bottom: 25px;
-        box-shadow: 2px 2px 2px $extra-dark-gray;
-
+        box-shadow: 2px 2px 2px $dark-gray;
         input {
           padding: 5px;
           text-align: center;
           font-family: $font-raleway;
-          font-weight: bold;
-          min-width: 300px;
         }
-
         .button {
-          min-width: 300px;
+          width: 100%;
           border-radius: 2px;
-          font-family: $font-nova-norm;
+          font-family: $font-raleway;
           padding: 5px;
         }
-
         small {
-          font-family: $font-nova-norm;
+          font-family: $font-raleway;
+          color: #fff;
         }
-
-        .createAccount, .forgotPassword, .createAccount:hover, .forgotPassword:hover {
+        .forgotPassword:hover, .createAccount:hover {
           cursor: pointer;
           color: $blue;
         }

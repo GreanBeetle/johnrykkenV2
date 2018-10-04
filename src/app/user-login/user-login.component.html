@@ -1,31 +1,28 @@
 <section class="section">
   <div class="card">
-    <h1 class="title">Login</h1>
+    <p class="loginTitle">user login</p>
+    <br>
     <form>
       <div class="control field-body has-icons-left">
         <input class="input" placeholder="email" #email>
         <span class="icon is-small is-left">
           <fa-icon icon="user"></fa-icon>
         </span>
-      </div>
-      <br><br>
+      </div><br>
       <div class="control field-body has-icons-left">
-        <input type="password" placeholder="password" #password>
+        <input class="input" type="password" placeholder="password" #password>
         <span class="icon is-small is-left">
           <fa-icon icon="lock"></fa-icon>
         </span>
-      </div>
-      <br><br>
-      <a class="button is-black"
-         (click)="login(email.value, password.value)">
-         login
+      </div><br>
+      <a class="button is-black" (click)="login(email.value, password.value)">
+        login
       </a>
     </form>
     <br>
     <small>
-      <span (click)="forgotPassword()" class="forgotPassword">Forgot password?</span>
-      or
-      <span class="createAccount" routerLink="/signup">Create account</span>
+      <span (click)="forgotPassword()" class="forgotPassword">Reset password</span> |
+      <span class="createAccount" routerLink="/signup">Sign up</span>
     </small>
   </div>
 </section>
