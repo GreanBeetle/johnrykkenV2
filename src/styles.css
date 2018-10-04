@@ -25,4 +25,21 @@ body { margin: 0; font-family: 'Raleway', sans-serif; }
   font-size: 1.3em !important;
   color: #000000 !important;
 }
-/* angular material styling */
+
+/* primeng toast styling  */
+.ui-toast-message-success {
+  background-color: #55efc4 !important;
+}
+.ui-toast-message-error {
+  background-color: #e74c3c !important;
+}
+.ui-toast-message-content {
+  font-family: 'Raleway';
+  color: #fff;
+}
+.ui-toast-close-icon {
+  color: #fff;
+}
+.ui-toast-close-icon:hover {
+  color: #f1c40f;
+}
