@@ -33,6 +33,9 @@ body { margin: 0; font-family: 'Raleway', sans-serif; }
 .ui-toast-message-error {
   background-color: #e74c3c !important;
 }
+.ui-toast-message-info {
+  background-color: #0984e3 !important;
+}
 .ui-toast-message-content {
   font-family: 'Raleway';
   color: #fff;
