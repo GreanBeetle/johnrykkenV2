@@ -2,44 +2,35 @@
 
 .section {
     text-align: center;
-
     .title {
-      font-family: $font-nova-lite;
-      font-size: 2.5em;
-      font-weight: lighter;
+        font-family: $font-nova-lite;
+        font-size: 2.5em;
+        font-weight: lighter;
     }
-
-    // form column
     .inputFields {
         .label {
           font-family: $font-nova-lite;
           margin-bottom: 0px;
         }
-
         input[type="text"], textarea[type="text"], option, select {
           font-family: $font-raleway;
           font-size: 12pt;
         }
     }
-
-    // oldArticle
     .oldArticle {
         max-height: 400px;
         overflow: scroll;
-
         .titleGroup {
             text-align: center;
             .articleTitle {
               font-family: $font-raleway;
               font-size: 2em;
             }
-
             .articleSubtitle {
               font-family: $font-raleway;
               font-size: 1.5em;
             }
         }
-
         .keywordsAndCategory {
             text-align: left;
             .keywords, .category {
@@ -47,13 +38,10 @@
               font-size: .8em;
             }
         }
-
-        .articleContent {
+        .columns {
           text-align: justify;
-          font-family: $font-raleway;
         }
     }
-
     button {
       font-family: $font-nova-lite;
       max-width: 500px;

@@ -9,7 +9,7 @@
       </h1>
       <hr>
 
-        <!-- form column -->
+        <!-- edit form -->
         <div class="inputFields">
 
             <!-- new title -->
@@ -79,7 +79,7 @@
                 <div class="field-body">
                   <div class="field">
                     <div class="control">
-                      <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="article.content">
+                      <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="article.content" #newContent>
                       </app-ngx-editor>
                     </div>
                   </div>
@@ -97,7 +97,7 @@
                          name="keywords">
                 </div>
             </div>
-        </div> <!-- end form column -->
+        </div> <!-- end edit form -->
 
       <br>
       <button class="button is-black is-text-centered is-medium is-fullwidth"
@@ -108,7 +108,7 @@
                                      newKeywords.value)">
         u&nbsp;p&nbsp;d&nbsp;a&nbsp;t&nbsp;e
       </button>
-      <hr>
+      <br>
       <div class="oldArticle">
         <div class="titleGroup">
           <h1 class="articleTitle">{{ article.title }}</h1>
@@ -121,8 +121,13 @@
           <p class="keywords"><b>Keywords:</b> {{ article.keywords }}</p>
         </div>
         <br>
-        <div class="articleContent">
-          {{ article.content }}
+        <div class="columns">
+          <div class="column">
+            <div [innerHTML]="article.content"></div>
+          </div>
+          <div class="column">
+            <p>{{ article.content }}</p>
+          </div>
         </div>
       </div>
   </div>
