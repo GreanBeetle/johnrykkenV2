@@ -1,12 +1,13 @@
 <section class="section is-medium">
   <div class="container">
-    <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="article.content">
-      {{ article.content }}
+    <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="htmlContent">
+
     </app-ngx-editor>
   </div>
-</section>                                              
-
-
+</section>
+<hr>
+{{ htmlContent }}
+<hr>
 {{ article.title }}
 <br>
 {{ article.subtitle }}
@@ -16,3 +17,4 @@
 {{ article.content }}
 <br>
 {{ article.keywords }}
+<hr>

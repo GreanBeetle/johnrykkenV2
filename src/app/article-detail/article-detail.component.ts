@@ -18,6 +18,7 @@ export class ArticleDetailComponent {
   articles: Observable<Article[]>;
   article: any;
   id: any;
+  htmlContent = 'Some text to play with';
 
   constructor (private route: ActivatedRoute,
                private afs: AngularFirestore) {

@@ -79,11 +79,14 @@
                 <div class="field-body">
                   <div class="field">
                     <div class="control">
-                      <textarea class="textarea is-primary"
+                      <!-- <textarea class="textarea is-primary"
                                 #newContent
                                 [(ngModel)]="article.content"
                                 type="text">
-                      </textarea>
+                      </textarea> -->
+                      <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="article.content">
+
+                      </app-ngx-editor>
                     </div>
                   </div>
                 </div>
@@ -122,7 +125,7 @@
       </div> <!-- end columns -->
       <br>
       <button class="button is-black is-text-centered is-medium is-fullwidth"
-              (click)="updateArticle(newTitle.value, 
+              (click)="updateArticle(newTitle.value,
                                      newDate.value,
                                      newSubtitle.value,
                                      newContent.value,
