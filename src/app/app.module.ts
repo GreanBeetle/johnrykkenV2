@@ -50,13 +50,13 @@ import { UserAuthService } from './user-auth.service';
 import { CruxFeatureArticleComponent } from './crux-feature-article/crux-feature-article.component';
 import { ArticleEditComponent } from './article-edit/article-edit.component';
 import { AuthGuardService } from './auth-guard.service';
-// share buttons
 import { ShareModule } from '@ngx-share/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ShareButtonsComponent } from './share-buttons/share-buttons.component';
 import { ShareButtonModule } from '@ngx-share/button';
 import { CruxArchivedArticlesComponent } from './crux-archived-articles/crux-archived-articles.component';
-// end share buttons
+import { NgxEditorModule } from 'ngx-editor';
+
 library.add(fas);
 
 export const firebaseConfig = {
@@ -116,10 +116,11 @@ export const firebaseConfig = {
     BrowserAnimationsModule,
     NgxPaginationModule,
     FontAwesomeModule,
-    HttpClientModule, // (Required) for share counts
-    ShareModule.forRoot(), // share buttons
-    ShareButtonModule.forRoot(), // share buttons
-    MatTabsModule
+    HttpClientModule,
+    ShareModule.forRoot(),
+    ShareButtonModule.forRoot(),
+    MatTabsModule,
+    NgxEditorModule
   ],
   providers: [
     MessageService,
