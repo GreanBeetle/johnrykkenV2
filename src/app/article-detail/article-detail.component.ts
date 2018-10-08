@@ -15,15 +15,12 @@ import { Article } from '../models/article.model';
 
 export class ArticleDetailComponent {
   articlesCollection: AngularFirestoreCollection<Article>;
-  articles: Observable<Article[]>;
   article: any;
   id: any;
-  htmlContent = 'Some text to play with';
 
   constructor (private route: ActivatedRoute,
                private afs: AngularFirestore) {
       this.articlesCollection = this.afs.collection('articles');
-      this.articles = this.articlesCollection.valueChanges();
       this.route.params.subscribe(params => {
           this.id = params['id'];
       });
@@ -31,8 +28,4 @@ export class ArticleDetailComponent {
         this.article = doc.data();
       });
   }
-
-
-
-
 }
